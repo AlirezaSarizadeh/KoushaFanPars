@@ -1,6 +1,7 @@
 'use client'
 import { Button, Offcanvas } from "react-bootstrap";
 import React, { useState } from 'react'
+import { Menu as MenuIcon } from "lucide-react";
 
 
 const Navbar = () => {
@@ -11,12 +12,12 @@ const Navbar = () => {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow} className="me-2">
-                menu
+            <Button variant="transparent" onClick={handleShow} className="me-2">
+                <MenuIcon color="#333"/>
             </Button>
             <Offcanvas show={show} onHide={handleClose} placement="start">
                 <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                    <Offcanvas.Title>منو</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     Some text as placeholder. In real life you can have the elements you
