@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const Header = () => {
     return (
-        <header className='d-flex '>
+        <header className='d-flex align-items-center justify-content-between container-custom'>
             <Navbar />
             <Link href={'/'}>
                 <Image src={images.mainLogo} alt='KFP LOGO' width={175} height={50} />

@@ -1,7 +1,8 @@
 'use client'
 import { Button, Offcanvas } from "react-bootstrap";
 import React, { useState } from 'react'
-import { Menu as MenuIcon } from "lucide-react";
+import images from "@/app/public/assets/images";
+import Image from "next/image";
 
 
 const Navbar = () => {
@@ -12,9 +13,9 @@ const Navbar = () => {
 
     return (
         <>
-            <Button variant="transparent" onClick={handleShow} className="me-2">
-                <MenuIcon color="#333"/>
-            </Button>
+            <button onClick={handleShow} className="me-2 p-0 bg-transparent border-0">
+                <Image src={images.menuIco} alt="menu-icon" />
+            </button>
             <Offcanvas show={show} onHide={handleClose} placement="start">
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>منو</Offcanvas.Title>

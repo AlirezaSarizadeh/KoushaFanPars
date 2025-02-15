@@ -1,0 +1,14 @@
+.title-line {
+    width: 180px;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(3, 76, 148, 1) 0%, rgba(35, 188, 249, 1) 35%);
+    display: block;
+}
+
+.main-title {
+    color: #044F97;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 24px;
+}
