@@ -20,7 +20,7 @@ const Hero = () => {
             <Card.Body>
                 <Card.Title>
                     <h1 className='fw-bold d-flex flex-column gap-3'>
-                        <span className='lead fs-2 opacity-75'>
+                        <span className='lead fw-normal fs-3'>
                             شرکت مهندسی تولیدی
                         </span>
                         دانش بنیان کوشافن پارس
