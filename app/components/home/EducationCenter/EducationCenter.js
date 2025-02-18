@@ -6,7 +6,7 @@ import Button from '../../utils/button/Button'
 
 const EducationCenter = () => {
     return (
-        <div className='row align-items-center'>
+        <div className='row align-items-center container-custom '>
             <div className='col-lg-8'>
                 <Title title={'مرکز آموزش'} />
                 <Lead boldText={'دانشکده کوشافن پارس'} lightText={'مهارت های خود را با کوشافن پارس ارتقا دهید'} />

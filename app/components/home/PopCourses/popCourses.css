@@ -1,0 +1,18 @@
+.popCours-card-img {
+    background: #bbe0f6;
+    border-radius: 10px;
+}
+.popCours-card .card-body {
+    background: #fff;
+    border-radius: 10px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 20px;
+    width: 80%;
+    margin: auto;
+    box-shadow:  0 .125rem .25rem #00000013;
+}
+.popCours-card {
+    position: relative;
+}
