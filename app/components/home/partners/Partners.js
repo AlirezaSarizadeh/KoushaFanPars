@@ -52,7 +52,45 @@ const Partners = () => {
               <Card className='d-flex flex-row align-items-center justify-content-between border-0'>
                 <Image src={images.partner1_product} alt='product' style={{ objectFit: 'scale-down' }} />
                 <Card.Body className='text-start d-flex flex-column'>
+                  <Card.Title className='small'>کوشافن پارس 78989879889</Card.Title>
+                  <Card.Text className='fw-light small text-justify'>
+                    شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید
+                  </Card.Text>
+                  <Card.Footer className='border-0 bg-transparent text-end'>
+                    <Link className='d-flex align-items-center gap-3 textColor justify-content-end' href={'/'}>
+                      <small className='small'>
+                        مشاهده محصولات
+                      </small>
+                      <Image src={images.arrowLeftIco} alt='arrow' style={{ objectFit: 'scale-down' }} />
+                    </Link>
+                  </Card.Footer>
+                </Card.Body>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card className='d-flex flex-row align-items-center justify-content-between border-0'>
+                <Image src={images.partner1_product} alt='product' style={{ objectFit: 'scale-down' }} />
+                <Card.Body className='text-start d-flex flex-column'>
                   <Card.Title className='small'>کوشافن پارس</Card.Title>
+                  <Card.Text className='fw-light small text-justify'>
+                    شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید
+                  </Card.Text>
+                  <Card.Footer className='border-0 bg-transparent text-end'>
+                    <Link className='d-flex align-items-center gap-3 textColor justify-content-end' href={'/'}>
+                      <small className='small'>
+                        مشاهده محصولات
+                      </small>
+                      <Image src={images.arrowLeftIco} alt='arrow' style={{ objectFit: 'scale-down' }} />
+                    </Link>
+                  </Card.Footer>
+                </Card.Body>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card className='d-flex flex-row align-items-center justify-content-between border-0'>
+                <Image src={images.partner1_product} alt='product' style={{ objectFit: 'scale-down' }} />
+                <Card.Body className='text-start d-flex flex-column'>
+                  <Card.Title className='small'>کوشافن پارس 45454</Card.Title>
                   <Card.Text className='fw-light small text-justify'>
                     شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید
                   </Card.Text>
@@ -81,25 +119,25 @@ const Partners = () => {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper"
+        className="mySwiper mt-lg-4 mt-2"
       >
         <SwiperSlide>
           <Image src={images.partner1} alt='partner' />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={images.partner1} alt='partner' />
+          <Image src={images.partner2} alt='partner' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image src={images.partner3} alt='partner' />
         </SwiperSlide>
         <SwiperSlide>
           <Image src={images.partner1} alt='partner' />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={images.partner1} alt='partner' />
+          <Image src={images.partner2} alt='partner' />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={images.partner1} alt='partner' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={images.partner1} alt='partner' />
+          <Image src={images.partner3} alt='partner' />
         </SwiperSlide>
       </Swiper>
     </div>

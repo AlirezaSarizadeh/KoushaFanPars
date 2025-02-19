@@ -1,8 +1,8 @@
 import React from 'react'
 import './title.css'
-const Title = ({ title }) => {
+const Title = ({ title, fontSize }) => {
   return (
-    <div className='main-title'>
+    <div className='main-title' style={{ fontSize: `${fontSize}` }}>
       {title}
       <span className='title-line'></span>
     </div>

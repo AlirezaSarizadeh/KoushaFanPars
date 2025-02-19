@@ -7,22 +7,30 @@ import counterIcon1 from './images/counterIcon1.png'
 import counterIcon2 from './images/counterIcon2.png'
 import counterIcon3 from './images/counterIcon3.png'
 import counterIcon4 from './images/counterIcon4.png'
-import partner1 from './images/company-1.png'
+import partner1 from './images/partner_redon.png'
+import partner2 from './images/partner_upcera.png'
+import partner3 from './images/partner_vita.png'
 import partner1_product from './images/partner1-product.png'
-import partner1_small from './images/partner1-small.png'
+import event_image from './images/event_image.png'
+import clockIcon from './images/clock.png'
+import calendarIcon from './images/calendar.png'
 
 const images = {
    mainLogo,
    userIco,
    menuIco,
    arrowLeftIco,
-   docSamplePic ,
+   docSamplePic,
    counterIcon1,
    counterIcon2,
    counterIcon3,
    counterIcon4,
    partner1,
+   partner2,
+   partner3,
    partner1_product,
-   partner1_small
+   event_image,
+   clockIcon,
+   calendarIcon
 }
 export default images
