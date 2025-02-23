@@ -1,0 +1,29 @@
+body {
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 78%, rgba(151,204,243,1) 100%);
+}
+.footer .accordion {
+    --bs-accordion-bg: transparent !important;
+}
+.footer-section h5 {
+    color: #0055a5;
+    position: relative;
+    font-weight: 500 !important;
+}
+
+.footer-section h5::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: rgb(3, 76, 148);
+    background: linear-gradient(90deg, rgba(3, 76, 148, 1) 0%, rgba(35, 188, 249, 1) 60%);
+    max-width: 200px;
+}
+
+.footer-section-ul li {
+    margin-top: 1rem;
+}

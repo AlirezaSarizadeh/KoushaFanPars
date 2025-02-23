@@ -25,7 +25,7 @@ const Partners = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div className=' container-custom'>
+    <div className=''>
 
       <div className='row align-items-center'>
         <div className='col-lg-6'>

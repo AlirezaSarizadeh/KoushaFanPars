@@ -17,7 +17,7 @@ import Link from 'next/link';
 
 const PopCourses = () => {
   return (
-    <div className='py-5 container-custom '>
+    <div className='py-5'>
       <div className='d-flex align-items-center justify-content-between pb-lg-5 pb-3 w-100'>
         <Title title={'دوره های پرطرفدار'} />
         <Link className='d-flex align-items-center justify-content-center gap-3' href={'/'}>

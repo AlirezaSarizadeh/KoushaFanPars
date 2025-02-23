@@ -5,7 +5,7 @@ import Button from '../../utils/button/Button'
 
 const CustomerServices = () => {
   return (
-    <div className='row align-items-center  container-custom'>
+    <div className='row align-items-center'>
       <div className='col-lg-8'>
         <Title title={'خدمات پس از فروش'} />
         <Lead boldText={'کوشایار'} lightText={'همراه همیشگی شما در هر شرایط'} />
