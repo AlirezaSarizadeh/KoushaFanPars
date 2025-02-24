@@ -149,3 +149,14 @@ a {
   line-clamp: 4;
   -webkit-box-orient: vertical;
 }
+.search-btn{
+  position: fixed;
+  bottom: 30px ;
+  left: 30px ;
+  z-index: 999;
+}
+.form-control:focus {
+  border-color: transparent;
+  outline: 0;
+  box-shadow: none;
+}

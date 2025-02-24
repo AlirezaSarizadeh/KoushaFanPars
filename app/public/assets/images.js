@@ -14,6 +14,9 @@ import partner1_product from './images/partner1-product.png'
 import event_image from './images/event_image.png'
 import clockIcon from './images/clock.png'
 import calendarIcon from './images/calendar.png'
+import searchBtnIcon from './images/search-btn-icon.png'
+import searchModalBtnIcon from './images/search-modal-icon.png'
+import arrowSearchModalIcon from './images/arrow-search-modal-icon.png'
 
 const images = {
    mainLogo,
@@ -31,6 +34,9 @@ const images = {
    partner1_product,
    event_image,
    clockIcon,
-   calendarIcon
+   calendarIcon,
+   searchBtnIcon,
+   searchModalBtnIcon,
+   arrowSearchModalIcon
 }
 export default images

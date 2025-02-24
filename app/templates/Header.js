@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/navbar/Navbar'
+import Menu from '../components/Menu/Menu'
 import Image from 'next/image'
 import images from '../public/assets/images'
 import Link from 'next/link'
@@ -7,7 +7,7 @@ import Link from 'next/link'
 const Header = () => {
     return (
         <header className='d-flex align-items-center justify-content-between'>
-            <Navbar />
+            <Menu />
             <Link href={'/'}>
                 <Image src={images.mainLogo} alt='KFP LOGO' width={175} height={50} />
             </Link>

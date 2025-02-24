@@ -1,0 +1,34 @@
+.search-modal-input {
+    border: 1px solid #044F97;
+    padding: 10px;
+    border-radius: 10px;
+}
+.arrowSearchModalIcon{
+    position: absolute;
+    left: -35px;
+    top: 0;
+    bottom: 0;
+    background-color: #7dbded;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin: auto;
+}
+.search-modal{
+    background-color: #7dbced6b;
+    backdrop-filter: blur(5px);
+}
+.search-modal .modal-content{
+    background-color: #7dbded;
+    border: none;
+}
+.search-modal .modal-body input{
+    background-color: #7dbded;
+    color: #fff;
+}
+.search-modal .modal-body input::placeholder{
+    color: #fff;
+}
