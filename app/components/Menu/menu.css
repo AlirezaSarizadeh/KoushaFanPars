@@ -1,3 +1,68 @@
-.canvas-menu{
-    background-color: red;
+.offcanvas-header{
+    display: none;
+}
+.offcanvas-body {
+    padding: 0;
+}
+.menu {
+    background-color: #044f97;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.menu .nav-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    background: #044f97;
+    border-radius: 15px;
+}
+.nav-pills .nav-link.active {
+    background-color: #fff;
+    border: none;
+    box-shadow: none;
+}
+.nav-pills .nav-link.active img{
+    filter: brightness(0.5) !important;
+}
+.menu-tab-content .tab-pane.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+.menu-tab-content {
+    height: 100%;
+    padding: 0 15px;
+    position: relative;
+}
+.menu-tab-content-header {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    left: 0;
+    width: 85%;
+    margin: auto;
+}
+.menu-tab-content-header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(3, 76, 148, 1) 0%, rgba(35, 188, 249, 1) 35%);
+    height: 2px;
+    width: 100%;
+}
+.offcanvas {
+    border-radius: 50px ;
 }

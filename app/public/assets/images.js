@@ -17,6 +17,12 @@ import calendarIcon from './images/calendar.png'
 import searchBtnIcon from './images/search-btn-icon.png'
 import searchModalBtnIcon from './images/search-modal-icon.png'
 import arrowSearchModalIcon from './images/arrow-search-modal-icon.png'
+import productMeniIcon from './images/products-menu-icon.png'
+import markazAnoozheMenuIcon from './images/markaz-amoozeh-menu-icon.png'
+import koushayarMenuIcon from './images/kooshayar-icon-menu.png'
+import blogMenuIcon from './images/blog-menu-icon.png'
+import contactUsMenuIcon from './images/contactus-menu-icon.png'
+import aboutUsMenuIcon from './images/aboutus-menu-icon.png'
 
 const images = {
    mainLogo,
@@ -37,6 +43,12 @@ const images = {
    calendarIcon,
    searchBtnIcon,
    searchModalBtnIcon,
-   arrowSearchModalIcon
+   arrowSearchModalIcon,
+   productMeniIcon,
+   markazAnoozheMenuIcon,
+   koushayarMenuIcon,
+   blogMenuIcon,
+   contactUsMenuIcon,
+   aboutUsMenuIcon,
 }
 export default images
