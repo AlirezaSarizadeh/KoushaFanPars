@@ -23,7 +23,10 @@ import koushayarMenuIcon from './images/kooshayar-icon-menu.png'
 import blogMenuIcon from './images/blog-menu-icon.png'
 import contactUsMenuIcon from './images/contactus-menu-icon.png'
 import aboutUsMenuIcon from './images/aboutus-menu-icon.png'
-
+import circledTestimonial from './images/cicledTestimonialBG.png'
+import testiMan1 from './images/testimonial-men.png'
+import testiMan2 from './images/testimonial-men-2.png'
+import testiTick from './images/testimonial-approved.png'
 const images = {
    mainLogo,
    userIco,
@@ -50,5 +53,9 @@ const images = {
    blogMenuIcon,
    contactUsMenuIcon,
    aboutUsMenuIcon,
+   circledTestimonial,
+   testiMan1,
+   testiMan2,
+   testiTick
 }
 export default images

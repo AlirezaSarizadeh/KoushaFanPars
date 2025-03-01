@@ -1,0 +1,12 @@
+app/
+│── routes/
+│   ├── auth/
+│   │   ├── login/
+│   │   │   ├── page.jsx
+│   │   ├── register/
+│   │   │   ├── page.jsx
+│   │   ├── layout.jsx (optional)
+│   ├── dashboard/
+│   ├── settings/
+│── layout.jsx
+│── page.jsx

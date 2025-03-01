@@ -9,7 +9,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
-
+import './partners.css'
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
@@ -119,7 +119,7 @@ const Partners = () => {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper mt-lg-4 mt-2"
+        className="mySwiper mt-lg-4 mt-2 partner-logo-swiper"
       >
         <SwiperSlide>
           <Image src={images.partner1} alt='partner' />

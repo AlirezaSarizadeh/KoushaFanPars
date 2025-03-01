@@ -3,6 +3,7 @@ import './educationCenter.css'
 import Title from '../../utils/title/Title'
 import Lead from '../../utils/lead/Lead'
 import Button from '../../utils/button/Button'
+import CircledTestimonial from '../../CircledTestimonial/CircledTestimonial'
 
 const EducationCenter = () => {
     return (
@@ -19,7 +20,7 @@ const EducationCenter = () => {
                 </div>
             </div>
             <div className='col-lg-4'>
-                CIRCLED TESTIMONTIAL
+                <CircledTestimonial />
             </div>
         </div>
     )

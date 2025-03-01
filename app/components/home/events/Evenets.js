@@ -62,48 +62,6 @@ const Evenets = () => {
               className="mySwiper"
             >
               <SwiperSlide className='p-4' style={{ width: '70%' }}>
-
-                s;dlijdlhj
-                <EvenetCard />
-              </SwiperSlide>
-              <SwiperSlide className='p-4' style={{ width: '70%' }}>
-                <EvenetCard />
-              </SwiperSlide>
-            </Swiper>
-          </Tab>
-          <Tab eventKey="sim" title="وبلاگ ها">
-            <Swiper
-              slidesPerView={'auto'}
-              spaceBetween={10}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[]}
-              className="mySwiper"
-            >
-              <SwiperSlide className='p-4' style={{ width: '70%' }}>
-
-                s;dlijdlhj
-                <EvenetCard />
-              </SwiperSlide>
-              <SwiperSlide className='p-4' style={{ width: '70%' }}>
-                <EvenetCard />
-              </SwiperSlide>
-            </Swiper>
-          </Tab>
-          <Tab eventKey="sim" title="وبلاگ ها">
-            <Swiper
-              slidesPerView={'auto'}
-              spaceBetween={10}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[]}
-              className="mySwiper"
-            >
-              <SwiperSlide className='p-4' style={{ width: '70%' }}>
-
-                s;dlijdlhj
                 <EvenetCard />
               </SwiperSlide>
               <SwiperSlide className='p-4' style={{ width: '70%' }}>
