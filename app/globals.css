@@ -90,6 +90,12 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'PeydaFaNum', Helvetica, sans-serif;
+}
+
+input,
+input::placeholder {
+  font-family: 'PeydaFaNum', Helvetica, sans-serif;
 }
 
 a {
@@ -158,12 +164,14 @@ a {
   line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-.search-btn{
+
+.search-btn {
   position: fixed;
-  bottom: 30px ;
-  left: 30px ;
+  bottom: 30px;
+  left: 30px;
   z-index: 999;
 }
+
 .form-control:focus {
   border-color: transparent;
   outline: 0;
