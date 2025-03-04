@@ -27,6 +27,11 @@ import circledTestimonial from './images/cicledTestimonialBG.png'
 import testiMan1 from './images/testimonial-men.png'
 import testiMan2 from './images/testimonial-men-2.png'
 import testiTick from './images/testimonial-approved.png'
+import hero2ndpic from './images/2nd-her-card.png'
+import heroIcon1 from './images/hero-2nd-icon1.png'
+import heroIcon2 from './images/hero-2nd-icon2.png'
+import heroIcon3 from './images/hero-2nd-icon3.png'
+import heroIcon4 from './images/hero-2nd-icon4.png'
 const images = {
    mainLogo,
    userIco,
@@ -56,6 +61,11 @@ const images = {
    circledTestimonial,
    testiMan1,
    testiMan2,
-   testiTick
+   testiTick,
+   hero2ndpic,
+   heroIcon1,
+   heroIcon2,
+   heroIcon3,
+   heroIcon4,
 }
 export default images

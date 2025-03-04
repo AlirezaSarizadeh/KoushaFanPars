@@ -1,11 +1,24 @@
-import React from 'react'
-
-const notfound = () => {
+import Link from 'next/link'
+import './globals.css'
+import './not-found.css'
+import RootLayout from './(main)/layout'
+import Button from './components/utils/button/Button'
+export default function NotFound() {
   return (
-    <div>
-      not found
-    </div>
+    <RootLayout>
+      <div className="text-center bg-404 d-flex align-items-center justify-content-center rounded-5 my-lg-5 ">
+
+        <div className="text-center flex-column d-flex align-items-start justify-content-center rounded-5 my-lg-5 ms-lg-5">
+          <h1 className='fw-bold ms-lg-5'>صفحه مورد نظر یافت نشد!</h1>
+          <p className='lead mt-3 ms-lg-5'>
+            صفحه ای که به دنبال آن ، ممکن است آدرس صفحه تغییر کرده و یا از بین رفته باشد
+          </p>
+          <span className='ms-auto mt-lg-5 '>
+            <Button href={'/'} title={'بازگشت'} />
+
+          </span>
+        </div>
+      </div>
+    </RootLayout>
   )
 }
-
-export default notfound

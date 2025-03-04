@@ -2,7 +2,10 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, InputGroup, FormControl } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../global.auth.css'
 import { Eye, EyeOff } from 'lucide-react';
+import Image from 'next/image';
+import images from '@/app/public/assets/images';
 
 const LoginForm = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -13,65 +16,87 @@ const LoginForm = () => {
 
     return (
         <Container fluid>
-            <Row className="vh-100 d-flex align-items-center">
-                <Col md={6} className="bg-primary text-white p-5">
-                    {/* Left side content */}
-                    <h1>ثبت نام</h1>
-                    <p>در کاردار سالانه تولیدی و رسمی با شرکت های مطرح دبیاز (Vita ,3shape ,imes-icore ,Redon) همکاری متقابل داشته و پاسخگو به لازم جامعه دندانپزشکی و دندانسازی ایران همیشه نگاهوارد زودنیا باشد.</p>
-                </Col>
-                <Col md={6} className="p-5">
+            <Row className="h-100 d-flex align-items-center auth-color-side">
+                <Col md={5} className="p-5 bg-white vh-100 auth-form-side">
                     {/* Right side form */}
-                    <Form>
+                    <Form className='d-flex flex-column justify-content-around'>
+                        <div className='auth-heading d-flex flex-column gap-2'>
+                            <Image src={images.mainLogo} alt='logo' />
+                            <h3 className='fs-1 mt-lg-5 mt-3 fw-bold'>
+                                ثبت نام
+                            </h3>
+                            <p className='text-justify fw-medium'>
+                                در کنار 30 سال تولید ملی بصورت انحصاری و رسمی با شرکت های مطرح دنیا از جمله  (Vita ، 3shape ، imes-icore ، Redon ) همکاری متقابل داشته باشد و پاسخگوی نیاز روز جامعه دندانپزشکی و دندانسازی ایران همپای تکنولوژِی روز دنیا باشد.
+
+                            </p>
+                        </div>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>نام</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
-                            <Form.Text className="text-muted">
+                            <Form.Control type="text" placeholder="" />
+                            {/* <Form.Text className="text-muted">
                                 We'll never share your email with anyone else.
-                            </Form.Text>
+                            </Form.Text> */}
                         </Form.Group>
-
-                        <Form.Group controlId="formBasicLastName">
-                            <Form.Control type="text" placeholder="نام خانوادگی" />
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>نام خانوادگی</Form.Label>
+                            <Form.Control type="text" placeholder="" />
+                            {/* <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                            </Form.Text> */}
                         </Form.Group>
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Control type="email" placeholder="ایمیل" />
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>ایمیل </Form.Label>
+                            <Form.Control type="email" placeholder="" />
+                            {/* <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                            </Form.Text> */}
                         </Form.Group>
-                        <Form.Group controlId="formBasicPhone">
-                            <Form.Control type="tel" placeholder="شماره تلفن" />
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>کد ملی </Form.Label>
+                            <Form.Control type="number" placeholder="" />
+                            {/* <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                            </Form.Text> */}
                         </Form.Group>
-                        <Form.Group controlId="formBasicAddress">
-                            <Form.Control type="text" placeholder="آدرس" />
-                        </Form.Group>
-                        <Form.Group controlId="formBasicPassword">
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>رمز عبور</Form.Label>
                             <InputGroup>
-                                <FormControl
-                                    type={showPassword ? "text" : "password"}
-                                    placeholder="رمز عبور"
-                                />
-                                <InputGroup.Text onClick={togglePasswordVisibility}>
-                                    {showPassword ? <EyeOff /> : <Eye />}
+                                <Form.Control style={{ borderRadius: '0 8px 8px 0' }} type={showPassword ? "text" : "password"} />
+                                {/* <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                            </Form.Text> */}
+                                <InputGroup.Text className='opacity-75' onClick={togglePasswordVisibility}>
+                                    {showPassword ? <Eye /> : <EyeOff />}
                                 </InputGroup.Text>
                             </InputGroup>
                         </Form.Group>
-                        <Form.Group controlId="formBasicConfirmPassword">
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>تکرار رمز عبور</Form.Label>
                             <InputGroup>
-                                <FormControl
-                                    type={showPassword ? "text" : "password"}
-                                    placeholder="تکرار رمز عبور"
-                                />
-                                <InputGroup.Text onClick={togglePasswordVisibility}>
-                                    {showPassword ? <EyeOff /> : <Eye />}
+                                <Form.Control style={{ borderRadius: '0 8px 8px 0' }} type={showPassword ? "text" : "password"} />
+                                {/* <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                            </Form.Text> */}
+                                <InputGroup.Text className='opacity-75' onClick={togglePasswordVisibility}>
+                                {showPassword ? <Eye /> : <EyeOff />}
                                 </InputGroup.Text>
                             </InputGroup>
                         </Form.Group>
-                        <Button variant="primary" type="submit" className="w-100 mt-3">
+                        <Button variant="" className="auth-primary-button w-100 my-3" type="submit">
                             ثبت نام
                         </Button>
-                        <div className="mt-4">
-                            <span>قبلاً ثبت نام کرده‌اید؟</span>
-                            <Button variant="link">ورود</Button>
+                        <div className='auth-hr-devider position-relative text-center'>
+                            <span className='px-2 position-relative bg-white small' style={{ zIndex: '2' }}>
+                                یا
+                            </span>
                         </div>
+                        <Button variant="" className="auth-secondary-button w-100 mt-3" type="submit">
+                            ورود
+                        </Button>
                     </Form>
+                </Col>
+                <Col md={6} className="text-white p-0 ">
+                    {/* Left side content */}
                 </Col>
             </Row>
         </Container>

@@ -10,10 +10,9 @@ import TestComponent from "../components/TestComponent/testComponent";
 export default function Home() {
   return (
     <div className="d-flex flex-column gap-lg-5 gap-3">
-      <Hero />
-
+      {/* <Hero /> */}
+      <EducationCenter />
       <TestComponent />
-
       <EducationCenter />
       <PopCourses />
       <CustomerServices />

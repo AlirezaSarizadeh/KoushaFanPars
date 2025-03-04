@@ -7,8 +7,8 @@ import CircledTestimonial from '../../CircledTestimonial/CircledTestimonial'
 
 const EducationCenter = () => {
     return (
-        <div className='row align-items-center'>
-            <div className='col-lg-8'>
+        <div className='row align-items-center mt-lg-5 pt-lg-5'>
+            <div className='col-lg-8 mt-lg-5'>
                 <Title title={'مرکز آموزش'} />
                 <Lead boldText={'دانشکده کوشافن پارس'} lightText={'مهارت های خود را با کوشافن پارس ارتقا دهید'} />
                 <p className='text-justify py-2'>
@@ -19,7 +19,7 @@ const EducationCenter = () => {
                     <Button variant={'primary'} title={'ثبت نام دوره'} />
                 </div>
             </div>
-            <div className='col-lg-4'>
+            <div className='col-lg-4 mt-lg-5'>
                 <CircledTestimonial />
             </div>
         </div>

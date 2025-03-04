@@ -1,0 +1,62 @@
+.auth-color-side {
+    background-color: #71b1e1;
+    min-height: 100vh;
+}
+
+.form-control {
+    border-radius: 12px;
+    text-align: right;
+    padding: 15px;
+}
+
+.form-label {
+    margin-bottom: 0px;
+    opacity: 75%;
+}
+
+span.input-group-text {
+    background: #fff;
+    border-radius: 8px 0 0 8px !important;
+}
+
+.auth-form-side {
+    overflow-y: scroll;
+    /* height: 100% !important; */
+}
+
+.auth-primary-button {
+    background-color: #034c94;
+    padding: 15px 10px;
+    color: #fff;
+    border-radius: 15px;
+    font-size: 16px;
+}
+.auth-primary-button:hover {
+    background-color: #034b9418;
+    border-color: #034c94;
+    color: #034c94;
+}
+
+.auth-secondary-button {
+    padding: 15px 10px;
+    color: #333;
+    border-radius: 15px;
+    font-size: 16px;
+    border-color: #333;
+}
+.auth-secondary-button:hover {
+    background-color: #333;
+    color: #fff;
+}
+.auth-hr-devider::after{
+    background-color: #ccc;
+    height: 1px;
+    width: 100%;
+    content: '';
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+}

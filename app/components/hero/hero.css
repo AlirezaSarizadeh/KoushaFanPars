@@ -5,4 +5,5 @@
     border: none;
     padding: 20px;
     background: linear-gradient(180deg, rgba(69,205,247,0.35) 0%, rgba(255,255,255,1) 30%);
+    z-index: 99;
 }

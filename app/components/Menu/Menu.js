@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Tab, Nav, Row, Col } from "react-bootstrap";
 import './menu.css'
 import Link from "next/link";
+import { AlignJustify, AlignRight } from "lucide-react";
 
 const Menu = () => {
     const [show, setShow] = useState(false);
@@ -16,7 +17,8 @@ const Menu = () => {
     return (
         <>
             <button onClick={handleShow} className="me-2 p-0 bg-transparent border-0">
-                <Image src={images.menuIco} alt="menu-icon" />
+                {/* <Image src={images.menuIco} alt="menu-icon" /> */}
+                <AlignRight size={32} />
             </button>
             <Offcanvas className="canvas-menu" show={show} onHide={handleClose} placement="start">
                 <Offcanvas.Header closeButton>

@@ -102,11 +102,21 @@ a {
   color: inherit;
   text-decoration: none !important;
 }
+/* برای تمام مرورگرها */
+* , body , html {
+  scrollbar-width: none; /* فایرفاکس */
+  -ms-overflow-style: none; /* اینترنت اکسپلورر و اج */
+}
+
+/* برای کروم، سافاری و نسخه‌های جدید اج */
+*::-webkit-scrollbar , body::-webkit-scrollbar , html::-webkit-scrollbar {
+  display: none !important;
+}
 
 @media (prefers-color-scheme: dark) {
-  html {
+  /* html {
     color-scheme: dark;
-  }
+  } */
 }
 
 .textColor {
