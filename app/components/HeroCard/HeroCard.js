@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card'
 import Title from '../utils/title/Title'
 import Button from '../utils/button/Button'
 
-const Hero = () => {
+const HeroCard = () => {
     return (
         <Card
             bg={'light'}
@@ -38,4 +38,4 @@ const Hero = () => {
     )
 }
 
-export default Hero
+export default HeroCard

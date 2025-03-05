@@ -1,0 +1,19 @@
+.hero-card {
+    border-radius: 50px !important;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px ;
+    background-color: transparent;
+    border: none;
+    padding: 20px;
+    background: linear-gradient(180deg, rgba(69,205,247,0.35) 0%, rgba(255,255,255,1) 30%);
+    --hero-bg: linear-gradient(#45cdf759 0%, #fff 30%);
+    background: var(--hero-bg);
+    z-index: 99;
+}
+.product-list-container{
+    background-color: #f2f9ff;
+    border-radius: 10px;
+}
+
+.swiper-slide{
+    background-color: transparent;
+}

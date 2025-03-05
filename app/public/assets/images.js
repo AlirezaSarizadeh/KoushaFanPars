@@ -32,6 +32,7 @@ import heroIcon1 from './images/hero-2nd-icon1.png'
 import heroIcon2 from './images/hero-2nd-icon2.png'
 import heroIcon3 from './images/hero-2nd-icon3.png'
 import heroIcon4 from './images/hero-2nd-icon4.png'
+import productSample from './images/product-image-sample.png'
 const images = {
    mainLogo,
    userIco,
@@ -67,5 +68,6 @@ const images = {
    heroIcon2,
    heroIcon3,
    heroIcon4,
+   productSample
 }
 export default images

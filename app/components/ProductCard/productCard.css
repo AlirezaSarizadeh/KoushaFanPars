@@ -1,0 +1,16 @@
+.product-list-card .card-body {
+    background: #fff;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    width: 80%;
+    margin: auto;
+    border-radius: 15px;
+}
+.product-list-card{
+    background-color: #f2f9ff00;
+}
+.popCours-card-img {
+    background-color: #bae0f5;
+}

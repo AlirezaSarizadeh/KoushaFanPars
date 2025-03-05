@@ -1,6 +1,7 @@
 .popCours-card-img {
     background: #bbe0f6;
     border-radius: 10px;
+    object-fit: scale-down;
 }
 .popCours-card .card-body {
     background: #fff;

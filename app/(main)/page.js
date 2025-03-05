@@ -1,4 +1,4 @@
-import Hero from "../components/Hero/Hero";
+import Hero from "../components/HeroCard/HeroCard";
 import Counters from "../components/home/counters/Counters";
 import CustomerServices from "../components/home/CustomerServices/CustomerServices";
 import EducationCenter from "../components/home/EducationCenter/EducationCenter";

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Hero from "../Hero/Hero";
+import HeroCard from "../HeroCard/HeroCard";
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { Col, Row } from "react-bootstrap";
@@ -35,7 +35,7 @@ const CardComponent = () => {
                 animate={{ opacity: showSecondCard ? 0 : 1 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
             >
-                <Hero />
+                <HeroCard />
             </motion.div>
 
             {/* Second Card with Framer Motion */}
