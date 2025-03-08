@@ -1,0 +1,42 @@
+.primaryButton {
+    background-color: #C5EFFD;
+    color: #044F97;
+    transition: 0.3s ease-out;
+}
+
+.secondaryButton {
+    background-color: #fff;
+    color: #044F97;
+    border: 1px solid #0450978f;
+    transition: 0.3s ease-out;
+}
+
+.custom-button {
+    width: 250px;
+    height: 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.custom-button:hover{
+    filter: grayscale(1);
+}
+
+.button-arrow {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: -15px;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    margin: auto;
+}

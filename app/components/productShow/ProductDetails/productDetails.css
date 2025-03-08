@@ -1,0 +1,14 @@
+.post-card {
+    margin-bottom: 20px;
+  }
+  
+  .post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .post-card{
+    max-height: 460px;
+    overflow-y: scroll;
+  }

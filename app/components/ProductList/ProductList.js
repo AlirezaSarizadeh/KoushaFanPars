@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import React from 'react';
 import './productList.css';
 import Title from '../utils/title/Title';
-import ProductCard from "../ProductCard/ProductCard";
+import ProductCard from "../productShow/ProductCard/ProductCard";
 import PlaceholderCard from "../PlaceholderCard/PlaceholderCard";
 
 const ProductList = ({ bgColor = "#4ec983" }) => {
