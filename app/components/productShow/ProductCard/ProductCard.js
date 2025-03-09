@@ -5,10 +5,10 @@ import React from 'react'
 import './productCard.css'
 import { Card } from 'react-bootstrap'
 
-const ProductCard = ({ hoverColor }) => {
+const ProductCard = ({ hoverColor , bgColor }) => {
     return (
         <Link href={'/'}>
-            <Card className="border-0 text-center p-3 rounded-4 product-list-card" style={{ minHeight: '400px', }}>
+            <Card className="border-0 text-center p-3 rounded-4 product-list-card" style={{ minHeight: '400px', backgroundColor: bgColor}}>
                 {/* Image */}
                 <div className="popCours-card-img rounded-4 p-3"
                     style={{

@@ -7,6 +7,8 @@ import Button from '@/app/components/utils/button/Button';
 import images from '@/app/public/assets/images';
 import Link from 'next/link';
 import Image from 'next/image';
+import ProductList from '@/app/components/ProductList/ProductList';
+import ProductReviews from '@/app/components/ProductReviews/ProductReviews';
 export default function page() {
 
 
@@ -43,10 +45,20 @@ export default function page() {
         </div>
         <div className='col-lg-8 mt-lg-0'>
           <ProductDetails />
-          <div className='d-flex align-items-center justify-content-around'>
-              <Button title={'ارتباط با کارشناسان'} variant={'secondary'} href={'moz'}/>
-              <Button title={'خرید محصول'} variant={'primary'} href={'moz'}/>
-            </div>
+          <div className='d-flex align-items-center justify-content-start container gap-lg-5 gap-2'>
+            <Button title={'ارتباط با کارشناسان'} variant={'secondary'} href={'moz'} />
+            <Button title={'خرید محصول'} variant={'primary'} href={'moz'} />
+          </div>
+        </div>
+      </div>
+      {/* <div className='row align-items-start mt-lg-5 pt-lg-5'> */}
+      <ProductList hoverColor={'#bae0f5'} bgColor='#bae0f5' title={'محصولات مشابه'} />
+      {/* </div> */}
+
+      {/* Product Reviews Component */}
+      <div className='row align-items-start mt-lg-5 pt-lg-5 justify-content-center'>
+        <div className='col-lg-10'>
+          <ProductReviews />
         </div>
       </div>
     </RootLayout>

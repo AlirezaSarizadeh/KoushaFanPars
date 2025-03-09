@@ -26,7 +26,7 @@ const ProductGallery = () => {
                 navigation={true}
                 thumbs={{ swiper: thumbsSwiper }}
                 modules={[FreeMode, Navigation, Thumbs]}
-                className="mySwiper2"
+                className="mySwiper2 product-gallery-swiper2"
             >
                 {[...Array(3)].map((_, index) => (
                     <SwiperSlide key={index}>
@@ -42,7 +42,7 @@ const ProductGallery = () => {
                 freeMode={false}
                 watchSlidesProgress={true}
                 modules={[Navigation, Thumbs]}
-                className="mySwiper"
+                className="mySwiper product-gallery-swiper"
                 style={{ background: '#bae0f5' }}
             >
                 {[...Array(3)].map((_, index) => (

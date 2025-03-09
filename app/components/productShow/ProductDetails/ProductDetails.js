@@ -2,9 +2,10 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button, Modal } from 'react-bootstrap';
 import './productDetails.css'; // For custom CSS if needed
-// import HeartIcon from 'react-animated-heart';
-import { CiHeart } from "react-icons/ci";
 import Title from '../../utils/title/Title';
+import FavoriteButton from '../../FavortiteButton/FavoriteButton';
+import ShareButton from '../../ShareButton/ShareButton';
+import ProductReviews from '../../ProductReviews/ProductReviews';
 
 
 const ProductDetails = () => {
@@ -24,12 +25,10 @@ const ProductDetails = () => {
         <Col>
           <Card className="post-card">
             <Card.Body>
-              <div className="post-header">
-                <CiHeart />
+              <div className="product-actions">
+                <FavoriteButton />
                 {/* <span>AT100</span> */}
-                <Button variant="primary" onClick={handleShareClick}>
-                  Share
-                </Button>
+                <ShareButton />
               </div>
               <Card.Title className='d-flex align-items-center gap-1'>
                 <Title title={'کوره AT-100'} />
@@ -43,7 +42,7 @@ const ProductDetails = () => {
               <h6 className='pt-3'>
                 مشخصات
               </h6>
-              <Card.Text className='d-flex flex-column gap-1'>
+              <Card.Text className='d-flex flex-column gap-1 product-details'>
                 <span className='mt-2'>
                   -
                   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
@@ -114,24 +113,6 @@ const ProductDetails = () => {
           </Card>
         </Col>
       </Row>
-
-      <Modal show={showModal} onHide={handleCloseModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Share Options</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {/* Add your share options here */}
-          <p>Choose how you want to share:</p>
-          <Button variant="primary">Facebook</Button>
-          <Button variant="primary">Twitter</Button>
-          {/* Add more options as needed */}
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
     </Container>
   );
 };

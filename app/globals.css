@@ -122,6 +122,12 @@ a {
 .textColor {
   color: #044F97;
 }
+.swiper {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
 
 .container-custom {
   /* max-width: 90%; */

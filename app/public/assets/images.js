@@ -36,6 +36,7 @@ import productSample from './images/product-image-sample.png'
 import folderOpenIcon from './images/folder-open.png'
 import downloadCatalogIcon from './images/downloadCatalogIcon.png'
 import videoIconProduct from './images/video-circle.png'
+import chatIcon from './images/chat-icon.png'
 const images = {
    mainLogo,
    userIco,
@@ -75,5 +76,6 @@ const images = {
    folderOpenIcon,
    downloadCatalogIcon,
    videoIconProduct,
+   chatIcon
 }
 export default images

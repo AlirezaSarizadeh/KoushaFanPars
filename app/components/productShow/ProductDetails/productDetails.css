@@ -1,14 +1,23 @@
 .post-card {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.product-actions {
+  flex-direction: column;
+  left: 10px;
+  top: 10px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-card {
+  max-height: 460px;
+  overflow-y: scroll;
+}
+@media(min-width:1000px){
+  .product-details{
+    width: 95%;
   }
-  
-  .post-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  .post-card{
-    max-height: 460px;
-    overflow-y: scroll;
-  }
+}

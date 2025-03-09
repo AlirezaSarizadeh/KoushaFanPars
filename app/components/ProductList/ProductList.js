@@ -10,7 +10,7 @@ import Title from '../utils/title/Title';
 import ProductCard from "../productShow/ProductCard/ProductCard";
 import PlaceholderCard from "../PlaceholderCard/PlaceholderCard";
 
-const ProductList = ({ bgColor = "#4ec983" }) => {
+const ProductList = ({ bgColor, title , hoverColor}) => {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
@@ -32,10 +32,10 @@ const ProductList = ({ bgColor = "#4ec983" }) => {
 
     return (
         <>
-            {[...Array(4)].map((_, index) => (
-                <section key={index} className='py-4 px-5 product-list-container my-lg-5 my-3' style={bgStyle}>
+            {[...Array(1)].map((_, index) => (
+                <section key={index} className='py-4 px-5 product-list-container my-lg-5 my-3' style={{ backgroundColor: getRGBAColor(bgColor, 0.2) }}>
                     <div className='d-flex align-items-center justify-content-between pb-lg-2 pb-2 w-100'>
-                        <Title title={'کوره های دندانسازی'} />
+                        <Title title={title} />
                     </div>
 
                     <Swiper
@@ -47,11 +47,12 @@ const ProductList = ({ bgColor = "#4ec983" }) => {
                     >
                         {isLoaded ? (
                             <>
-                                <SwiperSlide><ProductCard hoverColor={'#4ec983'}/></SwiperSlide>
-                                <SwiperSlide><ProductCard /></SwiperSlide>
-                                <SwiperSlide><ProductCard /></SwiperSlide>
-                                <SwiperSlide><ProductCard /></SwiperSlide>
-                                <SwiperSlide><ProductCard /></SwiperSlide>
+                                <SwiperSlide style={{ backgroundColor: getRGBAColor(bgColor, 0.0) }}><ProductCard hoverColor={hoverColor} bgColor={getRGBAColor(bgColor, 0.0)} /></SwiperSlide>
+                                <SwiperSlide style={{ backgroundColor: getRGBAColor(bgColor, 0.0) }}><ProductCard hoverColor={hoverColor} bgColor={getRGBAColor(bgColor, 0.0)} /></SwiperSlide>
+                                <SwiperSlide style={{ backgroundColor: getRGBAColor(bgColor, 0.0) }}><ProductCard hoverColor={hoverColor} bgColor={getRGBAColor(bgColor, 0.0)} /></SwiperSlide>
+                                <SwiperSlide style={{ backgroundColor: getRGBAColor(bgColor, 0.0) }}><ProductCard hoverColor={hoverColor} bgColor={getRGBAColor(bgColor, 0.0)} /></SwiperSlide>
+                                <SwiperSlide style={{ backgroundColor: getRGBAColor(bgColor, 0.0) }}><ProductCard hoverColor={hoverColor} bgColor={getRGBAColor(bgColor, 0.0)} /></SwiperSlide>
+                                <SwiperSlide style={{ backgroundColor: getRGBAColor(bgColor, 0.0) }}><ProductCard hoverColor={hoverColor} bgColor={getRGBAColor(bgColor, 0.0)} /></SwiperSlide>
                             </>
                         ) : (
                             <>

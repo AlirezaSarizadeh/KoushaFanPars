@@ -6,10 +6,11 @@
     right: 0;
     width: 80%;
     margin: auto;
-    border-radius: 15px;
+    border-radius: 15px !important;
 }
 .product-list-card{
-    background-color: #f2f9ff00;
+    /* background-color: #f2f9ff00; */
+    overflow: hidden;
 }
 .popCours-card-img {
     background-color: #bae0f5;
