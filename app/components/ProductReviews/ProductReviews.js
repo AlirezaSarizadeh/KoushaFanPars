@@ -33,15 +33,21 @@ const ProductReviews = () => {
                 {/* Comments Section */}
                 <Tab.Pane eventKey="comments" active={activeKey === "comments"}>
                     <div className="p-3 rounded">
-                        <span className="d-flex align-items-center gap-2 mt-lg-3 mt-2">
+                        <span className="d-flex align-items-center gap-2 mt-lg-3 mt-2 mb-lg-4 mb-2">
                             <Image src={images.chatIcon} alt="icon" />
                             <Title title={'دیدگاه کاربران'} />
                         </span>
                         <CustomerReview
                             key={1}
-                            review={'ردین یسمیا لورزم'}
-                            reviewerName={'احمدرضا'}
-                            date={'21245'}
+                            review={'سلام چرا نمیشه دوعدد سفارش داد؟'}
+                            reviewerName={'امیرعلی هریوندی'}
+                            date={'1403/12/21'}
+                        />
+                        <CustomerReview
+                            key={2}
+                            review={'سلام چرا نمیشه دوعدد سفارش داد؟'}
+                            reviewerName={'امیرعلی هریوندی'}
+                            date={'1403/12/21'}
                         />
                     </div>
                 </Tab.Pane>
