@@ -1,3 +1,4 @@
+'use client'
 // components/AnimatedInput.js
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
@@ -27,6 +28,7 @@ const AnimatedInput = ({ label, type = 'text', as = 'input', ...props }) => {
           }}
           onChange={handleChange}
           className={`form-control p-3 ${focused || value ? 'border-primary' : ''}`}
+          style={{border : '2px solid #49a7db94'}}
         />
       ) : (
         <input
@@ -41,6 +43,7 @@ const AnimatedInput = ({ label, type = 'text', as = 'input', ...props }) => {
           }}
           onChange={handleChange}
           className={`form-control p-3 ${focused || value ? 'border-primary' : ''}`}
+          style={{border : '2px solid #49a7db94'}}
         />
       )}
       <motion.label

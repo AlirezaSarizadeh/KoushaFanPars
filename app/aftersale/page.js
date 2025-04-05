@@ -12,6 +12,10 @@ import { LuPhoneCall } from 'react-icons/lu'
 import { FaEnvelope, FaEnvelopeOpen, FaEnvelopeSquare, FaSms } from 'react-icons/fa'
 import { BaggageClaim } from 'lucide-react'
 import CardTest from '../components/CardTest/CardTest'
+import BlogSlider from '../components/BlogSlider/BlogSlider'
+import LicenseSlider from '../components/LicenseSlider/LicenseSlider'
+import AnimatedInput from '../components/AnimatedInput/AnimatedInput'
+import Button from '../components/utils/button/Button'
 
 
 const page = () => {
@@ -22,10 +26,10 @@ const page = () => {
                 <Counters />
             </div>
             <div className='row align-items-center mt-lg-5 mt-3'>
-                <div className='col-lg-4'>
+                {/* <div className='col-lg-4'>
 
                     <CardTest />
-                </div>
+                </div> */}
                 <div className='col-lg-8'>
                     <Title title={'معرفی کوشایار'} />
                     <p className='text-justify py-2'>
@@ -79,6 +83,104 @@ const page = () => {
                             </span>
                         </Col>
                     </Row>
+                </div>
+            </div>
+
+            {/* blog list slider */}
+            <div className='row align-items-center mt-lg-3 mt-3'>
+                {/* <div className='col-lg-4'>
+
+                    <CardTest />
+                </div> */}
+                <div className='col-lg-12'>
+                    <BlogSlider />
+                </div>
+            </div>
+
+            {/* License list slider */}
+            <div className='row align-items-center mt-lg-3 mt-3'>
+                {/* <div className='col-lg-4'>
+
+                    <CardTest />
+                </div> */}
+                <div className='col-lg-12'>
+                    <LicenseSlider />
+                </div>
+            </div>
+
+            {/* Voice of Customer slider */}
+            <div className='row align-items-center mt-lg-3 mt-3'>
+                {/* <div className='col-lg-4'>
+
+                    <CardTest />
+                </div> */}
+                <div className='col-lg-11 m-auto'>
+                <div className=" p-3 rounded">
+                        <span className="d-flex align-items-center gap-2 mt-lg-3 mt-2">
+                            <Image src={images.chatIcon} alt="icon" />
+                            <Title title={'صدای مشتری'} />
+                        </span>
+                        <h6 className="fw-normal fs-5 mt-lg-4 mt-2">
+                            نظر خود را درباره این محصول ثبت نمایید
+                        </h6>
+                        <form>
+                            <div className="row align-items-center justify-content-center">
+                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                    <span className="mt-3 mt-lg-5">
+                                        <AnimatedInput id="name" label="نام" name="name" type="text" />
+                                    </span>
+                                </div>
+                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                    <span className="mt-3 mt-lg-5">
+                                        <AnimatedInput id="name" label="نام خانوادگی" name="name" type="text" />
+                                    </span>
+                                </div>
+                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                    <span className="mt-3 mt-lg-5">
+                                        <AnimatedInput id="name" label="نام" name="name" type="text" />
+                                    </span>
+                                </div>
+                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                    <span className="mt-3 mt-lg-5">
+                                        <AnimatedInput id="name" label="نام خانوادگی" name="name" type="text" />
+                                    </span>
+                                </div>
+                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                    <span className="mt-3 mt-lg-5">
+                                        <AnimatedInput id="name" label="نام" name="name" type="text" />
+                                    </span>
+                                </div>
+                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                    <span className="mt-3 mt-lg-5">
+                                        <AnimatedInput id="name" label="نام خانوادگی" name="name" type="text" />
+                                    </span>
+                                </div>
+                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                    <span className="mt-3 mt-lg-5">
+                                        <AnimatedInput id="name" label="نام" name="name" type="text" />
+                                    </span>
+                                </div>
+                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                    <span className="mt-3 mt-lg-5">
+                                        <AnimatedInput id="name" label="نام خانوادگی" name="name" type="text" />
+                                    </span>
+                                </div>
+                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                    <span className="mt-3 mt-lg-5">
+                                        <AnimatedInput id="name" label="نام" name="name" type="text" />
+                                    </span>
+                                </div>
+                                <div className="col-lg-12 mt-lg-5 mt-2">
+                                    <span className="mt-3 mt-lg-5">
+                                        <AnimatedInput id="description" label="شرح دهید" name="description" as="textarea" rows="4" />
+                                    </span>
+                                </div>
+                                <div className="col-12 mt-lg-4 mt-2 d-flex align-items-center justify-content-end">
+                                    <Button title={'ثبت دیدگاه'} variant={'primary'} />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
 
