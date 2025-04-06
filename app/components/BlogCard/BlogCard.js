@@ -2,14 +2,15 @@
 import React from "react";
 import { Card, Badge } from "react-bootstrap";
 import { FaMapMarkerAlt } from "react-icons/fa";
-
+import './blogcard.css'
 const BlogCard = () => {
   return (
     <Card
       style={{
         borderRadius: "15px",
         boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-        overflow: "hidden"
+        overflow: "hidden",
+        border: 'none'
       }}
     >
       {/* تصویر بالای کارت */}
@@ -25,13 +26,22 @@ const BlogCard = () => {
       />
 
       {/* محتوای کارت */}
-      <Card.Body>
+      <Card.Body className="py-2 px-3 ">
         {/* تاریخ و مکان در یک ردیف */}
-        <div className="d-flex justify-content-between align-items-center mb-2">
-          <h5 className="text-primary mb-0">
-           <FaMapMarkerAlt />  استان مشهد 
+        <div className="d-flex justify-content-start align-items-center gap-lg-4 mb-2 position-relative">
+          <h5 className=" mb-0 fw-light" style={{ color : '#044F97'}}>
+            <FaMapMarkerAlt style={{ color : '#044F97'}} />  استان مشهد
           </h5>
+          {/* ستاره‌ها */}
+          <div className="pt-1">
+            {Array.from({ length: 5 }).map((_, index) => (
+              <span key={index} className="text-warning fs-5">
+                &#9733;
+              </span>
+            ))}
+          </div>
           <Badge
+            className="blog-card-badge"
             bg="primary"
             style={{
               fontSize: "14px",
@@ -39,21 +49,18 @@ const BlogCard = () => {
               borderRadius: "8px"
             }}
           >
-            16 دی
+            16
+            <span>
+              دی
+            </span>
           </Badge>
         </div>
 
-        {/* ستاره‌ها */}
-        <div className="mb-2">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <span key={index} className="text-warning fs-5">
-              &#9733;
-            </span>
-          ))}
-        </div>
 
         {/* متن توضیحات */}
-        <p className="text-muted" style={{ fontSize: "14px", lineHeight: "1.6" }}>
+        <p className="text-justify fs-6 limit-4-lines" style={{ fontSize: "14px", lineHeight: "1.6" }}>
+          امروز ساختار مجموعه کوشافن پارس بر پایه تعامل با مشتریان، درک نیاز و تحقق خواسته‌های آنان است که همان
+          لبخند رضایتشان دلگرمی مدیریت و پرسنل در نیل به اهداف عالی سازمان است.
           امروز ساختار مجموعه کوشافن پارس بر پایه تعامل با مشتریان، درک نیاز و تحقق خواسته‌های آنان است که همان
           لبخند رضایتشان دلگرمی مدیریت و پرسنل در نیل به اهداف عالی سازمان است.
         </p>
