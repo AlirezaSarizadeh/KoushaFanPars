@@ -38,6 +38,10 @@ import downloadCatalogIcon from './images/downloadCatalogIcon.png'
 import videoIconProduct from './images/video-circle.png'
 import chatIcon from './images/chat-icon.png'
 import licenseImage from './images/license-image.png'
+import educateCenterPicture from './images/educateCenterPicture.png'
+import coursesHeartIcon from './images/coursesHeartIcon.png'
+import discountedBoxImage from './images/discountedBoxImage.png'
+import clockDiscount from './images/clock-discount.png'
 const images = {
    mainLogo,
    userIco,
@@ -78,6 +82,10 @@ const images = {
    downloadCatalogIcon,
    videoIconProduct,
    chatIcon,
-   licenseImage
+   licenseImage,
+   educateCenterPicture,
+   coursesHeartIcon,
+   discountedBoxImage,
+   clockDiscount
 }
 export default images
