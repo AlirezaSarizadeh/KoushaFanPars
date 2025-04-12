@@ -1,6 +1,6 @@
 .doctorCard {
     position: relative;
-    height: 400px;
+    height: 330px;
     border-radius: 15px !important;
     text-align: right;
     direction: rtl;
@@ -55,27 +55,28 @@
   }
   
   .timerContainer {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 0.8rem;
-    border-radius: 10px;
-    text-align: center;
-    margin: 0 1.5rem 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 5px;
+      background-color: #ffffffe6;
+      padding: .3rem .8rem;
+      border-radius: 10px;
+      text-align: center;
+      /* margin: 0 1.5rem 1.5rem; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      width: 220px;
   }
   
   .timerLabel {
     font-size: 0.9rem;
     color: #333;
-    margin-bottom: 0.3rem;
+    /* margin-bottom: 0.3rem; */
   }
   
   .timer {
     font-size: 1.3rem;
     font-weight: bold;
-    color: #d9534f;
+    color: #333;
   }
   
   /* Responsive adjustments */

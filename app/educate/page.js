@@ -18,21 +18,22 @@ const page = () => {
   return (
     <RootLayout>
       <EducationCenter />
+        <Title title={'دوره های تخفیفاتی'} className='mb-4 mt-lg-5' />
       <div className='row row-cols-md-3'>
         <div className='p-2'>
-          <DiscountedCoursesBox initialTime="02:30:45" />
+          <DiscountedCoursesBox doctorImage={images.discountedBoxImage} initialTime="02:30:45" />
         </div>
         <div className='p-2'>
-          <DiscountedCoursesBox initialTime="02:30:45" />
+          <DiscountedCoursesBox doctorImage={images.discountedBoxImage} initialTime="02:30:45" />
         </div>
         <div className='p-2'>
-          <DiscountedCoursesBox initialTime="02:30:45" />
+          <DiscountedCoursesBox doctorImage={images.discountedBoxImage} initialTime="02:30:45" />
         </div>
         <div className='p-2'>
-          <DiscountedCoursesBox initialTime="02:30:45" />
+          <DiscountedCoursesBox doctorImage={images.discountedBoxImage2} initialTime="02:30:45" />
         </div>
         <div className='p-2'>
-          <DiscountedCoursesBox initialTime="02:30:45" />
+          <DiscountedCoursesBox doctorImage={images.discountedBoxImage2} initialTime="02:30:45" />
         </div>
       </div>
     </RootLayout>

@@ -41,6 +41,7 @@ import licenseImage from './images/license-image.png'
 import educateCenterPicture from './images/educateCenterPicture.png'
 import coursesHeartIcon from './images/coursesHeartIcon.png'
 import discountedBoxImage from './images/discountedBoxImage.png'
+import discountedBoxImage2 from './images/discountedBoxImage2.png'
 import clockDiscount from './images/clock-discount.png'
 const images = {
    mainLogo,
@@ -86,6 +87,7 @@ const images = {
    educateCenterPicture,
    coursesHeartIcon,
    discountedBoxImage,
+   discountedBoxImage2,
    clockDiscount
 }
 export default images

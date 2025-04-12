@@ -1,16 +1,18 @@
 import React from 'react'
-import Title from '../utils/title/Title'
-import Lead from '../utils/lead/Lead'
-import Button from '../utils/button/Button'
+import RootLayout from '../../(main)/layout'
+import Title from '../../components/utils/title/Title'
+import images from '../../public/assets/images'
+import DiscountedCoursesBox from '../../components/DiscountedCoursesBox/DiscountedCoursesBox'
+import Lead from '@/app/components/utils/lead/Lead'
+import Button from '@/app/components/utils/button/Button'
 import Image from 'next/image'
-import images from '@/app/public/assets/images'
-import EducateCourses from '../EducateCourses/EducateCourses'
-import EducationCenter from '../home/EducationCenter/EducationCenter'
+import EducationCenter from '@/app/components/home/EducationCenter/EducationCenter'
+import EducateCourseShow from '@/app/components/EducateCourseShow/EducateCourseShow'
 
-const جچEducateCenter = () => {
+
+const page = () => {
     return (
-
-        <>
+        <RootLayout>
             <div className='row align-items-center justify-content-center'>
                 <div className='col-lg-8'>
                     <Title title={'مرکز آموزش'} />
@@ -30,17 +32,33 @@ const جچEducateCenter = () => {
 
             {/* COURSES SLIDER */}
             <div className='row align-items-center mt-lg-5 mt-2 p-lg-4 p-2 justify-content-center' style={{ background: '#e4f0fd', borderRadius: '15px' }}>
-                <EducateCourses heading={'دوره مبتدی'} />
-                <EducateCourses heading={'دوره متوسطه'} />
-                <EducateCourses heading={'دوره پیشرفته'} />
+                <EducateCourseShow heading={'دوره مبتدی'} />
             </div>
 
             {/* Education Center Component */}
             <div className='row align-items-center justify-content-center'>
-                <EducationCenter />
+               <EducationCenter />
             </div>
-        </>
+            <Title title={'دوره های تخفیفاتی'} className='mb-4 mt-lg-5' />
+            <div className='row row-cols-md-3'>
+                <div className='p-2'>
+                    <DiscountedCoursesBox doctorImage={images.discountedBoxImage} initialTime="02:30:45" />
+                </div>
+                <div className='p-2'>
+                    <DiscountedCoursesBox doctorImage={images.discountedBoxImage} initialTime="02:30:45" />
+                </div>
+                <div className='p-2'>
+                    <DiscountedCoursesBox doctorImage={images.discountedBoxImage} initialTime="02:30:45" />
+                </div>
+                <div className='p-2'>
+                    <DiscountedCoursesBox doctorImage={images.discountedBoxImage2} initialTime="02:30:45" />
+                </div>
+                <div className='p-2'>
+                    <DiscountedCoursesBox doctorImage={images.discountedBoxImage2} initialTime="02:30:45" />
+                </div>
+            </div>
+        </RootLayout>
     )
 }
 
-export default EducateCenter
+export default page
