@@ -7,7 +7,7 @@ import images from '@/app/public/assets/images'
 import EducateCourses from '../EducateCourses/EducateCourses'
 import EducationCenter from '../home/EducationCenter/EducationCenter'
 
-const جچEducateCenter = () => {
+const EducateCenter = () => {
     return (
 
         <>

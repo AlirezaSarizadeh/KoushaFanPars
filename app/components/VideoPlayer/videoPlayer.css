@@ -1,0 +1,16 @@
+.vjs-poster img{
+    object-fit: fill;
+}
+.vjs-poster{
+    border-radius: 15px !important;
+    overflow: hidden;
+}
+.video-js{
+    border-radius: 15px;
+}
+.vjs_video_3-dimensions.vjs-fluid:not(.vjs-audio-only-mode) {
+    padding-top: 400px !important;
+}
+/* .vjs-has-started .vjs-control-bar, .vjs-audio-only-mode .vjs-control-bar {
+    border-radius: 0 0 15px 15px;
+} */
