@@ -43,6 +43,9 @@ import coursesHeartIcon from './images/coursesHeartIcon.png'
 import discountedBoxImage from './images/discountedBoxImage.png'
 import discountedBoxImage2 from './images/discountedBoxImage2.png'
 import clockDiscount from './images/clock-discount.png'
+import coursePlayCover from './images/coursePlayCover.png'
+import courseSeasonCircleBadge from './images/courseSeasonCircleBadge.png'
+import testimonialCardAvatar from './images/testimontialCardAvatar.png'
 const images = {
    mainLogo,
    userIco,
@@ -88,6 +91,9 @@ const images = {
    coursesHeartIcon,
    discountedBoxImage,
    discountedBoxImage2,
-   clockDiscount
+   clockDiscount,
+   coursePlayCover,
+   courseSeasonCircleBadge,
+   testimonialCardAvatar
 }
 export default images

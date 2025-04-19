@@ -1,0 +1,38 @@
+.coursePlay-tabs {
+    justify-content: space-between;
+}
+.coursePlay-tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: var(--bs-nav-tabs-link-active-color);
+    background-color: transparent;
+    border-color: transparent;
+    font-weight: 500;
+}
+.coursePlay-tabs .nav-link {
+    color: #333;
+    opacity: 75%;
+    padding: 10px 0;
+}
+.nav-link:focus-visible {
+    outline: 0;
+    box-shadow: none;
+}
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    isolation: isolate;
+    border-color: transparent ;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+    color: var(--bs-list-group-color);
+    text-decoration: none;
+    background-color: transparent;
+    border: var(--bs-list-group-border-width) solid #cccccc83;
+    border-right: 0 !important;
+    border-radius: 0;
+    border-left: 0 !important;
+    border-top: 0;
+}
+.list-group{
+    border-radius: 0;
+}

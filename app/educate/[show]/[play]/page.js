@@ -9,7 +9,9 @@ import Image from 'next/image'
 import EducationCenter from '@/app/components/home/EducationCenter/EducationCenter'
 import EducateCourseShow from '@/app/components/EducateCourseShow/EducateCourseShow'
 import CoursePlay from '@/app/components/CoursePlay/CoursePlay'
-
+import { Card } from 'react-bootstrap';
+import CourseSeasonSlider from '@/app/components/CourseSeasonSlider/CourseSeasonSlider'
+import TestimonialSlider from '@/app/components/TestimonialSlider/TestimonialSlider'
 
 const page = () => {
     return (
@@ -33,14 +35,17 @@ const page = () => {
 
             {/* COURSES SLIDER */}
             <div className='row align-items-center mt-lg-5 mt-2 p-lg-4 p-2 justify-content-center' style={{ background: '#e4f0fd', borderRadius: '15px' }}>
-                <EducateCourseShow heading={'دوره مبتدی'} />
+                <CoursePlay />
             </div>
 
-            {/* Education Center Component */}
-            <div className='row align-items-center justify-content-center'>
-                <EducationCenter />
+            {/* CourseSeasonSlider Component */}
+            <div className='row align-items-center justify-content-center py-lg-5 px-lg-4' style={{background:'#f1f2f4'}}>
+                <CourseSeasonSlider />
+            </div>
 
-                <CoursePlay />
+            {/* Testimonial Slider Component */}
+            <div className='row align-items-center justify-content-center py-lg-5 px-lg-4' style={{background:'#f1f2f4'}}>
+                <TestimonialSlider />
             </div>
             <Title title={'دوره های تخفیفاتی'} className='mb-4 mt-lg-5' />
             <div className='row row-cols-md-3'>

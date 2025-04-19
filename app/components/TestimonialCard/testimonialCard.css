@@ -1,0 +1,7 @@
+.testimonial-code{
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    transform: scale(-1, -1);   
+    opacity: 30%;
+}

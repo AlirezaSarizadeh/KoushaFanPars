@@ -10,6 +10,7 @@
 }
 .vjs_video_3-dimensions.vjs-fluid:not(.vjs-audio-only-mode) {
     padding-top: 400px !important;
+    border-radius: 50px;
 }
 /* .vjs-has-started .vjs-control-bar, .vjs-audio-only-mode .vjs-control-bar {
     border-radius: 0 0 15px 15px;
