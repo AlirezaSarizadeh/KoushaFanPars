@@ -46,6 +46,8 @@ import clockDiscount from './images/clock-discount.png'
 import coursePlayCover from './images/coursePlayCover.png'
 import courseSeasonCircleBadge from './images/courseSeasonCircleBadge.png'
 import testimonialCardAvatar from './images/testimontialCardAvatar.png'
+import courseCertificatePic from './images/courseCertificatePic.png'
+import drbahooshPic from './images/drbahooshPic.png'
 const images = {
    mainLogo,
    userIco,
@@ -94,6 +96,8 @@ const images = {
    clockDiscount,
    coursePlayCover,
    courseSeasonCircleBadge,
-   testimonialCardAvatar
+   testimonialCardAvatar,
+   courseCertificatePic,
+   drbahooshPic
 }
 export default images

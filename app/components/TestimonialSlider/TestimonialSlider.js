@@ -18,7 +18,7 @@ const TestimonialSlider = () => {
                 نظرات مشاهده کننده ها
             </h4>
             <Swiper
-                slidesPerView={3}
+                slidesPerView={4}
                 spaceBetween={10}
                 pagination={{
                     clickable: true,
@@ -32,32 +32,32 @@ const TestimonialSlider = () => {
                 className="mySwiper courseSeasonSlider"
             >
                 <SwiperSlide>
-                    <Link href={'/'}>
+                    <Link href={'/'} className="text-center">
                         <TestimonialCard />
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link href={'/'}>
+                    <Link href={'/'} className="text-center">
                         <TestimonialCard />
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link href={'/'}>
+                    <Link href={'/'} className="text-center">
                         <TestimonialCard />
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link href={'/'}>
+                    <Link href={'/'} className="text-center">
                         <TestimonialCard />
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link href={'/'}>
+                    <Link href={'/'} className="text-center">
                         <TestimonialCard />
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link href={'/'}>
+                    <Link href={'/'} className="text-center">
                         <TestimonialCard />
                     </Link>
                 </SwiperSlide>

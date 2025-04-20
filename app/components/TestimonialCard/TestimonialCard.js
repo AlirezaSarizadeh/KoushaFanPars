@@ -14,7 +14,8 @@ const TestimonialCard = () => {
             border: 'none',
             borderRadius: '10px',
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-            backgroundColor: '#f8f9fa'
+            backgroundColor: '#f8f9fa',
+            margin:'auto'
         }}>
             <Card.Body style={{ padding: '1rem' }}>
                 {/* Star Rating */}

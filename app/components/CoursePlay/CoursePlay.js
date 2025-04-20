@@ -93,7 +93,7 @@ const CoursePlay = () => {
           >
             <Tab eventKey="tab1" title="فصل یک">
 
-              <ul className="list-group">
+              <ul className="list-group courseList-group">
                 {videos.map((video, index) => (
                   <li
                     key={index}
@@ -118,7 +118,7 @@ const CoursePlay = () => {
                           </small>
                         )}
                       </div>
-                      <p className='' style={{ fontSize:'10px' , lineHeight:'2.5'}}>
+                      <p className='' style={{ fontSize: '10px', lineHeight: '2.5' }}>
                         امـروز سـاختار مجموعـه کوشـافن پارس بر پایـه تعامل با مشـتریان، درک نیاز و تحقق خواسـته های آنهاسـت کـه همانـا لبخنـد رضایتشـان دلگرمـی مدیریـت و پرسـنل در نیل بـه اهداف عالـی سـازمان اسـت
                       </p>
                     </div>
@@ -128,7 +128,7 @@ const CoursePlay = () => {
             </Tab>
             <Tab eventKey="tab2" title="فصل دو">
 
-              <ul className="list-group">
+              <ul className="list-group courseList-group">
                 {videos.map((video, index) => (
                   <li
                     key={index}
@@ -158,7 +158,7 @@ const CoursePlay = () => {
             </Tab>
             <Tab eventKey="tab3" title="فصل سه">
 
-              <ul className="list-group">
+              <ul className="list-group courseList-group">
                 {videos.map((video, index) => (
                   <li
                     key={index}
@@ -188,7 +188,7 @@ const CoursePlay = () => {
             </Tab>
             <Tab eventKey="tab4" title="فصل چهار">
 
-              <ul className="list-group">
+              <ul className="list-group courseList-group">
                 {videos.map((video, index) => (
                   <li
                     key={index}

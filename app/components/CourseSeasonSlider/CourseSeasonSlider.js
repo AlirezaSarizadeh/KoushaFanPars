@@ -15,7 +15,7 @@ const CourseSeasonSlider = () => {
     return (
         <div className='text-center '>
             <Swiper
-                slidesPerView={4}
+                slidesPerView={5}
                 spaceBetween={30}
                 pagination={{
                     clickable: true,
