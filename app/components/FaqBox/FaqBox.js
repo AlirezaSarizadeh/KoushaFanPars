@@ -7,6 +7,9 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import './faqBox.css';
 import { FaSearch } from 'react-icons/fa';
 import Accordion from 'react-bootstrap/Accordion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Nav } from 'react-bootstrap';
 
 function FaqBox() {
   const [activeTab, setActiveTab] = useState("profile");
@@ -15,6 +18,9 @@ function FaqBox() {
   // 👇 Example data structured per tab
   const faqData = {
     home: [
+      { question: "سوال عمومی اول", answer: "پاسخ مربوط به سوال عمومی اول" },
+      { question: "سوال عمومی اول", answer: "پاسخ مربوط به سوال عمومی اول" },
+      { question: "سوال عمومی اول", answer: "پاسخ مربوط به سوال عمومی اول" },
       { question: "سوال عمومی اول", answer: "پاسخ مربوط به سوال عمومی اول" },
       { question: "سوال عمومی دوم", answer: "پاسخ مربوط به سوال عمومی دوم" }
     ],
@@ -70,16 +76,22 @@ function FaqBox() {
           </Tabs>
         </div> */}
 
-<Tabs
-    activeKey={activeTab}
-    onSelect={(k) => setActiveTab(k)}
-    id="scrollable-tabs"
-    className="scrollable-tabs"
-  >
-    {tabs.map((tab) => (
-      <Tab key={tab.eventKey} eventKey={tab.eventKey} title={tab.title} />
-    ))}
-  </Tabs>
+        <Nav variant="tabs" activeKey={activeTab} onSelect={(k) => setActiveTab(k)} className="mb-3 faq-tab-titles">
+          <Swiper spaceBetween={10} slidesPerView="auto">
+            {tabs.map((tab) => (
+              <SwiperSlide key={tab.eventKey} style={{ width: 'auto' }}>
+                <Nav.Item>
+                  <Nav.Link
+                    eventKey={tab.eventKey}
+                    className="px-3 text-nowrap"
+                  >
+                    {tab.title}
+                  </Nav.Link>
+                </Nav.Item>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </Nav>
 
         {/* Search input */}
         <div className="search-input-container">
@@ -92,26 +104,35 @@ function FaqBox() {
               className='border-0'
             />
             <InputGroup.Text className='border-0 bg-transparent'>
-              <FaSearch className='textColor fw-light'/>
+              <FaSearch className='textColor fw-light' />
             </InputGroup.Text>
           </InputGroup>
         </div>
       </div>
 
       {/* Accordion content */}
-      <div className="tab-content p-3 border-top-0 border">
-        {filteredFaqs?.length > 0 ? (
-          <Accordion defaultActiveKey="0">
-            {filteredFaqs.map((item, index) => (
-              <Accordion.Item eventKey={index.toString()} key={index}>
-                <Accordion.Header>{item.question}</Accordion.Header>
-                <Accordion.Body>{item.answer}</Accordion.Body>
-              </Accordion.Item>
-            ))}
-          </Accordion>
-        ) : (
-          <p className="text-muted">هیچ موردی یافت نشد.</p>
-        )}
+      <div className="tab-content p-3 border-top-0 border faq-tab-content ">
+        <div className='row align-items-center justify-content-start row-cols-2 p-5' style={{ background: '#2d98e7', borderRadius: '15px' }}>
+          <span className='fs-3 w-100 text-light fw-bolder mb-lg-5 mb-3'>
+            {tabs.find(tab => tab.eventKey === activeTab)?.title}
+          </span>
+          {filteredFaqs?.length > 0 ? (
+            <>
+              {filteredFaqs.map((item, index) => (
+                <div className='p-2' key={index}>
+                  <Accordion defaultActiveKey="0" className=''>
+                    <Accordion.Item eventKey={index.toString()} key={index}>
+                      <Accordion.Header>{item.question}</Accordion.Header>
+                      <Accordion.Body>{item.answer}</Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
+                </div>
+              ))}
+            </>
+          ) : (
+            <p className="text-muted">هیچ موردی یافت نشد.</p>
+          )}
+        </div>
       </div>
     </div>
   );
