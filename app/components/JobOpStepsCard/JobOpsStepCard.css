@@ -1,0 +1,45 @@
+/* For additional styling if needed */
+.jobOpsStepsCard {
+    border-radius: 8px;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+}
+.jobOpsStepsCard:hover {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1)
+}
+.jobOpsStepsCard:hover .josc-icon {
+    background: #0a65cc;
+}
+.jobOpsStepsCard:hover .josc-icon img{
+    filter: none;
+}
+
+.jobOpsStepsCard .card-title {
+    font-weight: 600;
+}
+
+.josc-icon {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    background: #fff;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.josc-icon  img{
+    filter: brightness(0.5);
+}
+.josc-icon:hover img{
+    filter: none;
+}
+
+.josc-icon:hover{
+    background: #0a65cc;
+}

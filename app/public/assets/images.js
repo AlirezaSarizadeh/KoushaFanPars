@@ -48,6 +48,8 @@ import courseSeasonCircleBadge from './images/courseSeasonCircleBadge.png'
 import testimonialCardAvatar from './images/testimontialCardAvatar.png'
 import courseCertificatePic from './images/courseCertificatePic.png'
 import drbahooshPic from './images/drbahooshPic.png'
+import stepOne from './images/stepOne.png'
+import jneedOne from './images/jneedOne.png'
 const images = {
    mainLogo,
    userIco,
@@ -98,6 +100,8 @@ const images = {
    courseSeasonCircleBadge,
    testimonialCardAvatar,
    courseCertificatePic,
-   drbahooshPic
+   drbahooshPic,
+   stepOne,
+   jneedOne
 }
 export default images
