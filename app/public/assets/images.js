@@ -50,6 +50,9 @@ import courseCertificatePic from './images/courseCertificatePic.png'
 import drbahooshPic from './images/drbahooshPic.png'
 import stepOne from './images/stepOne.png'
 import jneedOne from './images/jneedOne.png'
+import departmentOne from './images/departmentOne.png'
+import sendResumeAvatar from './images/send-resume-avatar.png'
+import sendResumeFrame from './images/send-resume-frame.png'
 const images = {
    mainLogo,
    userIco,
@@ -102,6 +105,9 @@ const images = {
    courseCertificatePic,
    drbahooshPic,
    stepOne,
-   jneedOne
+   jneedOne,
+   departmentOne,
+   sendResumeAvatar,
+   sendResumeFrame
 }
 export default images
