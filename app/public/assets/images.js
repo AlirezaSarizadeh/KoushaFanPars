@@ -53,6 +53,7 @@ import jneedOne from './images/jneedOne.png'
 import departmentOne from './images/departmentOne.png'
 import sendResumeAvatar from './images/send-resume-avatar.png'
 import sendResumeFrame from './images/send-resume-frame.png'
+import companieSliderPic from './images/companie-slider-pic.png'
 const images = {
    mainLogo,
    userIco,
@@ -108,6 +109,7 @@ const images = {
    jneedOne,
    departmentOne,
    sendResumeAvatar,
-   sendResumeFrame
+   sendResumeFrame,
+   companieSliderPic
 }
 export default images

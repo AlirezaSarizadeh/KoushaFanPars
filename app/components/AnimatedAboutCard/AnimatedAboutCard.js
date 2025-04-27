@@ -6,11 +6,11 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import { Col, Row } from "react-bootstrap";
 import Image from "next/image";
-import './testcomponent.css'
+import './animatedAboutCard.css'
 import images from "@/app/public/assets/images";
 import CounterBox from "../utils/counterBox/CounterBox";
 
-const CardComponent = () => {
+const AnimatedAboutCard = () => {
     const [showSecondCard, setShowSecondCard] = useState(false);
 
     useEffect(() => {
@@ -123,4 +123,4 @@ const CardComponent = () => {
     );
 };
 
-export default CardComponent;
+export default AnimatedAboutCard;

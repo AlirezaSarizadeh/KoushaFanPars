@@ -5,14 +5,15 @@ import EducationCenter from "../components/home/EducationCenter/EducationCenter"
 import Evenets from "../components/home/Events/Evenets";
 import Partners from "../components/home/Partners/Partners";
 import PopCourses from "../components/home/PopCourses/PopCourses";
-import TestComponent from "../components/TestComponent/testComponent";
+import TestComponent from "../components/AnimatedAboutCard/AnimatedAboutCard";
+import AnimatedAboutCard from "../components/AnimatedAboutCard/AnimatedAboutCard";
 
 export default function Home() {
   return (
     <div className="d-flex flex-column gap-lg-5 gap-3">
       {/* <Hero /> */}
       <EducationCenter />
-      <TestComponent />
+      <AnimatedAboutCard />
       <EducationCenter />
       <PopCourses />
       <CustomerServices />
