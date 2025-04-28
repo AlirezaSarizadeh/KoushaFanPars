@@ -1,0 +1,17 @@
+.ctu-box::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+    background: #104369;
+
+}
+.ctu-main-content{
+    position: relative;
+    z-index: 2;
+}
+.ctu-box{
+    border-radius: 3.5rem;
+}

@@ -54,6 +54,8 @@ import departmentOne from './images/departmentOne.png'
 import sendResumeAvatar from './images/send-resume-avatar.png'
 import sendResumeFrame from './images/send-resume-frame.png'
 import companieSliderPic from './images/companie-slider-pic.png'
+import mapImage from './images/map-image.png'
+import instagramCtu from './images/instagram-contact.png'
 const images = {
    mainLogo,
    userIco,
@@ -110,6 +112,8 @@ const images = {
    departmentOne,
    sendResumeAvatar,
    sendResumeFrame,
-   companieSliderPic
+   companieSliderPic,
+   mapImage,
+   instagramCtu
 }
 export default images
