@@ -3,6 +3,7 @@
     top: 50%;
     left: 10px; /* اینجا لوکیشن سفارشی رو مشخص کن */
     z-index: 10;
+    bottom: 50%;
     cursor: pointer;
     font-size: 30px;
     color: #000; /* رنگ فلش */

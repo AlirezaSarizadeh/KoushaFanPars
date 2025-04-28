@@ -1,101 +1,56 @@
 'use client';
-
-import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
-
-const Chrono = dynamic(() => import('react-chrono').then(mod => mod.Chrono), {
-  ssr: false
-});
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import './timeLine.css'
+import Image from 'next/image';
+import images from '@/app/public/assets/images';
 
 export default function Timeline() {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    setItems([
-      {
-        title: "فروردین 1403",
-        cardTitle: "شروع پروژه",
-        cardSubtitle: "ایده‌پردازی",
-        cardDetailedText: "بررسی اولیه تیم",
-        media: {
-          type: "IMAGE",
-          source: {
-            url: "https://via.placeholder.com/300x200.png?text=شروع+پروژه"
-          }
-        }
-      },
-      {
-        title: "خرداد 1403",
-        cardTitle: "طراحی اولیه",
-        cardSubtitle: "وایرفریم",
-        cardDetailedText: "طراحی صفحات اولیه",
-        media: {
-          type: "IMAGE",
-          source: {
-            url: "https://via.placeholder.com/300x200.png?text=طراحی+اولیه"
-          }
-        }
-      },
-      {
-        title: "مرداد 1403",
-        cardTitle: "توسعه",
-        cardSubtitle: "کدنویسی",
-        cardDetailedText: "شروع فرانت‌اند و بک‌اند",
-        media: {
-          type: "IMAGE",
-          source: {
-            url: "https://via.placeholder.com/300x200.png?text=توسعه"
-          }
-        }
-      },
-      {
-        title: "آبان 1403",
-        cardTitle: "لانچ",
-        cardSubtitle: "عرضه محصول",
-        cardDetailedText: "محصول نهایی آماده شد",
-        media: {
-          type: "IMAGE",
-          source: {
-            url: "https://via.placeholder.com/300x200.png?text=لانچ"
-          }
-        }
-      }
-    ]);
-  }, []);
-
-  if (items.length === 0) return null; // هنوز آیتم‌ها نیومدن، چیزی نشون نده
+  const timelineData = [
+    {
+      // date: "۲۰۲۵/۰۱/۰۱",
+      title: "شروع پروژه",
+      description: "پروژه با هدف ایجاد یک وبسایت منحصر به فرد آغاز شد.",
+      icon: "bi-rocket-takeoff-fill",
+      color: "#0d6efd"
+    },
+    {
+      // date: "۲۰۲۵/۰۲/۱۵",
+      title: "طراحی رابط کاربری",
+      description: "طراحی صفحات و تجربه کاربری انجام شد.",
+      icon: "bi-brush-fill",
+      color: "#198754"
+    },
+    {
+      // date: "۲۰۲۵/۰۳/۱۰",
+      title: "شروع توسعه",
+      description: "برنامه نویسی سایت آغاز شد.",
+      icon: "bi-code-slash",
+      color: "#6610f2"
+    },
+  ];
 
   return (
-    <div dir="rtl" style={{ direction: 'rtl' }}>
-      <div style={{
-        transform: 'scaleX(-1)',
-        backgroundColor: "#c5effd",
-        padding: "20px",
-        borderRadius: "16px",
-        boxShadow: "0 4px 15px rgba(0,0,0,0.1)"
-      }}>
-        <Chrono
-          items={items}
-          mode="horizontal"
-          slideShow
-          allowDynamicUpdate
-          cardHeight={250}
-          theme={{
-            primary: "#0077b6",
-            secondary: "#48cae4",
-            cardBgColor: "#ffffff",
-            cardForeColor: "#000000",
-            titleColor: "#0077b6",
-          }}
-          fontSizes={{
-            cardSubtitle: "1rem",
-            cardText: "0.9rem",
-            title: "1.2rem"
-          }}
-          scrollable={{ scrollbar: true }}
-          mediaSettings={{ align: 'center', fit: 'cover' }}
-        />
-      </div>
+    <div className="py-5 rounded-3 mt-lg-5" style={{ background: '#e4eef4' }}>
+      <h2 className="text-center mb-5 fw-bold" style={{ color: '#0069b0' }}>تاریخچه شرکت</h2>
+
+      <VerticalTimeline className="timeline-rtl">
+        {timelineData.map((item, index) => (
+          <VerticalTimelineElement
+            key={index}
+            date={item.date}
+            contentStyle={{ background: item.color, color: '#fff' }}
+            contentArrowStyle={{ borderLeft: `0` , border:'none' }} // چپ به جای راست
+            iconStyle={{ background: index % 2 === 0 ? '#0069b0' : '#fff', color: '#fff' }}
+            icon={<i className={`bi ${item.icon} fs-2`}></i>}
+            className={index % 2 === 0 ? "left" : "right"}
+          >
+            <h3 className="vertical-timeline-element-title">{item.title}</h3>
+            <p>{item.description}</p>
+            {/* <Image className='mt-lg-4 mt-2' src={images.event_image} alt='alt' /> */}
+          </VerticalTimelineElement>
+        ))}
+      </VerticalTimeline>
     </div>
   );
 }

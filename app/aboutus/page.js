@@ -8,16 +8,10 @@ import Title from '../components/utils/title/Title'
 import Lead from '../components/utils/lead/Lead'
 import './aboutus.css'
 import CompaniesSlider from '../components/AboutUs/CompaniesSlider/CompaniesSlider'
-import dynamic from "next/dynamic";
 import Timeline from '../components/AboutUs/Timeline/Timeline'
-import TimelineContainer from '../components/AboutUs/TimelineContainer/TimelineContainer'
-import dynamic from "next/dynamic";
-
-const Chrono = dynamic(() => import("react-chrono").then((mod) => mod.Chrono), {
-  ssr: false,
-});
 
 const page = () => {
+
 
   return (
     <RootLayout>
@@ -42,6 +36,7 @@ const page = () => {
       </div>
 
       <CompaniesSlider />
+      
 
       <Timeline />
       
