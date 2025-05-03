@@ -4,11 +4,13 @@ import images from '@/app/public/assets/images'
 import Image from 'next/image'
 import React from 'react'
 import './aboutcompanies.css'
+import Link from 'next/link'
+import { FaArrowLeft } from 'react-icons/fa'
 
 const page = () => {
     return (
         <RootLayout>
-            <div className='row align-items-center mt-lg-5 pt-lg-5 about-main-desc'>
+            <div className='row align-items-center mt-lg-2 pt-lg-2 about-main-desc'>
                 <div className='col-lg-12 mt-lg-5'>
                     <Title title={'درباره'} />
                     <h2 className='fw-bold d-flex flex-column gap-3 mt-3'>
@@ -23,27 +25,74 @@ const page = () => {
                 </div>
             </div>
 
-            <div className='' style={{ background: '#e4f0fd', borderRadius: '15px' }}>
-                <div className='courses-box row p-lg-4 p-3 mb-lg-3 mb-2' >
-                    <div className='col-md-8 d-flex flex-column justify-content-start align-items-start gap-2 course-box-desc'>
-                        <Image src={images.coursesHeartIcon} alt='heart icon' />
-                        <h2 className='fs-1 fw-bold'>
-                            {/* {props.heading} */}
-                            MPZ
-                        </h2>
-                        <p>
-                            امـروز سـاختار مجموعـه کوشـافن پارس بر پایـه تعامل با مشـتریان، درک نیاز و تحقق خواسـته های آنهاسـت کـه همانـا لبخنـد رضایتشـان دلگرمـی مدیریـت و پرسـنل در نیل بـه اهداف عالـی سـازمان اسـت.امیدواریم به همـت و حمایت جامعه دندانپزشـکان و دندانسـازان، دانشـگاه هـا و مراکـز علمـی بـا امیـد بـه آینـده روشـن، همواره پشـتیبان و حامـی ایـن عزیزان باشـیم.امـروز سـاختار مجموعـه کوشـافن پارس بر پایـه تعامل با مشـتریان، درک نیاز و تحقق خواسـته های آنهاسـت کـه همانـا لبخنـد رضایتشـان دلگرمـی مدیریـت و پرسـنل در نیل بـه اهداف عالـی سـازمان اسـت.امیدواریم به همـت و حمایت جامعه دندانپزشـکان و دندانسـازان، دانشـگاه هـا و مراکـز علمـی بـا امیـد بـه آینـده روشـن، همواره پشـتیبان و حامـی ایـن عزیزان باشـیم.
-                        </p>
-                        {/* <Link className='ms-auto mt-lg-4 mt-3' href={'#!'}>مطالعه بیشتر</Link> */}
-                    </div>
-                    <div className='col-md-4 position-relative'>
-                        <Image src={images.educateCenterPicture} width={1200} // Set your max width
+            <div className='row align-items-center mt-lg-5 mt-2 p-lg-4 p-2 justify-content-center' style={{ background: '#e4f0fd', borderRadius: '25px' }}>
+                <div className='courses-box course-box-companies row p-lg-4 p-3 my-lg-3 my-2 justify-content-center col-lg-11' >
+                    <div className='col-md-5 position-relative companies-pic-col'>
+                        <Image src={images.company_1} width={1200} // Set your max width
                             height={800} // Set your max height
                             sizes="100vw"
                             style={{
                                 width: '100%',
                                 height: 'auto',
                             }} alt='image' />
+                    </div>
+                    <div className='col-md-7 d-flex flex-column justify-content-center gap-lg-5 gap-3 align-items-between gap-2 course-box-desc'>
+                        <h2 className='fs-1 fw-bold'>
+                            {/* {props.heading} */}
+                            کارخانه کوشافن پارس
+                        </h2>
+                        <p className='' style={{minHeight:'2'}}>
+                        امـروز سـاختار مجموعـه کوشـافن پارس بر پایـه تعامل با مشـتریان، درک نیاز و تحقق خواسـته های آنهاسـت کـه همانـا لبخنـد رضایتشـان دلگرمـی مدیریـت و پرسـنل در نیل بـه اهداف عالـی سـازمان اسـت.امیدواریم به همـت و حمایت جامعه دندانپزشـکان و دندانسـازان، دانشـگاه هـا و مراکـز علمـی بـا امیـد بـه آینـده روشـن، همواره پشـتیبان و حامـی ایـن عزیزان باشـیم.
+                        </p>
+                        <Link className='ms-auto mt-lg-4 mt-3' href={'#!'}>مطالعه بیشتر
+                        <FaArrowLeft className='ms-2' style={{fontWeight:'100'}} />
+                        </Link>
+                    </div>
+                </div>
+                <div className='courses-box course-box-companies row p-lg-4 p-3 my-lg-3 my-2 justify-content-center col-lg-11' >
+                    <div className='col-md-5 position-relative companies-pic-col'>
+                        <Image src={images.company_1} width={1200} // Set your max width
+                            height={800} // Set your max height
+                            sizes="100vw"
+                            style={{
+                                width: '100%',
+                                height: 'auto',
+                            }} alt='image' />
+                    </div>
+                    <div className='col-md-7 d-flex flex-column justify-content-center gap-lg-5 gap-3 align-items-between gap-2 course-box-desc'>
+                        <h2 className='fs-1 fw-bold'>
+                            {/* {props.heading} */}
+                            کارخانه کوشافن پارس
+                        </h2>
+                        <p className='' style={{minHeight:'2'}}>
+                        امـروز سـاختار مجموعـه کوشـافن پارس بر پایـه تعامل با مشـتریان، درک نیاز و تحقق خواسـته های آنهاسـت کـه همانـا لبخنـد رضایتشـان دلگرمـی مدیریـت و پرسـنل در نیل بـه اهداف عالـی سـازمان اسـت.امیدواریم به همـت و حمایت جامعه دندانپزشـکان و دندانسـازان، دانشـگاه هـا و مراکـز علمـی بـا امیـد بـه آینـده روشـن، همواره پشـتیبان و حامـی ایـن عزیزان باشـیم.
+                        </p>
+                        <Link className='ms-auto mt-lg-4 mt-3' href={'#!'}>مطالعه بیشتر
+                        <FaArrowLeft className='ms-2' style={{fontWeight:'100'}} />
+                        </Link>
+                    </div>
+                </div>
+                <div className='courses-box course-box-companies row p-lg-4 p-3 my-lg-3 my-2 justify-content-center col-lg-11' >
+                    <div className='col-md-5 position-relative companies-pic-col'>
+                        <Image src={images.company_1} width={1200} // Set your max width
+                            height={800} // Set your max height
+                            sizes="100vw"
+                            style={{
+                                width: '100%',
+                                height: 'auto',
+                            }} alt='image' />
+                    </div>
+                    <div className='col-md-7 d-flex flex-column justify-content-center gap-lg-5 gap-3 align-items-between gap-2 course-box-desc'>
+                        <h2 className='fs-1 fw-bold'>
+                            {/* {props.heading} */}
+                            کارخانه کوشافن پارس
+                        </h2>
+                        <p className='' style={{minHeight:'2'}}>
+                        امـروز سـاختار مجموعـه کوشـافن پارس بر پایـه تعامل با مشـتریان، درک نیاز و تحقق خواسـته های آنهاسـت کـه همانـا لبخنـد رضایتشـان دلگرمـی مدیریـت و پرسـنل در نیل بـه اهداف عالـی سـازمان اسـت.امیدواریم به همـت و حمایت جامعه دندانپزشـکان و دندانسـازان، دانشـگاه هـا و مراکـز علمـی بـا امیـد بـه آینـده روشـن، همواره پشـتیبان و حامـی ایـن عزیزان باشـیم.
+                        </p>
+                        <Link className='ms-auto mt-lg-4 mt-3' href={'#!'}>مطالعه بیشتر
+                        <FaArrowLeft className='ms-2' style={{fontWeight:'100'}} />
+                        </Link>
                     </div>
                 </div>
             </div>

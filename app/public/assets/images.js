@@ -59,6 +59,7 @@ import instagramCtu from './images/instagram-contact.png'
 import cut_loc from './images/location-ctu.png'
 import ctu_cart from './images/sms-ctu.png'
 import ctu_mail from './images/call-ctu.png'
+import company_1 from './images/companies-1.png'
 
 const images = {
    mainLogo,
@@ -121,6 +122,7 @@ const images = {
    instagramCtu,
    cut_loc,
    ctu_cart,
-   ctu_mail
+   ctu_mail,
+   company_1
 }
 export default images
