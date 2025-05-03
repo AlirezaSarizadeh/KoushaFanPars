@@ -56,6 +56,10 @@ import sendResumeFrame from './images/send-resume-frame.png'
 import companieSliderPic from './images/companie-slider-pic.png'
 import mapImage from './images/map-image.png'
 import instagramCtu from './images/instagram-contact.png'
+import cut_loc from './images/location-ctu.png'
+import ctu_cart from './images/sms-ctu.png'
+import ctu_mail from './images/call-ctu.png'
+
 const images = {
    mainLogo,
    userIco,
@@ -114,6 +118,9 @@ const images = {
    sendResumeFrame,
    companieSliderPic,
    mapImage,
-   instagramCtu
+   instagramCtu,
+   cut_loc,
+   ctu_cart,
+   ctu_mail
 }
 export default images
