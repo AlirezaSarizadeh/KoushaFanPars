@@ -31,7 +31,7 @@ export default function Timeline() {
   ];
 
   return (
-    <div className="py-5 rounded-3 mt-lg-5" style={{ background: '#e4eef4' }}>
+    <div className="py-5 rounded-3 mt-lg-5">
       <h2 className="text-center mb-5 fw-bold" style={{ color: '#0069b0' }}>تاریخچه شرکت</h2>
 
       <VerticalTimeline className="timeline-rtl">

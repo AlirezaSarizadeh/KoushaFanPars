@@ -46,3 +46,13 @@
         font-size: 20px !important;
     }
 }
+.right.vertical-timeline-element > span{
+  border: 5px solid #0069b0 !important;
+}
+.vertical-timeline-element > span{
+  box-shadow: 10px 10px 10px #00000033 !important;
+}
+.vertical-timeline-element > div{
+  box-shadow: 10px 10px 10px #00000033 !important;
+  border-radius: 15px;
+}

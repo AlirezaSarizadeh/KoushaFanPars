@@ -1,0 +1,54 @@
+import RootLayout from '@/app/(main)/layout'
+import Title from '@/app/components/utils/title/Title'
+import images from '@/app/public/assets/images'
+import Image from 'next/image'
+import React from 'react'
+import './aboutcompanies.css'
+
+const page = () => {
+    return (
+        <RootLayout>
+            <div className='row align-items-center mt-lg-5 pt-lg-5 about-main-desc'>
+                <div className='col-lg-12 mt-lg-5'>
+                    <Title title={'درباره'} />
+                    <h2 className='fw-bold d-flex flex-column gap-3 mt-3'>
+                        <span className='lead fs-3 fw-normal'>
+                            شرکت تولیدی مهندسی
+                        </span>
+                        دانش بنیان کوشـافن پارس
+                    </h2>
+                    <p className='text-justify py-2 lead'>
+                        شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید. کوشـا فـن پـارس بزرگترین تولیـد کننده تجهیـزات و لوازم دندانپزشـکی و دندانسـازی در کشـور مـی باشـد کـه بـا سـرمایه گـذاری در بخـش تحقیـق و توسـعه و با هدف توسـعه فنـاوری در زمینـه طراحـی، سـاخت و تولیـد تجهیـزات مرتبـط بـا صنعت دندانپزشـکی و دندانسـازی فعالیت دارد. هـم اکنون محصـولات تولیدی این شرکت با بالاتریـن کیفیت و قیمت رقابتی نسـبت بـه سـایر برندهـای هم تـراز خود در دنیـا مورد اسـتفاده مصـرف کنندگان قـرار می گیرد. کوره های دندانسازی شامل کوره پرسلن AT 100 و AT 300 تمام اتوماتیک، کوره پرس AT 300P تمام اتوماتیک، کوره پرسلن AT 3000 تمام اتوماتیک، کوره های حذف موم سیلندر، کوره گلیزر، کوره زینترینگ زیرکونیا است. میزهای تولیدی این شرکت به دو گروه لابراتواری و آموزشی کلینیکی تقسیم می شود
+                    </p>
+                </div>
+            </div>
+
+            <div className='' style={{ background: '#e4f0fd', borderRadius: '15px' }}>
+                <div className='courses-box row p-lg-4 p-3 mb-lg-3 mb-2' >
+                    <div className='col-md-8 d-flex flex-column justify-content-start align-items-start gap-2 course-box-desc'>
+                        <Image src={images.coursesHeartIcon} alt='heart icon' />
+                        <h2 className='fs-1 fw-bold'>
+                            {/* {props.heading} */}
+                            MPZ
+                        </h2>
+                        <p>
+                            امـروز سـاختار مجموعـه کوشـافن پارس بر پایـه تعامل با مشـتریان، درک نیاز و تحقق خواسـته های آنهاسـت کـه همانـا لبخنـد رضایتشـان دلگرمـی مدیریـت و پرسـنل در نیل بـه اهداف عالـی سـازمان اسـت.امیدواریم به همـت و حمایت جامعه دندانپزشـکان و دندانسـازان، دانشـگاه هـا و مراکـز علمـی بـا امیـد بـه آینـده روشـن، همواره پشـتیبان و حامـی ایـن عزیزان باشـیم.امـروز سـاختار مجموعـه کوشـافن پارس بر پایـه تعامل با مشـتریان، درک نیاز و تحقق خواسـته های آنهاسـت کـه همانـا لبخنـد رضایتشـان دلگرمـی مدیریـت و پرسـنل در نیل بـه اهداف عالـی سـازمان اسـت.امیدواریم به همـت و حمایت جامعه دندانپزشـکان و دندانسـازان، دانشـگاه هـا و مراکـز علمـی بـا امیـد بـه آینـده روشـن، همواره پشـتیبان و حامـی ایـن عزیزان باشـیم.
+                        </p>
+                        {/* <Link className='ms-auto mt-lg-4 mt-3' href={'#!'}>مطالعه بیشتر</Link> */}
+                    </div>
+                    <div className='col-md-4 position-relative'>
+                        <Image src={images.educateCenterPicture} width={1200} // Set your max width
+                            height={800} // Set your max height
+                            sizes="100vw"
+                            style={{
+                                width: '100%',
+                                height: 'auto',
+                            }} alt='image' />
+                    </div>
+                </div>
+            </div>
+        </RootLayout>
+    )
+}
+
+export default page
