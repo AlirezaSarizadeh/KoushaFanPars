@@ -62,7 +62,8 @@ import ctu_mail from './images/call-ctu.png'
 import company_1 from './images/companies-1.png'
 import room_pic from './images/room-pic.png'
 import blog_avatars from './images/blog-avatars.png'
-
+import blog_show_image from './images/blog-show-image.png'
+import share_icon from './images/share-icon.png'
 const images = {
    mainLogo,
    userIco,
@@ -127,6 +128,8 @@ const images = {
    ctu_mail,
    company_1,
    room_pic,
-   blog_avatars
+   blog_avatars,
+   blog_show_image,
+   share_icon
 }
 export default images
