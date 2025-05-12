@@ -12,12 +12,12 @@ const CustomerServices = () => {
         <p className='text-justify py-2'>
           امـروز سـاختار مجموعـه کوشـافن پارس بر پایـه تعامل با مشـتریان، درک نیاز و تحقق خواسـته های آنهاسـت کـه همانـا لبخنـد رضایتشـان دلگرمـی مدیریـت و پرسـنل در نیل بـه اهداف عالـی سـازمان اسـت.امیدواریم به همـت و حمایت جامعه دندانپزشـکان و دندانسـازان، دانشـگاه هـا و مراکـز علمـی بـا امیـد بـه آینـده روشـن، همواره پشـتیبان و حامـی ایـن عزیزان باشـیم.
         </p>
-        <div className='d-flex align-items-center gap-lg-4 border-0 bg-transparent px-0'>
+        <div className='d-flex align-items-center justify-content-lg-start justify-content-between gap-lg-4 border-0 bg-transparent px-0'>
           <Button variant={'secondary'} title={'صدای مشتری'} />
           <Button variant={'primary'} title={'ارتباط با کارشناسان'} />
         </div>
       </div>
-      <div className='col-lg-4'>
+      <div className='col-lg-4 d-none d-lg-block'>
         Iran map
       </div>
     </div>

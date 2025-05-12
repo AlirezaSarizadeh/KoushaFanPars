@@ -12,3 +12,17 @@
     gap: 10px;
     font-size: 24px;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .title-line {
+        width: 30px;
+        height: 4px;
+        background: linear-gradient(90deg, #034c94 0%, #23bcf9 35%);
+        display: block;
+    }
+
+    .main-title {
+        font-size: 18px;
+    }
+}

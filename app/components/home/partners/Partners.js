@@ -29,10 +29,11 @@ const Partners = () => {
 
       <div className='row align-items-center'>
         <div className='col-lg-6'>
-          <Title title={'خدمات پس از فروش'} />
-          <Lead boldText={'کوشایار'} lightText={'همراه همیشگی شما در هر شرایط'} />
+          <Title title={'همکاران ما'} />
+          <Lead boldText={'افتخارات ما'} lightText={'شرکت کوشافن پارس افتخار دارد'} />
           <p className='text-justify py-2'>
-            امـروز سـاختار مجموعـه کوشـافن پارس بر پایـه تعامل با مشـتریان، درک نیاز و تحقق خواسـته های آنهاسـت کـه همانـا لبخنـد رضایتشـان دلگرمـی مدیریـت و پرسـنل در نیل بـه اهداف عالـی سـازمان اسـت.امیدواریم به همـت و حمایت جامعه دندانپزشـکان و دندانسـازان، دانشـگاه هـا و مراکـز علمـی بـا امیـد بـه آینـده روشـن، همواره پشـتیبان و حامـی ایـن عزیزان باشـیم.
+            در کنار 30 سال تولید ملی بصورت انحصاری و رسمی با شرکت های مطرح دنیا از جمله  (Vita ، 3shape ، imes-icore ، Redon ) همکاری متقابل داشته باشد و پاسخگوی نیاز روز جامعه دندانپزشکی و دندانسازی ایران همپای تکنولوژِی روز دنیا باشد.
+
           </p>
         </div>
         <div className='col-lg-6'>
@@ -49,9 +50,9 @@ const Partners = () => {
             className="mySwiper2"
           >
             <SwiperSlide>
-              <Card className='d-flex flex-row align-items-center justify-content-between border-0'>
+              <Card className='d-flex flex-lg-row flex-column align-items-center justify-content-between border-0'>
                 <Image src={images.partner1_product} alt='product' style={{ objectFit: 'scale-down' }} />
-                <Card.Body className='text-start d-flex flex-column'>
+                <Card.Body className='text-start d-flex flex-column partner-desc-box'>
                   <Card.Title className='small'>کوشافن پارس 78989879889</Card.Title>
                   <Card.Text className='fw-light small text-justify'>
                     شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید
@@ -68,9 +69,9 @@ const Partners = () => {
               </Card>
             </SwiperSlide>
             <SwiperSlide>
-              <Card className='d-flex flex-row align-items-center justify-content-between border-0'>
+              <Card className='d-flex flex-lg-row flex-column align-items-center justify-content-between border-0'>
                 <Image src={images.partner1_product} alt='product' style={{ objectFit: 'scale-down' }} />
-                <Card.Body className='text-start d-flex flex-column'>
+                <Card.Body className='text-start d-flex flex-column partner-desc-box'>
                   <Card.Title className='small'>کوشافن پارس</Card.Title>
                   <Card.Text className='fw-light small text-justify'>
                     شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید
@@ -87,9 +88,9 @@ const Partners = () => {
               </Card>
             </SwiperSlide>
             <SwiperSlide>
-              <Card className='d-flex flex-row align-items-center justify-content-between border-0'>
+              <Card className='d-flex flex-lg-row flex-column align-items-center justify-content-between border-0'>
                 <Image src={images.partner1_product} alt='product' style={{ objectFit: 'scale-down' }} />
-                <Card.Body className='text-start d-flex flex-column'>
+                <Card.Body className='text-start d-flex flex-column partner-desc-box'>
                   <Card.Title className='small'>کوشافن پارس 45454</Card.Title>
                   <Card.Text className='fw-light small text-justify'>
                     شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید
@@ -119,7 +120,20 @@ const Partners = () => {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper mt-lg-4 mt-2 partner-logo-swiper"
+        className="mySwiper mt-lg-4 mt-4 partner-logo-swiper"
+        breakpoints={{
+          // When screen width is <= 768px
+          320: {
+            slidesPerView: 1.8, // Show 1 full slide + half slides on each side
+            spaceBetween: 15, // Reduced spacing for smaller screens
+          },
+          // When screen width is > 768px
+          769: {
+            slidesPerView: 4, // Show 4 slides
+            spaceBetween: 30, // Default spacing
+            centeredSlides: false, // No need to center on larger screens
+          },
+        }}
       >
         <SwiperSlide>
           <Image src={images.partner1} alt='partner' />

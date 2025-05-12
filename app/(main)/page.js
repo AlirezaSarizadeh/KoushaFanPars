@@ -12,7 +12,6 @@ export default function Home() {
   return (
     <div className="d-flex flex-column gap-lg-5 gap-3">
       {/* <Hero /> */}
-      <EducationCenter />
       <AnimatedAboutCard />
       <EducationCenter />
       <PopCourses />

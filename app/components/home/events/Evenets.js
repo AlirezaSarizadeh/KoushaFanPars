@@ -16,7 +16,7 @@ import Button from '../../utils/button/Button';
 const Evenets = () => {
   const [key, setKey] = useState('home');
   return (
-    <div className='row align-items-center'>
+    <div className='row align-items-center mt-2'>
       <div className='col-lg-12'>
         <Title title={'مجله کوشافن پارس'} />
         <Lead boldText={'مقالات و رویداد ها'} lightText={'پنجره ای رو به دنیای نوآورانه دندانپزشکی و دندانسازیر'} />

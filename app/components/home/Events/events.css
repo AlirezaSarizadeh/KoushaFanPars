@@ -1,20 +1,24 @@
-.eventSection-tabs{
-    border: 1px solid #0681fc !important; 
+.eventSection-tabs {
+    border: 1px solid #0681fc !important;
     border-radius: 7px;
     overflow: hidden;
     width: fit-content;
 }
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
     border-color: transparent;
     border-bottom: 1px solid #034C94;
     color: #044F97;
     font-weight: 600;
     border-radius: 0px !important;
 }
-.nav-tabs .nav-link.active{
+
+.nav-tabs .nav-link.active {
     background-color: #034C94;
     color: #Ffff;
 }
+
 .see-all-blog-btn {
     margin-right: auto;
     bottom: -65px;
@@ -23,8 +27,20 @@
     position: relative;
     width: fit-content;
 }
+
 .nav-tabs .nav-link {
     color: #034C94;
     font-weight: 700;
     padding: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-tabs .nav-link {
+        padding: 7px;
+        font-size: 12px;
+    }
+
+    .see-all-blog-btn {
+        bottom: unset;
+    }
 }

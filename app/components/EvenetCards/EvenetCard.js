@@ -9,7 +9,7 @@ import Link from 'next/link';
 const EvenetCard = () => {
     return (
         <Card className="rounded-4 border-0 p-2 float-start event-card" style={{ margin: "auto", backgroundColor: "#FFF" }}>
-            <Card.Body>
+            <Card.Body className='p-0 p-lg-4'>
                 <div className="d-flex flex-column flex-md-row">
                     {/* Image Section */}
                     <div className="me-md-3 mb-3 mb-md-0">

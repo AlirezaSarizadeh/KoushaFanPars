@@ -41,10 +41,10 @@ const CounterBox = ({ targetNumber, label, icon, labelColor, countSize }) => {
     }, [targetNumber]);
 
     return (
-        <div ref={boxRef} className="d-flex align-items-center rounded-lg shadow-md gap-2">
+        <div ref={boxRef} className="d-flex align-items-center rounded-lg shadow-md gap-2 flex-lg-row flex-column mt-4 mt-lg-0">
             {/* Render the Image only if icon exists */}
             {icon && <Image src={icon} alt="counter-img" width={50} height={50} />}
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-column counter-content">
                 {/* Dynamically set the font size of count */}
                 <span className={`fw-bold ${labelColor || ""} ${countSize || "fs-4"}`}>{count}+</span>
                 {/* Dynamically set the color class for the label */}

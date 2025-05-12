@@ -35,10 +35,23 @@ const PopCourses = () => {
         }}
         modules={[]}
         className="mySwiper popCours-card"
+        breakpoints={{
+          // When screen width is <= 768px
+          320: {
+            slidesPerView: 1.5, // Show 1 full slide + half slides on each side
+            spaceBetween: 15, // Reduced spacing for smaller screens
+          },
+          // When screen width is > 768px
+          769: {
+            slidesPerView: 4, // Show 4 slides
+            spaceBetween: 30, // Default spacing
+            centeredSlides: false, // No need to center on larger screens
+          },
+        }}
       >
         <SwiperSlide>
           <Link href={'/'}>
-            <Card className="border-0 text-center p-3 rounded-4" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
+            <Card className="border-0 text-center p-3 rounded-4 pop-course-card" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
               {/* Image */}
               <div className="popCours-card-img rounded-4 p-3">
                 <Image
@@ -62,7 +75,7 @@ const PopCourses = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link href={'/'}>
-            <Card className="border-0 text-center p-3 rounded-4" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
+            <Card className="border-0 text-center p-3 rounded-4 pop-course-card" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
               {/* Image */}
               <div className="popCours-card-img rounded-4 p-3">
                 <Image
@@ -86,7 +99,7 @@ const PopCourses = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link href={'/'}>
-            <Card className="border-0 text-center p-3 rounded-4" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
+            <Card className="border-0 text-center p-3 rounded-4 pop-course-card" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
               {/* Image */}
               <div className="popCours-card-img rounded-4 p-3">
                 <Image
@@ -110,7 +123,7 @@ const PopCourses = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link href={'/'}>
-            <Card className="border-0 text-center p-3 rounded-4" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
+            <Card className="border-0 text-center p-3 rounded-4 pop-course-card" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
               {/* Image */}
               <div className="popCours-card-img rounded-4 p-3">
                 <Image
@@ -134,7 +147,7 @@ const PopCourses = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link href={'/'}>
-            <Card className="border-0 text-center p-3 rounded-4" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
+            <Card className="border-0 text-center p-3 rounded-4 pop-course-card" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
               {/* Image */}
               <div className="popCours-card-img rounded-4 p-3">
                 <Image
@@ -158,7 +171,7 @@ const PopCourses = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Link href={'/'}>
-            <Card className="border-0 text-center p-3 rounded-4" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
+            <Card className="border-0 text-center p-3 rounded-4 pop-course-card" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
               {/* Image */}
               <div className="popCours-card-img rounded-4 p-3">
                 <Image

@@ -22,7 +22,7 @@
     cursor: pointer;
 }
 
-.custom-button:hover{
+.custom-button:hover {
     filter: grayscale(1);
 }
 
@@ -39,4 +39,12 @@
     bottom: 0;
     background-color: #fff;
     margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .custom-button {
+        width: 145px;
+        height: 40px;
+        font-size: 13px;
+    }
 }
