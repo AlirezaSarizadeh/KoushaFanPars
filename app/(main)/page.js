@@ -7,11 +7,12 @@ import Partners from "../components/home/Partners/Partners";
 import PopCourses from "../components/home/PopCourses/PopCourses";
 import TestComponent from "../components/AnimatedAboutCard/AnimatedAboutCard";
 import AnimatedAboutCard from "../components/AnimatedAboutCard/AnimatedAboutCard";
+import MainSlider from "../components/home/MainSlider/MainSlider";
 
 export default function Home() {
   return (
     <div className="d-flex flex-column gap-lg-5 gap-3">
-      {/* <Hero /> */}
+      <MainSlider />
       <AnimatedAboutCard />
       <EducationCenter />
       <PopCourses />

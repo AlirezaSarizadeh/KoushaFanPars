@@ -64,6 +64,13 @@ import room_pic from './images/room-pic.png'
 import blog_avatars from './images/blog-avatars.png'
 import blog_show_image from './images/blog-show-image.png'
 import share_icon from './images/share-icon.png'
+import main_slider_item_1 from './images/main-slider-item-1.png'
+import main_slider_item_2 from './images/main-slider-item-2.png'
+import main_slider_item_3 from './images/main-slider-item-3.png'
+import main_slider_item_4 from './images/main-slider-item-4.png'
+import main_slider_item_5 from './images/main-slider-item-5.png'
+import main_slider_desktop_bg from './images/main-slider-bg-desktop.png'
+import main_slider_mobile_bg from './images/main-slider-bg-mobile.png'
 const images = {
    mainLogo,
    userIco,
@@ -130,6 +137,13 @@ const images = {
    room_pic,
    blog_avatars,
    blog_show_image,
-   share_icon
+   share_icon,
+   main_slider_item_1,
+   main_slider_item_2,
+   main_slider_item_3,
+   main_slider_item_4,
+   main_slider_item_5,
+   main_slider_desktop_bg,
+   main_slider_mobile_bg,
 }
 export default images
