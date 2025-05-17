@@ -43,10 +43,10 @@ const Evenets = () => {
               modules={[]}
               className="mySwiper"
             >
-              <SwiperSlide className='p-4' style={{ width: '70%' }}>
+              <SwiperSlide className='p-4 events-swiperSlide' style={{ width: '70%' }}>
                 <EvenetCard />
               </SwiperSlide>
-              <SwiperSlide className='p-4' style={{ width: '70%' }}>
+              <SwiperSlide className='p-4 events-swiperSlide' style={{ width: '70%' }}>
                 <EvenetCard />
               </SwiperSlide>
             </Swiper>

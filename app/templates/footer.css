@@ -1,10 +1,12 @@
 body {
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 78%, rgba(151,204,243,1) 100%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 78%, rgba(151, 204, 243, 1) 100%);
 }
+
 .footer .accordion {
     --bs-accordion-bg: transparent !important;
 }
+
 .footer-section h5 {
     color: #0055a5;
     position: relative;
@@ -26,4 +28,43 @@ body {
 
 .footer-section-ul li {
     margin-top: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .container-custom.accordion {
+        padding: 0;
+    }
+
+    .container-custom .accordion-header button {
+        font-size: 18px !important;
+    }
+
+    .accordion-body {
+        text-align: justify;
+    }
+
+    .accordion-button:after {
+        transform: scale(1);
+    }
+
+    .footer-section h5:after {
+
+        max-width: 100%;
+    }
+
+    .footer-section-ul {
+        margin-top: 50px;
+    }
+
+    .search-btn {
+        position: fixed;
+        bottom: 30px;
+        left: 0px;
+        z-index: 999;
+    }
+
+    .footer-section h5 {
+        font-size: 16px;
+    }
+
 }

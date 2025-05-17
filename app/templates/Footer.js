@@ -7,7 +7,7 @@ import './footer.css'
 
 const Footer = () => {
   return (
-    <section className='mt-lg-5 footer'>
+    <section className='mt-lg-5 mt-3 footer'>
       <FaqOutro />
       <Row className="text-center text-md-start mt-lg-5 mt-3 footer-section">
         {/* Quick Access */}
@@ -35,7 +35,7 @@ const Footer = () => {
         {/* Contact Information */}
         <Col md={6}>
           <h5 className="fw-bold">راه ارتباطی</h5>
-          <div className='d-flex flex-column mt-lg-5'>
+          <div className='d-flex flex-column mt-5'>
             <p>دفتر مرکزی: تهران، شهرک غرب، بلوار فرحزادی، بالاتر از بیمارستان آتیه، خیابان سپهر، پلاک ۴۵</p>
             <p>کارخانه: جاده قدیم قم، شهرک صنعتی شمس آباد، فاز ۳، بلوار سوسنستان، خیابان گل سرخ ۹</p>
             <p>سینا سنتر: جاده قدیم قم، شهرک صنعتی شمس آباد، فاز ۳، بلوار سوسنستان، خیابان گل سرخ ۹</p>
@@ -48,7 +48,7 @@ const Footer = () => {
       <hr className="border-dark" />
 
       {/* Social Icons */}
-      <Row className='align-items-center pb-3'>
+      <Row className='align-items-center pb-3 flex-column flex-md-row'>
       <Col>
           <Row className="text-start flex-row">
             <Col>

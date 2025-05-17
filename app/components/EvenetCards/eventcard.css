@@ -1,4 +1,29 @@
-.event-card{
+.event-card {
     /* box-shadow: 3px 3px 30px #3177e160; */
     border-radius: 40px !important;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .events-swiperSlide {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .event-card {
+        margin: auto;
+        background-color: #034c9421 !important;
+        border-radius: 20px !important;
+    }
+
+    .limit-4-lines {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .blog_image {
+        width: 100%;
+        height: 100%;
+    }
 }

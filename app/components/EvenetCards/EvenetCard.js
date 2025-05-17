@@ -13,19 +13,19 @@ const EvenetCard = () => {
                 <div className="d-flex flex-column flex-md-row">
                     {/* Image Section */}
                     <div className="me-md-3 mb-3 mb-md-0">
-                        <Image src={images.event_image} alt='blog_image' className='rounded-3' />
+                        <Image src={images.event_image} alt='blog_image' className='rounded-3 blog_image' />
                     </div>
 
                     {/* Content Section */}
                     <div className='d-flex flex-column justify-content-between'>
-                        <div className='d-flex align-items-center justify-content-between'>
+                        <div className='d-flex justify-content-between flex-column flex-md-row align-items-lg-start gap-2 gap-lg-0'>
 
                             <Title title={'وبلاگ ها'} fontSize={'18px'} />
                             <small className='small fw-light d-flex align-items-center gap-1' style={{ fontSize: '13px' }}>
                                 <Image src={images.calendarIcon} alt=''/>
                                 ۳ دی ۱۴۰۳
                             </small>
-                            <small className='small fw-light d-flex align-items-center gap-1' style={{ fontSize: '13px' }}>
+                            <small className='small fw-light d-flex align-items-center gap-1 d-none d-lg-flex' style={{ fontSize: '13px' }}>
                                 <Image src={images.clockIcon} alt=''/>
                                 زمان مطالعه: ۱۰ دقیقه
                             </small>
