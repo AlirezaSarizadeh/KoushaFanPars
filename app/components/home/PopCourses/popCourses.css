@@ -20,6 +20,9 @@
     position: relative;
 }
 
+.popCours-card-img img {
+    object-fit: none;
+}
 
 @media only screen and (max-width: 600px) {
     .pop-course-card {

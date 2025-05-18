@@ -15,7 +15,7 @@ const AnimatedAboutCard = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 500) {
+            if (window.scrollY > 400) {
                 setShowSecondCard(true);
             } else {
                 setShowSecondCard(false);
@@ -29,7 +29,7 @@ const AnimatedAboutCard = () => {
     return (
         <>
             {/* This Div Only Shows In Desktop */}
-            <div className="position-relative d-flex justify-content-center mt-5 d-none d-lg-block">
+            <div className="position-relative d-flex justify-content-center mt-5 d-none d-lg-block animatedAboutCard-div" >
                 {/* First Card (Hero) with opacity transition */}
                 <motion.div
                     style={{ width: "100%" }}

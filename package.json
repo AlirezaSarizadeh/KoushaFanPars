@@ -25,7 +25,7 @@
     "react-scroll": "^1.9.3",
     "react-timeline": "^0.0.9",
     "react-vertical-timeline-component": "^3.5.3",
-    "swiper": "^11.2.4",
+    "swiper": "^11.2.6",
     "video.js": "^8.22.0"
   }
 }
