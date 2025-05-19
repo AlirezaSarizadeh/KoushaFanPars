@@ -78,8 +78,9 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-    scroll-behavior: smooth;
-  overscroll-behavior-y: contain; /* helps control bounce */
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+  /* helps control bounce */
 }
 
 body {
@@ -206,4 +207,15 @@ html::-webkit-scrollbar {
 
 .animated-input-border {
   border: 2px solid #49a7db;
+}
+
+@media (max-width:768px) {
+  .text-justify.lead {
+    font-size: 16px;
+  }
+
+  .main-logo {
+    width: 90px;
+    height: 30px;
+  }
 }

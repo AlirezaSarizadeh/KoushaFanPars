@@ -12,7 +12,7 @@ const Header = () => {
         <header className='d-flex align-items-center justify-content-between pt-lg-4'>
             <Menu />
             <Link href={'/'}>
-                <Image src={images.mainLogo} alt='KFP LOGO' width={175} height={50} />
+                <Image src={images.mainLogo} alt='KFP LOGO' className='main-logo' width={175} height={50} />
             </Link>
             <Link href={'/'}>
                 {/* <Image src={images.userIco} alt='USER ICON' width={40} height={40} /> */}

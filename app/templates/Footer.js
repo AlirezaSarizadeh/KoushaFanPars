@@ -52,7 +52,7 @@ const Footer = () => {
       <Col>
           <Row className="text-start flex-row">
             <Col>
-              <p className="mb-0 lead textColor">تمامی حقوق این سایت برای شرکت کوشافن پارس محفوظ می باشد</p>
+              <p className="mb-0 lead textColor company-text">تمامی حقوق این سایت برای شرکت کوشافن پارس محفوظ می باشد</p>
             </Col>
           </Row>
 

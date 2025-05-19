@@ -1,40 +1,81 @@
 'use client'
 
 import React, { useState } from 'react'
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/free-mode'
+import 'swiper/css/navigation'
+import 'swiper/css/thumbs'
 import './partners.css'
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
+import Title from '../../utils/title/Title'
+import Lead from '../../utils/lead/Lead'
+import Button from '../../utils/button/Button'
+import Image from 'next/image'
+import images from '@/app/public/assets/images'
+import { Card } from 'react-bootstrap'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
 
-// import required modules
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
-import Title from '../../utils/title/Title';
-import Lead from '../../utils/lead/Lead';
-import Button from '../../utils/button/Button';
-import Image from 'next/image';
-import images from '@/app/public/assets/images';
-import { Card } from 'react-bootstrap';
-import Link from 'next/link';
 const Partners = () => {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null)
 
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  // Animation variants for cards
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.6, 
+        ease: 'easeOut' 
+      }
+    }
+  }
+
+  // Animation variants for thumbnails
+  const thumbVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { 
+        duration: 0.4, 
+        ease: 'easeOut' 
+      }
+    }
+  }
+
+  // Animation variants for text content
+  const textVariants = {
+    hidden: { opacity: 0, x: 20 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { 
+        duration: 0.5, 
+        ease: 'easeOut',
+        delay: 0.2 
+      }
+    }
+  }
 
   return (
-    <div className=''>
-
+    <div className='mt-3'>
       <div className='row align-items-center'>
         <div className='col-lg-6'>
-          <Title title={'همکاران ما'} />
-          <Lead boldText={'افتخارات ما'} lightText={'شرکت کوشافن پارس افتخار دارد'} />
-          <p className='text-justify py-2'>
-            در کنار 30 سال تولید ملی بصورت انحصاری و رسمی با شرکت های مطرح دنیا از جمله  (Vita ، 3shape ، imes-icore ، Redon ) همکاری متقابل داشته باشد و پاسخگوی نیاز روز جامعه دندانپزشکی و دندانسازی ایران همپای تکنولوژِی روز دنیا باشد.
-
-          </p>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={textVariants}
+          >
+            <Title title={'همکاران ما'} />
+            <Lead boldText={'افتخارات ما'} lightText={'شرکت کوشافن پارس افتخار دارد'} />
+            <p className='text-justify py-2'>
+              در کنار 30 سال تولید ملی بصورت انحصاری و رسمی با شرکت های مطرح دنیا از جمله (Vita ، 3shape ، imes-icore ، Redon) همکاری متقابل داشته باشد و پاسخگوی نیاز روز جامعه دندانپزشکی و دندانسازی ایران همپای تکنولوژِی روز دنیا باشد.
+            </p>
+          </motion.div>
         </div>
         <div className='col-lg-6'>
           <Swiper
@@ -49,68 +90,41 @@ const Partners = () => {
             modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper2"
           >
-            <SwiperSlide>
-              <Card className='d-flex flex-lg-row flex-column align-items-center justify-content-between border-0'>
-                <Image src={images.partner1_product} alt='product' style={{ objectFit: 'scale-down' }} />
-                <Card.Body className='text-start d-flex flex-column partner-desc-box'>
-                  <Card.Title className='small'>کوشافن پارس 78989879889</Card.Title>
-                  <Card.Text className='fw-light small text-justify'>
-                    شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید
-                  </Card.Text>
-                  <Card.Footer className='border-0 bg-transparent text-end'>
-                    <Link className='d-flex align-items-center gap-3 textColor justify-content-end' href={'/'}>
-                      <small className='small'>
-                        مشاهده محصولات
-                      </small>
-                      <Image src={images.arrowLeftIco} alt='arrow' style={{ objectFit: 'scale-down' }} />
-                    </Link>
-                  </Card.Footer>
-                </Card.Body>
-              </Card>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card className='d-flex flex-lg-row flex-column align-items-center justify-content-between border-0'>
-                <Image src={images.partner1_product} alt='product' style={{ objectFit: 'scale-down' }} />
-                <Card.Body className='text-start d-flex flex-column partner-desc-box'>
-                  <Card.Title className='small'>کوشافن پارس</Card.Title>
-                  <Card.Text className='fw-light small text-justify'>
-                    شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید
-                  </Card.Text>
-                  <Card.Footer className='border-0 bg-transparent text-end'>
-                    <Link className='d-flex align-items-center gap-3 textColor justify-content-end' href={'/'}>
-                      <small className='small'>
-                        مشاهده محصولات
-                      </small>
-                      <Image src={images.arrowLeftIco} alt='arrow' style={{ objectFit: 'scale-down' }} />
-                    </Link>
-                  </Card.Footer>
-                </Card.Body>
-              </Card>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card className='d-flex flex-lg-row flex-column align-items-center justify-content-between border-0'>
-                <Image src={images.partner1_product} alt='product' style={{ objectFit: 'scale-down' }} />
-                <Card.Body className='text-start d-flex flex-column partner-desc-box'>
-                  <Card.Title className='small'>کوشافن پارس 45454</Card.Title>
-                  <Card.Text className='fw-light small text-justify'>
-                    شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید
-                  </Card.Text>
-                  <Card.Footer className='border-0 bg-transparent text-end'>
-                    <Link className='d-flex align-items-center gap-3 textColor justify-content-end' href={'/'}>
-                      <small className='small'>
-                        مشاهده محصولات
-                      </small>
-                      <Image src={images.arrowLeftIco} alt='arrow' style={{ objectFit: 'scale-down' }} />
-                    </Link>
-                  </Card.Footer>
-                </Card.Body>
-              </Card>
-            </SwiperSlide>
+            {[
+              { title: 'کوشافن پارس 78989879889', image: images.partner1_product },
+              { title: 'کوشافن پارس', image: images.partner1_product },
+              { title: 'کوشافن پارس 45454', image: images.partner1_product },
+            ].map((item, index) => (
+              <SwiperSlide key={index}>
+                <motion.div
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  <Card className='d-flex flex-lg-row flex-column align-items-center justify-content-between border-0'>
+                    <Image src={item.image} alt='product' style={{ objectFit: 'scale-down' }} />
+                    <Card.Body className='text-start d-flex flex-column partner-desc-box'>
+                      <Card.Title className='small'>{item.title}</Card.Title>
+                      <Card.Text className='fw-light small text-justify'>
+                        شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید
+                      </Card.Text>
+                      <Card.Footer className='border-0 bg-transparent text-end'>
+                        <Link className='d-flex align-items-center gap-3 textColor justify-content-end' href={'/'}>
+                          <small className='small'>
+                            مشاهده محصولات
+                          </small>
+                          <Image src={images.arrowLeftIco} alt='arrow' style={{ objectFit: 'scale-down' }} />
+                        </Link>
+                      </Card.Footer>
+                    </Card.Body>
+                  </Card>
+                </motion.div>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>
-
-
 
       <Swiper
         onSwiper={setThumbsSwiper}
@@ -122,37 +136,30 @@ const Partners = () => {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper mt-lg-4 mt-4 partner-logo-swiper"
         breakpoints={{
-          // When screen width is <= 768px
           320: {
-            slidesPerView: 1.8, // Show 1 full slide + half slides on each side
-            spaceBetween: 15, // Reduced spacing for smaller screens
+            slidesPerView: 1.8,
+            spaceBetween: 15,
           },
-          // When screen width is > 768px
           769: {
-            slidesPerView: 4, // Show 4 slides
-            spaceBetween: 30, // Default spacing
-            centeredSlides: false, // No need to center on larger screens
+            slidesPerView: 4,
+            spaceBetween: 30,
+            centeredSlides: false,
           },
         }}
       >
-        <SwiperSlide>
-          <Image src={images.partner1} alt='partner' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={images.partner2} alt='partner' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={images.partner3} alt='partner' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={images.partner1} alt='partner' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={images.partner2} alt='partner' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={images.partner3} alt='partner' />
-        </SwiperSlide>
+        {[images.partner1, images.partner2, images.partner3, images.partner1, images.partner2, images.partner3].map((image, index) => (
+          <SwiperSlide key={index}>
+            <motion.div
+              variants={thumbVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <Image src={image} alt='partner' />
+            </motion.div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   )

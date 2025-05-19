@@ -58,9 +58,9 @@ const BlogList = (props) => {
 
     return (
         <div className='courses-box row p-lg-4 p-3 mb-lg-3 mb-2'>
-            <div className='col-lg-2 d-flex flex-column justify-content-start align-items-start gap-2 course-box-desc'>
+            <div className='col-lg-2 d-flex flex-lg-column flex-row justify-content-lg-start  align-items-lg-start align-items-center gap-2 course-box-desc mb-3 mb-lg-0 '>
                 <Image src={images.coursesHeartIcon} alt='heart icon' />
-                <h2 className='fs-2 fw-bold'>
+                <h2 className='fs-2 fw-bold mb-0 mb-lg-2'>
                     {props.heading}
                 </h2>
             </div>
@@ -90,13 +90,13 @@ const BlogList = (props) => {
                         }
                     }}
                 >
-                    <SwiperSlide style={{ borderRadius: '40px' }}>
+                    <SwiperSlide className='blog-list-swiperSlide' style={{ borderRadius: '40px' }}>
                         <EvenetCard />
                     </SwiperSlide>
-                    <SwiperSlide style={{ borderRadius: '40px' }}>
+                    <SwiperSlide className='blog-list-swiperSlide' style={{ borderRadius: '40px' }}>
                         <EvenetCard />
                     </SwiperSlide>
-                    <SwiperSlide style={{ borderRadius: '40px' }}>
+                    <SwiperSlide className='blog-list-swiperSlide' style={{ borderRadius: '40px' }}>
                         <EvenetCard />
                     </SwiperSlide>
                 </Swiper>

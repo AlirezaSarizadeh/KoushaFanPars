@@ -21,7 +21,7 @@
 }
 
 .popCours-card-img img {
-    object-fit: none;
+    object-fit: contain;
 }
 
 @media only screen and (max-width: 600px) {
@@ -42,7 +42,8 @@
     }
 
     .lead {
-        font-size: 17px !important;
+        font-size: 15px !important;
         font-weight: 300;
     }
+    
 }

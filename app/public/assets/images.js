@@ -71,6 +71,7 @@ import main_slider_item_4 from './images/main-slider-item-4.png'
 import main_slider_item_5 from './images/main-slider-item-5.png'
 import main_slider_desktop_bg from './images/main-slider-bg-desktop.png'
 import main_slider_mobile_bg from './images/main-slider-bg-mobile.png'
+import iran_map from './images/iran-map.png'
 const images = {
    mainLogo,
    userIco,
@@ -145,5 +146,6 @@ const images = {
    main_slider_item_5,
    main_slider_desktop_bg,
    main_slider_mobile_bg,
+   iran_map
 }
 export default images

@@ -27,7 +27,7 @@ const Menu = () => {
                 <Offcanvas.Body>
                     <Tab.Container defaultActiveKey="tab100">
                         <Row className="h-100">
-                            <Col sm={3} className="pe-0">
+                            <Col className="pe-0 col-3">
                                 <Nav variant="pills" className="flex-column menu">
                                     {/* <Nav.Item>
                                         <Nav.Link eventKey="tab100" className="btn-transparent"></Nav.Link>
@@ -64,7 +64,7 @@ const Menu = () => {
                                     </Nav.Item>
                                 </Nav>
                             </Col>
-                            <Col sm={9} className="ps-0">
+                            <Col className="ps-0 col-9">
                                 <Tab.Content className="menu-tab-content">
                                     <Tab.Pane eventKey="tab100">
                                         <h4 className="mb-0">
