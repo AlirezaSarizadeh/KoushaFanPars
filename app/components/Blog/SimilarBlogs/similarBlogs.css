@@ -29,3 +29,8 @@
 .popCours-card {
     position: relative;
 }
+@media(max-width:768px){
+    .similarblogs-swiper .swiper-slide{
+        background: unset !important;
+    }
+}

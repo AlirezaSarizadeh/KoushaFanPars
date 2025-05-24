@@ -9,7 +9,7 @@ import { Users } from 'lucide-react'
 
 const Header = () => {
     return (
-        <header className='d-flex align-items-center justify-content-between pt-lg-4'>
+        <header className='d-flex align-items-center justify-content-between pt-lg-4 pt-4'>
             <Menu />
             <Link href={'/'}>
                 <Image src={images.mainLogo} alt='KFP LOGO' className='main-logo' width={175} height={50} />

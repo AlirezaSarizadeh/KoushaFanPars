@@ -11,8 +11,8 @@ const page = () => {
   return (
     <RootLayout>
       {/* COURSES SLIDER */}
-      <div className='row align-items-center mt-lg-5 mt-2 py-lg-5 px-lg-4  p-2 justify-content-center' style={{ background: '#e4f0fd', borderRadius: '15px' }}>
-        <div className='col-12'>
+      <div className='row align-items-center mt-lg-5 mt-4 py-lg-5 px-lg-4  p-2 justify-content-center' style={{ background: '#e4f0fd', borderRadius: '15px' }}>
+        <div className='col-12 my-3'>
           <Image src={images.blog_show_image} alt='image' className='w-100 h-100' />
         </div>
         <div className='col-12 d-flex flex-column gap-lg-4'>

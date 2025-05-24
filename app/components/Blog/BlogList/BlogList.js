@@ -6,64 +6,90 @@ import 'swiper/css/pagination';
 import './bloglist.css'
 import Image from 'next/image'
 import images from '@/app/public/assets/images'
-import Link from 'next/link'
-import { Card } from 'react-bootstrap';
 import EvenetCard from '../../EvenetCards/EvenetCard';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
+import { motion, useInView } from 'framer-motion';
 
 const BlogList = (props) => {
-    const swiperRef = useRef(null); // Reference to the Swiper container
-    const [isVisible, setIsVisible] = useState(false); // Track visibility
-    const swiperInstance = useRef(null); // Store Swiper instance for manual control
+    const swiperRef = useRef(null);
+    const swiperInstance = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+    const observerRef = useRef(null);
+    const inView = useInView(observerRef, { once: true, margin: '-100px' });
 
-    // Set up Intersection Observer
+    // IntersectionObserver to control autoplay
     useEffect(() => {
         const observer = new IntersectionObserver(
-            (entries) => {
-                const entry = entries[0];
+            ([entry]) => {
                 setIsVisible(entry.isIntersecting);
-                // console.log('Swiper visibility:', entry.isIntersecting); // Debug visibility
             },
             {
-                threshold: 1, // Trigger when 10% of Swiper is visible
-                rootMargin: '0px', // Ensure visibility is calculated correctly
+                threshold: 1,
+                rootMargin: '0px',
             }
         );
 
         if (swiperRef.current) {
             observer.observe(swiperRef.current);
-            // console.log('Observer attached to Swiper');
         }
 
         return () => {
             if (swiperRef.current) {
                 observer.unobserve(swiperRef.current);
-                // console.log('Observer detached');
             }
         };
     }, []);
 
-    // Control autoplay manually based on isVisible
     useEffect(() => {
         if (swiperInstance.current) {
             if (isVisible) {
                 swiperInstance.current.autoplay.start();
-                // console.log('Autoplay manually started');
             } else {
                 swiperInstance.current.autoplay.stop();
-                // console.log('Autoplay manually stopped');
             }
         }
     }, [isVisible]);
 
+    // Animation variants
+    const containerVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: 'easeOut',
+            },
+        },
+    };
+
+    const slideVariants = {
+        hidden: { opacity: 0, scale: 0.9 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 0.5,
+                ease: 'easeOut',
+            },
+        },
+    };
+
     return (
-        <div className='courses-box row p-lg-4 p-3 mb-lg-3 mb-2'>
-            <div className='col-lg-2 d-flex flex-lg-column flex-row justify-content-lg-start  align-items-lg-start align-items-center gap-2 course-box-desc mb-3 mb-lg-0 '>
+        <motion.div
+            ref={observerRef}
+            variants={containerVariants}
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            className='courses-box row p-lg-4 p-3 mb-lg-3 mb-2'
+        >
+            <div className='col-lg-2 d-flex flex-lg-column flex-row justify-content-lg-start align-items-lg-start align-items-center gap-2 course-box-desc mb-3 mb-lg-0'>
                 <Image src={images.coursesHeartIcon} alt='heart icon' />
                 <h2 className='fs-2 fw-bold mb-0 mb-lg-2'>
                     {props.heading}
                 </h2>
             </div>
+
             <div className='col-lg-10 d-flex flex-column justify-content-start align-items-start gap-2'>
                 <Swiper
                     ref={swiperRef}
@@ -74,7 +100,7 @@ const BlogList = (props) => {
                         disableOnInteraction: false,
                         stopOnLastSlide: false,
                         waitForTransition: true,
-                    }} // Always define autoplay with defaults
+                    }}
                     modules={[Autoplay]}
                     className="mySwiper"
                     breakpoints={{
@@ -84,24 +110,30 @@ const BlogList = (props) => {
                         },
                     }}
                     onSwiper={(swiper) => {
-                        swiperInstance.current = swiper; // Store Swiper instance
+                        swiperInstance.current = swiper;
                         if (!isVisible) {
-                            swiper.autoplay.stop(); // Ensure autoplay is stopped initially
+                            swiper.autoplay.stop();
                         }
                     }}
                 >
-                    <SwiperSlide className='blog-list-swiperSlide' style={{ borderRadius: '40px' }}>
-                        <EvenetCard />
-                    </SwiperSlide>
-                    <SwiperSlide className='blog-list-swiperSlide' style={{ borderRadius: '40px' }}>
-                        <EvenetCard />
-                    </SwiperSlide>
-                    <SwiperSlide className='blog-list-swiperSlide' style={{ borderRadius: '40px' }}>
-                        <EvenetCard />
-                    </SwiperSlide>
+                    {[...Array(3)].map((_, index) => (
+                        <SwiperSlide
+                            key={index}
+                            className='blog-list-swiperSlide'
+                            style={{ borderRadius: '40px' }}
+                        >
+                            <motion.div
+                                variants={slideVariants}
+                                initial="hidden"
+                                animate={inView ? "visible" : "hidden"}
+                            >
+                                <EvenetCard />
+                            </motion.div>
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
