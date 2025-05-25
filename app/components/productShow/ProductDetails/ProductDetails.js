@@ -22,7 +22,7 @@ const ProductDetails = () => {
   return (
     <Container>
       <Row className='align-items-start'>
-        <Col>
+        <Col className='p-0 p-lg-1 mt-3 my-lg-0'>
           <Card className="post-card">
             <Card.Body>
               <div className="product-actions">

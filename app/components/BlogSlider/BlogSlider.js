@@ -23,16 +23,21 @@ const BlogSlider = ({ bgColor, title, hoverColor }) => {
     return (
         <>
             {[...Array(1)].map((_, index) => (
-                <section key={index} className='py-4 px-5 product-list-container my-lg-3 my-3' style={{ backgroundColor: '#f0f1f2' ,borderRadius:'15px' }}>
+                <section key={index} className='py-lg-4 px-lg-5 px-3 py-3 product-list-container my-lg-3 my-3' style={{ backgroundColor: '#f0f1f2', borderRadius: '15px' }}>
                     <div className='d-flex align-items-center justify-content-between pb-lg-2 pb-2 w-100'>
                         <Title title={'تجربیات شما'} />
                     </div>
 
                     <Swiper
-                        slidesPerView={4}
+                        slidesPerView={1}
                         spaceBetween={30}
                         slidesOffsetAfter={150}  // Padding after last slide
                         pagination={{ clickable: true }}
+                        breakpoints={{
+                            640: { slidesPerView: 1 },
+                            1024: { slidesPerView: 5 },
+                            1480: { slidesPerView: 5 }
+                        }}
                         className="mySwiper popCours-card"
                     >
                         {isLoaded ? (

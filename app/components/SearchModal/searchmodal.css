@@ -32,3 +32,19 @@
 .search-modal .modal-body input::placeholder{
     color: #fff;
 }
+@media(max-width:768px){
+    .search-modal .modal-content{
+        width: 85% ;
+        margin: auto;
+    }
+    .search-modal .modal-body{
+        padding: 5px;
+    }
+    .search-modal .modal-body input::placeholder{
+        font-size: 13px;
+    }
+    .arrowSearchModalIcon{
+    position: absolute;
+    left: 0px;
+}
+}

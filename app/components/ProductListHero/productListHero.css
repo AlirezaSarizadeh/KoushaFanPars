@@ -17,3 +17,8 @@
 .swiper-slide{
     background-color: transparent;
 }
+@media(min-width:768px){
+    .product-list-hero-card{
+        margin-top: -50px;
+    }
+}

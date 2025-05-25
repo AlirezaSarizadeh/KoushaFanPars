@@ -1,3 +1,8 @@
 .popCours-card{
     padding-left: 80px;
 }
+@media(max-width:768px){
+    .product-list-card{
+        padding: 0;
+    }
+}

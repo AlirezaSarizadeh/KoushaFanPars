@@ -11,7 +11,7 @@ const ProductListHero = ({ gradient }) => {
             bg={'light'}
             key={'light'}
             text={'dark'}
-            className="mb-2 w-100 hero-card"
+            className="mb-2 w-100 hero-card product-list-hero-card"
             style={{ '--hero-bg': gradient }}
         >
             <Card.Header className='border-0 bg-transparent'>

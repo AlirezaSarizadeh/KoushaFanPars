@@ -14,12 +14,12 @@ export default function page() {
 
   return (
     <RootLayout>
-      <div className='row align-items-start mt-lg-5 pt-lg-5'>
+      <div className='row align-items-start mt-lg-5 pt-lg-5 mt-3 pt-3'>
         <div className='col-lg-4 mt-lg-0'>
           <div className='position-relative product-gallery-container'>
             <ProductGallery />
           </div>
-          <div className='d-flex flex-column gap-lg-4 gap-2 mt-lg-3 mt-1'>
+          <div className='d-flex flex-column gap-lg-4 gap-2 mt-lg-3 mt-3'>
             <Link href={''} className="primaryButton custom-button w-100">
               دریافت کاتالوگ
 
@@ -45,7 +45,7 @@ export default function page() {
         </div>
         <div className='col-lg-8 mt-lg-0'>
           <ProductDetails />
-          <div className='d-flex align-items-center justify-content-start container gap-lg-5 gap-2'>
+          <div className='d-flex align-items-center justify-content-between container gap-lg-5 gap-2 justify-content-lg-start p-0'>
             <Button title={'ارتباط با کارشناسان'} variant={'secondary'} href={'moz'} />
             <Button title={'خرید محصول'} variant={'primary'} href={'moz'} />
           </div>

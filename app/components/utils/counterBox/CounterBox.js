@@ -48,7 +48,7 @@ const CounterBox = ({ targetNumber, label, icon, labelColor, countSize }) => {
                 {/* Dynamically set the font size of count */}
                 <span className={`fw-bold ${labelColor || ""} ${countSize || "fs-4"}`}>{count}+</span>
                 {/* Dynamically set the color class for the label */}
-                <span className={`lead fw-normal ${labelColor || ""}`}>{label}</span>
+                <span className={`lead fw-normal counter-text ${labelColor || ""}`}>{label}</span>
             </div>
         </div>
     );

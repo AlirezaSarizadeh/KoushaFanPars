@@ -3,4 +3,7 @@
         align-items: center;
         justify-content: center;
     }
+    .counter-text{
+        font-size: 13px;
+    }
 }

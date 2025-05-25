@@ -1,0 +1,72 @@
+.slide-wrapper {
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.custom-slide {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.custom-slide {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.slide-wrapper {
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+}
+
+/* Box that appears above image */
+.mainSlider-content {
+    position: absolute;
+    bottom: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 20%;
+    background-color: #00000020;
+    border-radius: 0;
+    opacity: 0;
+    transition: all .4s ease-in-out;
+    z-index: 10;
+    padding: 15px;
+    pointer-events: none;
+    border-radius: 15px;
+    margin: auto;
+}
+.mainSlider-swiperSlide-img {
+    filter: drop-shadow(0px 10px 6px #00000055);
+}
+.number-font{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* 🟢 Show box when whole slide is hovered */
+.slide-wrapper:hover .mainSlider-content {
+    opacity: 1;
+    bottom: 360px;
+}
+    .mainSlider-container {
+        height: 600px !important
+    }
+@media only screen and (max-width: 768px) {
+    .mainSlider-container {
+        height: 450px !important
+    }
+
+    .mainSlider-content {
+        opacity: 1;
+    }
+
+    .mainSlider-content {
+        opacity: 1;
+        bottom: 340px !important;
+    }
+}
