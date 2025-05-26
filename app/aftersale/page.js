@@ -46,7 +46,7 @@ const page = () => {
                         </Link>
                     </div>
                 </div>
-                <div className='col-lg-4'>
+                <div className='col-lg-4 mt-4 mt-lg-0'>
                     <Row className="g-2">
                         <Col md={4} className='p-0'>
                             <Row>
@@ -125,52 +125,52 @@ const page = () => {
                         </h6>
                         <form>
                             <div className="row align-items-center justify-content-center">
-                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                <div className="col-lg-4 mt-lg-5 mt-2 pt-3 pt-lg-0">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="name" label="نام" name="name" type="text" />
                                     </span>
                                 </div>
-                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                <div className="col-lg-4 mt-lg-5 mt-2 pt-3 pt-lg-0">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="name" label="نام خانوادگی" name="name" type="text" />
                                     </span>
                                 </div>
-                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                <div className="col-lg-4 mt-lg-5 mt-2 pt-3 pt-lg-0">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="name" label="نام" name="name" type="text" />
                                     </span>
                                 </div>
-                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                <div className="col-lg-4 mt-lg-5 mt-2 pt-3 pt-lg-0">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="name" label="نام خانوادگی" name="name" type="text" />
                                     </span>
                                 </div>
-                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                <div className="col-lg-4 mt-lg-5 mt-2 pt-3 pt-lg-0">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="name" label="نام" name="name" type="text" />
                                     </span>
                                 </div>
-                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                <div className="col-lg-4 mt-lg-5 mt-2 pt-3 pt-lg-0">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="name" label="نام خانوادگی" name="name" type="text" />
                                     </span>
                                 </div>
-                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                <div className="col-lg-4 mt-lg-5 mt-2 pt-3 pt-lg-0">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="name" label="نام" name="name" type="text" />
                                     </span>
                                 </div>
-                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                <div className="col-lg-4 mt-lg-5 mt-2 pt-3 pt-lg-0">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="name" label="نام خانوادگی" name="name" type="text" />
                                     </span>
                                 </div>
-                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                <div className="col-lg-4 mt-lg-5 mt-2 pt-3 pt-lg-0">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="name" label="نام" name="name" type="text" />
                                     </span>
                                 </div>
-                                <div className="col-lg-12 mt-lg-5 mt-2">
+                                <div className="col-lg-12 mt-lg-5 mt-2 pt-3 pt-lg-0">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="description" label="شرح دهید" name="description" as="textarea" rows="4" />
                                     </span>

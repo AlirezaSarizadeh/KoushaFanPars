@@ -219,3 +219,9 @@ html::-webkit-scrollbar {
     height: 30px;
   }
 }
+
+@media (max-width:1000px) {
+  .card{
+    box-shadow: none !important;
+  }
+}

@@ -1,12 +1,19 @@
-'use client'
+'use client';
 import images from '@/app/public/assets/images';
 import Image from 'next/image';
-import React from 'react'
-import { Card } from "react-bootstrap";
-import './JobOpsStepCard.css'
+import React from 'react';
+import { Card } from 'react-bootstrap';
+import { motion } from 'framer-motion';
+import './JobOpsStepCard.css';
+
 const JobOpsStepCard = () => {
     return (
-        <div>
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.5 }}
+        >
             <Card className='jobOpsStepsCard py-3' style={{ width: "18rem", border: "none" }}>
                 <Card.Body>
                     <span className='josc-icon mb-3'>
@@ -21,8 +28,8 @@ const JobOpsStepCard = () => {
                     </Card.Text>
                 </Card.Body>
             </Card>
-        </div>
-    )
-}
+        </motion.div>
+    );
+};
 
-export default JobOpsStepCard
+export default JobOpsStepCard;

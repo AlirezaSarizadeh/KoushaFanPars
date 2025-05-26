@@ -41,7 +41,7 @@ const EducateCourseShow = (props) => {
                             height: 'auto',
                         }} alt='image' />
                 </div>
-                <div className='w-100 row row-cols-lg-5 row-cols-md-4 row-cols-2 justify-content-start m-auto px-0 mt-lg-4 mt-2'>
+                <div className='w-100 row row-cols-lg-5 row-cols-md-4 row-cols-1 justify-content-start m-auto px-0 mt-lg-4 mt-2'>
                     <Link href={'/'}>
                         <Card className="border-0 text-center p-3 rounded-4 mt-3" style={{ minHeight: '200px', backgroundColor: "#EAF6FF" }}>
                             {/* Image */}

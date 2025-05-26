@@ -13,7 +13,7 @@ const Footer = () => {
         {/* Quick Access */}
         <Col md={3} className="mb-4 mb-md-0">
           <h5 className="fw-bold">دسترسی سریع</h5>
-          <ul className="list-unstyled mt-lg-5 footer-section-ul">
+          <ul className="list-unstyled mt-5 footer-section-ul">
             <li><a href="#" className="text-dark text-decoration-none">درباره ما</a></li>
             <li><a href="#" className="text-dark text-decoration-none">همکاری با ما</a></li>
             <li><a href="#" className="text-dark text-decoration-none">فرصت های شغلی</a></li>
@@ -23,7 +23,7 @@ const Footer = () => {
         {/* Product Categories */}
         <Col md={3} className="mb-4 mb-md-0">
           <h5 className="fw-bold">دسته بندی محصولات</h5>
-          <ul className="list-unstyled mt-lg-5 footer-section-ul">
+          <ul className="list-unstyled mt-5 footer-section-ul">
             <li><a href="#" className="text-dark text-decoration-none">AT100 گروه</a></li>
             <li><a href="#" className="text-dark text-decoration-none">زیربوکیا</a></li>
             <li><a href="#" className="text-dark text-decoration-none">AT3000 گروه دندانسازی</a></li>

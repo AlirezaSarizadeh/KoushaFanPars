@@ -13,22 +13,28 @@ import TestimonialCard from '../TestimonialCard/TestimonialCard';
 
 const TestimonialSlider = () => {
     return (
-        <div className='text-center'>
+        <div className='text-center '>
             <h4 className='fs-2 mb-lg-5 mb-3 fw-regular'>
                 نظرات مشاهده کننده ها
             </h4>
             <Swiper
-                slidesPerView={4}
+                slidesPerView={1}
                 spaceBetween={10}
                 pagination={{
                     clickable: true,
                 }}
+                        breakpoints={{
+                            640: { slidesPerView: 1 },
+                            1024: { slidesPerView: 2 },
+                            1480: { slidesPerView: 3 },
+                            1550: { slidesPerView: 4 }
+                        }}
                 modules={[Autoplay]}
                 autoplay={{
-                    delay: 3000, // 3 seconds
+                    delay: 2000, // 3 seconds
                     disableOnInteraction: false, // keeps autoplay running even after user interaction
-                  }}
-                  loop={true}
+                }}
+                loop={true}
                 className="mySwiper courseSeasonSlider"
             >
                 <SwiperSlide>

@@ -7,7 +7,10 @@
 .courses-box:hover{
     background-color: #2d98e7;
 }
-.courses-box:hover .course-box-desc *{
+.courses-box:hover .course-box-desc * {
+    color: #fff !important;
+}
+.courses-box:hover .coursePlay-tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link {
     color: #fff;
 }
 .popCours-card-img {

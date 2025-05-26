@@ -20,12 +20,12 @@ const page = () => {
                     <p className='text-justify py-2'>
                         امـروز سـاختار مجموعـه کوشـافن پارس بر پایـه تعامل با مشـتریان، درک نیاز و تحقق خواسـته های آنهاسـت کـه همانـا لبخنـد رضایتشـان دلگرمـی مدیریـت و پرسـنل در نیل بـه اهداف عالـی سـازمان اسـت.امیدواریم به همـت و حمایت جامعه دندانپزشـکان و دندانسـازان، دانشـگاه هـا و مراکـز علمـی بـا امیـد بـه آینـده روشـن، همواره پشـتیبان و حامـی ایـن عزیزان باشـیم.
                     </p>
-                    <div className='d-flex align-items-center gap-lg-4 border-0 bg-transparent px-0'>
+                    <div className='d-flex align-items-center gap-lg-4 border-0 bg-transparent px-0 justify-content-between justify-content-lg-start'>
                         <Button variant={'secondary'} title={'ثبت نام دوره'} />
                         <Button variant={'primary'} title={'مراجعه حضوری'} />
                     </div>
                 </div>
-                <div className='col-lg-4'>
+                <div className='col-lg-4 my-4 my-lg-0'>
                     <Image src={images.educateCenterPicture} alt='educate picture' className='w-100' />
                 </div>
             </div>
@@ -40,7 +40,7 @@ const page = () => {
                <EducationCenter />
             </div>
             <Title title={'دوره های تخفیفاتی'} className='mb-4 mt-lg-5' />
-            <div className='row row-cols-md-3'>
+            <div className='row row-cols-lg-3'>
                 <div className='p-2'>
                     <DiscountedCoursesBox doctorImage={images.discountedBoxImage} initialTime="02:30:45" />
                 </div>

@@ -9,7 +9,7 @@ const TestimonialCard = () => {
     const rating = 5; // You can make this dynamic if needed
 
     return (
-        <Card style={{
+        <Card className='testimonial-card' style={{
             width: '24rem',
             border: 'none',
             borderRadius: '10px',

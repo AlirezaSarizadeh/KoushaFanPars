@@ -6,11 +6,11 @@ import {FaPlayCircle } from 'react-icons/fa';
 
 const CoursePlayHero = () => {
   return (
-    <div className='row row-cols-lg-2 align-content-center mt-lg-4' style={{background:'#eff6ff' , borderRadius:'15px'}}>
-      <Image src={images.drbahooshPic} alt='dr bahoosh' objectFit='contain' style={{ height: '80%' }} />
+    <div className='row row-cols-lg-2 align-content-center mt-lg-4 mt-4' style={{background:'#eff6ff' , borderRadius:'15px'}}>
+      <Image src={images.drbahooshPic} alt='dr bahoosh' style={{ height: '80%' }} />
       <div className='row flex-column justify-content-start gap-2 m-auto'>
 
-        <div className='d-flex align-items-center gap-2'>
+        <div className='d-flex align-items-center gap-2 flex-column flex-md-row mt-4 mt-lg-0'>
           <Title className='fs-1 fw-bold' title={'دوره دندانسازی سرامیک'} />
           <span>
             دسته بندی :
@@ -27,7 +27,7 @@ const CoursePlayHero = () => {
           </p>
         </div>
 
-        <div className='d-flex align-items-center'>
+        <div className='d-flex align-items-center mb-4'>
           <span className='d-flex align-items-center justify-content-center gap-2 px-3 py-2 textColor small bg-light'>
             <FaPlayCircle className='text-primary fs-4' />
             این دوره شامل 60 قسمت می باشد

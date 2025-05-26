@@ -3,10 +3,11 @@ import images from '@/app/public/assets/images';
 import Image from 'next/image';
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import './coursesSeasonCard.css'
 
 const CourseSeasonCard = () => {
   return (
-    <Card style={{ width: '18rem', background:'#FFF' , borderRadius: '10px' }} className='border-0 m-auto d-flex flex-column justify-content-center align-items-center gap-3 text-center'>
+    <Card style={{ width: '18rem', background:'#FFF' , borderRadius: '10px' }} className='courses-season-card border-0 m-auto d-flex flex-column justify-content-center align-items-center gap-3 text-center'>
       <Card.Body>
         <Image className='mb-lg-4 mb-2' src={images.courseSeasonCircleBadge} alt="icondory" />
         <Card.Title style={{ fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '1rem' }}>

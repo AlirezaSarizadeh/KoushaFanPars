@@ -19,14 +19,14 @@ const page = () => {
     return (
         <RootLayout>
             <CoursePlayHero />
-            <div className='row align-items-center justify-content-center'>
+            <div className='row align-items-center justify-content-center mt-4 mt-lg-0'>
                 <div className='col-lg-8'>
                     <Title title={'معرفی دوره'} />
                     <Lead boldText={'دوره دندانسازی سرامیک'} lightText={'مهارت های خود را با کوشافن پارس ارتفا دهید'} />
                     <p className='text-justify py-2'>
                     مرکز آموزش کوشافن پارس، دروازه ورود به دنیای نوین دندانپزشکی است. این مرکز جامع آموزشی، با ارائه دوره‌های متنوع در سطوح مبتدی، نیمه پیشرفته و پیشرفته، پاسخگوی نیازهای تمام دندانپزشکان و دندانسازان است. چه تازه وارد دنیای دندانپزشکی باشید و چه سال‌ها تجربه داشته باشید، در کوشافن پارس، دوره‌ای متناسب با سطح دانش و مهارت خود خواهید یافت. تنها با یک ثبت‌نام ساده، به دنیایی از دانش و تجربه دسترسی پیدا خواهید کرد و می‌توانید مهارت‌های خود را ارتقا داده و با آخرین تکنیک‌ها و فناوری‌های روز دنیا آشنا شوید.
                     </p>
-                    <div className='d-flex align-items-center gap-lg-4 border-0 bg-transparent px-0'>
+                    <div className='d-flex align-items-start gap-lg-4 border-0 bg-transparent px-0 flex-column flex-md-row align-items-md-center gap-4'>
                         <div className='border d-flex gap-2 justify-content-center align-items-center btn px-lg-3 py-lg-3' style={{color:'#769fc6'}}>
                             <span>
                                 مبلغ دوره : 
@@ -39,23 +39,23 @@ const page = () => {
                     </div>
                 </div>
                 <div className='col-lg-4'>
-                    <Image src={images.courseCertificatePic} alt='educate picture' className='w-100' />
+                    <Image src={images.courseCertificatePic} alt='educate picture' className='w-100 object-fit-contain h-100' />
                 </div>
             </div>
 
             {/* CourseSeasonSlider Component */}
-            <div className='row align-items-center justify-content-center py-lg-5 px-lg-4' style={{background:'#f1f2f4' , borderRadius:'15px'}}>
-                <Title className='text-start mb-lg-5 ' title={'سر فصل ها'} />
+            <div className='row align-items-center justify-content-center py-lg-5 px-lg-4 py-4' style={{background:'#f1f2f4' , borderRadius:'15px'}}>
+                <Title className='text-start mb-lg-5 mb-4 ' title={'سر فصل ها'} />
                 <CourseSeasonSlider />
             </div>
 
             {/* COURSES SLIDER */}
-            <div className='row align-items-center mt-lg-5 mt-2 p-lg-4 p-2 justify-content-center' style={{ background: '#e4f0fd', borderRadius: '15px' }}>
+            <div className='row align-items-center mt-lg-5 mt-4 p-lg-4 p-2 justify-content-center' style={{ background: '#e4f0fd', borderRadius: '15px' }}>
                 <CoursePlay />
             </div>
 
             {/* Testimonial Slider Component */}
-            <div className='row align-items-center justify-content-center mt-lg-5 py-lg-5 px-lg-4' style={{background:'#f1f2f4', borderRadius:'15px'}}>
+            <div className='row align-items-center justify-content-center mt-lg-5 py-lg-5 px-lg-4 mt-4 py-4' style={{background:'#f1f2f4', borderRadius:'15px'}}>
                 <TestimonialSlider />
             </div>
             {/* Voice of Customer slider */}
@@ -75,17 +75,17 @@ const page = () => {
                         </h6>
                         <form>
                             <div className="row align-items-center justify-content-start">
-                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                <div className="col-lg-4 mt-lg-5 mt-2 pt-3">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="name" label="نام" name="name" type="text" />
                                     </span>
                                 </div>
-                                <div className="col-lg-4 mt-lg-5 mt-2">
+                                <div className="col-lg-4 mt-lg-5 mt-2 pt-3">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="name" label="نام خانوادگی" name="name" type="text" />
                                     </span>
                                 </div>
-                                <div className="col-lg-12 mt-lg-5 mt-2">
+                                <div className="col-lg-12 mt-lg-5 mt-2 pt-3">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="description" label="شرح دهید" name="description" as="textarea" rows="4" />
                                     </span>

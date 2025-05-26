@@ -7,7 +7,7 @@ import images from '@/app/public/assets/images';
 const CircledTestimonial = ({ name, image, message }) => {
     return (
         <div className='testimonial'>
-            <Image src={images.circledTestimonial} alt='' />
+            <Image src={images.circledTestimonial} alt='' className='w-100 h-100' />
 
             <div className='testi-item'>
                 <div className='testi-item-images position-relative'>

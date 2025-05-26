@@ -10,7 +10,7 @@ import CircledTestimonial from '../../CircledTestimonial/CircledTestimonial'
 const EducationCenter = () => {
     return (
         <motion.div
-            className='row align-items-center mt-lg-5 pt-lg-5 mt-3'
+            className='row align-items-center my-lg-5 pt-lg-5 my-4'
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}

@@ -66,7 +66,7 @@ const DiscountedCoursesBox = ({ initialTime = "12:56:23" , doctorImage}) => {
             <Card.Title className="text-text-dark mb-2 fw-bold fs-2">دکتر باهوش</Card.Title>
             <Card.Subtitle className="text-dark mb-3">دوره مبتدی دندانسازی</Card.Subtitle>
 
-            <Card.Text className={`text-dark ${styles.cardText}`}>
+            <Card.Text className={`text-dark ${styles.cardText} limit-4-lines`}>
               امروز ساختار مجموعه گوشافی پارس برپایه تعامل با مشتریان، درک نیاز و تحقق خواسته های آنهاست که همان ایجاد رضایتشان دلگر می‌مدیریت و پرسنل در لیل به اهداف عالی سازمان است.
             </Card.Text>
 

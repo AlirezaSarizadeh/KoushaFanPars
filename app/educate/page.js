@@ -18,8 +18,8 @@ const page = () => {
   return (
     <RootLayout>
       <EducationCenter />
-        <Title title={'دوره های تخفیفاتی'} className='mb-4 mt-lg-5' />
-      <div className='row row-cols-md-3'>
+        <Title title={'دوره های تخفیفاتی'} className='mb-4 mt-lg-5 mt-4' />
+      <div className='row row-cols-lg-3'>
         <div className='p-2'>
           <DiscountedCoursesBox doctorImage={images.discountedBoxImage} initialTime="02:30:45" />
         </div>

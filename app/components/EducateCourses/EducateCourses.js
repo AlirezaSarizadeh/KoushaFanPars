@@ -18,7 +18,7 @@ const EducateCourses = (props) => {
         <>
             {/* courses box */}
             <div className='courses-box row row-cols-md-2 p-lg-4 p-3 mb-lg-3 mb-2' >
-                <div className='d-flex flex-column justify-content-start align-items-start gap-2 course-box-desc'>
+                <div className='d-flex flex-column justify-content-start align-items-start gap-2 course-box-desc mb-4 mb-lg-0'>
                     <Image src={images.coursesHeartIcon} alt='heart icon' />
                     <h2 className='fs-1 fw-bold'>
                         {props.heading}
@@ -42,12 +42,12 @@ const EducateCourses = (props) => {
                                 spaceBetween: 20
                             },
                             640: {
-                                slidesPerView: 1.5, // 1 full + half of next
+                                slidesPerView: 1.2, // 1 full + half of next
                                 spaceBetween: 20
                             },
                             // When window width is >= 768px
                             768: {
-                                slidesPerView: 1.8, // 2 full + 0.2 peek
+                                slidesPerView: 1.2, // 2 full + 0.2 peek
                                 spaceBetween: 25
                             },
                             // When window width is >= 1024px
@@ -70,7 +70,7 @@ const EducateCourses = (props) => {
                     >
                         <SwiperSlide style={{ borderRadius: "15px" }}>
                             <Link href={'/'}>
-                                <Card className="border-0 text-center p-3 rounded-4" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
+                                <Card className="border-0 text-center p-3 rounded-4 courses-card" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
                                     {/* Image */}
                                     <div className="popCours-card-img rounded-4 p-3">
                                         <Image
@@ -94,7 +94,7 @@ const EducateCourses = (props) => {
                         </SwiperSlide>
                         <SwiperSlide style={{ borderRadius: "15px" }}>
                             <Link href={'/'}>
-                                <Card className="border-0 text-center p-3 rounded-4" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
+                                <Card className="border-0 text-center p-3 rounded-4 courses-card" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
                                     {/* Image */}
                                     <div className="popCours-card-img rounded-4 p-3">
                                         <Image
@@ -118,7 +118,7 @@ const EducateCourses = (props) => {
                         </SwiperSlide>
                         <SwiperSlide style={{ borderRadius: "15px" }}>
                             <Link href={'/'}>
-                                <Card className="border-0 text-center p-3 rounded-4" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
+                                <Card className="border-0 text-center p-3 rounded-4 courses-card" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
                                     {/* Image */}
                                     <div className="popCours-card-img rounded-4 p-3">
                                         <Image
@@ -142,7 +142,7 @@ const EducateCourses = (props) => {
                         </SwiperSlide>
                         <SwiperSlide style={{ borderRadius: "15px" }}>
                             <Link href={'/'}>
-                                <Card className="border-0 text-center p-3 rounded-4" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
+                                <Card className="border-0 text-center p-3 rounded-4 courses-card" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
                                     {/* Image */}
                                     <div className="popCours-card-img rounded-4 p-3">
                                         <Image
@@ -166,7 +166,7 @@ const EducateCourses = (props) => {
                         </SwiperSlide>
                         <SwiperSlide style={{ borderRadius: "15px" }}>
                             <Link href={'/'}>
-                                <Card className="border-0 text-center p-3 rounded-4" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
+                                <Card className="border-0 text-center p-3 rounded-4 courses-card" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
                                     {/* Image */}
                                     <div className="popCours-card-img rounded-4 p-3">
                                         <Image
@@ -190,7 +190,7 @@ const EducateCourses = (props) => {
                         </SwiperSlide>
                         <SwiperSlide style={{ borderRadius: "15px" }}>
                             <Link href={'/'}>
-                                <Card className="border-0 text-center p-3 rounded-4" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
+                                <Card className="border-0 text-center p-3 rounded-4 courses-card" style={{ minHeight: '400px', backgroundColor: "#EAF6FF" }}>
                                     {/* Image */}
                                     <div className="popCours-card-img rounded-4 p-3">
                                         <Image

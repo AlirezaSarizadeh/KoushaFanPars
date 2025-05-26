@@ -1,7 +1,13 @@
-.testimonial-code{
+.testimonial-code {
     position: absolute;
     left: 30px;
     bottom: 30px;
-    transform: scale(-1, -1);   
+    transform: scale(-1, -1);
     opacity: 30%;
+}
+
+@media (max-width:1000px) {
+    .testimonial-card {
+        width: 100% !important;
+    }
 }

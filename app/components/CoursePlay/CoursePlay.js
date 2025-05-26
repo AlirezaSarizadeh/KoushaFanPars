@@ -1,11 +1,11 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import './coursePlay.css'
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import { Tab, Tabs } from "react-bootstrap";
 import images from '@/app/public/assets/images';
 import Image from 'next/image';
 import { Card } from 'react-bootstrap';
+import './coursePlay.css'
 
 const CoursePlay = () => {
   const videos = [
@@ -97,7 +97,7 @@ const CoursePlay = () => {
                 {videos.map((video, index) => (
                   <li
                     key={index}
-                    className={`list-group-item d-flex align-items-center gap-2 ${video.url === currentVideo.url ? 'active' : ''
+                    className={`list-group-item d-flex align-items-lg-center align-items-start gap-2 flex-column flex-lg-row ${video.url === currentVideo.url ? 'active' : ''
                       }`}
                     role="button"
                     onClick={() => setCurrentVideo(video)}
@@ -132,7 +132,7 @@ const CoursePlay = () => {
                 {videos.map((video, index) => (
                   <li
                     key={index}
-                    className={`list-group-item d-flex align-items-center gap-2 ${video.url === currentVideo.url ? 'active' : ''
+                    className={`list-group-item d-flex align-items-lg-center align-items-start gap-2 flex-column flex-lg-row ${video.url === currentVideo.url ? 'active' : ''
                       }`}
                     role="button"
                     onClick={() => setCurrentVideo(video)}
@@ -162,7 +162,7 @@ const CoursePlay = () => {
                 {videos.map((video, index) => (
                   <li
                     key={index}
-                    className={`list-group-item d-flex align-items-center gap-2 ${video.url === currentVideo.url ? 'active' : ''
+                    className={`list-group-item d-flex align-items-lg-center align-items-start gap-2 flex-column flex-lg-row ${video.url === currentVideo.url ? 'active' : ''
                       }`}
                     role="button"
                     onClick={() => setCurrentVideo(video)}
@@ -192,7 +192,7 @@ const CoursePlay = () => {
                 {videos.map((video, index) => (
                   <li
                     key={index}
-                    className={`list-group-item d-flex align-items-center gap-2 ${video.url === currentVideo.url ? 'active' : ''
+                    className={`list-group-item d-flex align-items-lg-center align-items-start gap-2 flex-column flex-lg-row ${video.url === currentVideo.url ? 'active' : ''
                       }`}
                     role="button"
                     onClick={() => setCurrentVideo(video)}
