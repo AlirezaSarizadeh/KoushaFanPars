@@ -13,6 +13,7 @@ import Image from 'next/image';
 import images from '@/app/public/assets/images';
 import { Card } from 'react-bootstrap';
 import Link from 'next/link';
+import './companyShowSlider.css'
 
 const CompanyShowSlider = ({ flexDirection = 'row' }) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);

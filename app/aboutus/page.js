@@ -9,17 +9,19 @@ import Lead from '../components/utils/lead/Lead'
 import './aboutus.css'
 import CompaniesSlider from '../components/AboutUs/CompaniesSlider/CompaniesSlider'
 import Timeline from '../components/AboutUs/Timeline/Timeline'
+import Image from 'next/image'
+import images from '../public/assets/images'
 
 const page = () => {
 
 
   return (
     <RootLayout>
-      <EducationCenter />
+      <Image src={images.about_us_hero} className='w-100 h-100 mt-lg-5 mt-4' alt='about us hero' />
 
       <AnimatedAboutCard />
 
-      <div className='row align-items-center mt-lg-5 pt-lg-5 about-main-desc'>
+      <div className='row align-items-center mt-lg-5 pt-lg-5 mt-4 pt-4 about-main-desc'>
         <div className='col-lg-12 mt-lg-5'>
           <Title title={'معرفی'} />
           <h2 className='fw-bold d-flex flex-column gap-3 mt-3'>
@@ -36,10 +38,10 @@ const page = () => {
       </div>
 
       <CompaniesSlider />
-      
+
 
       <Timeline />
-      
+
 
     </RootLayout>
   )

@@ -9,7 +9,7 @@ import FaqBox from '../components/FaqBox/FaqBox'
 const page = () => {
     return (
         <RootLayout>
-            <div className='row align-items-center justify-content-start'>
+            <div className='row align-items-center justify-content-start mt-lg-5 mt-4'>
                 <div className='col-lg-8 mt-lg-5 mt-3'>
                     <Title title={'سوالات متداول'} />
                     <p className='text-justify py-4'>

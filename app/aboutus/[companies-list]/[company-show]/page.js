@@ -14,7 +14,7 @@ const page = () => {
   return (
     <RootLayout>
 
-      <div className='row align-items-center mt-lg-5 mt-2 p-lg-4 p-2 justify-content-center' style={{ background: '#104369', borderRadius: '25px' }}>
+      <div className='row align-items-center mt-lg-5 mt-4 p-lg-4 p-2 justify-content-center' style={{ background: '#104369', borderRadius: '25px' }}>
         <div className='courses-box course-box-companies row p-lg-4 p-3 my-lg-3 my-2 justify-content-center col-lg-11' >
           <div className='col-md-5 position-relative companies-pic-col'>
             <Image src={images.company_1} width={1200} // Set your max width

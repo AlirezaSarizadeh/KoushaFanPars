@@ -1,3 +1,18 @@
 .about-main-desc{
     margin-top: 100px !important;
 }
+.card {
+    box-shadow: 3px 3px 15px #00000033;
+}
+@media(max-width:900px){
+    .about-us-swiperslide {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .about-us-slider-pic{
+        width: 100%;
+    }
+    .about-main-desc{
+        margin-top: 0 !important;
+    }
+}

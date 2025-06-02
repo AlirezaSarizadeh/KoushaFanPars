@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <section className='mt-lg-5 mt-3 footer'>
       <FaqOutro />
-      <Row className="text-center text-md-start mt-lg-5 mt-3 footer-section">
+      <Row className="text-center text-md-start mt-lg-5 mt-4 footer-section">
         {/* Quick Access */}
         <Col md={3} className="mb-4 mb-md-0">
           <h5 className="fw-bold">دسترسی سریع</h5>

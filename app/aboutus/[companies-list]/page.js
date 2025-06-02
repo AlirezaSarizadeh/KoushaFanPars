@@ -11,7 +11,7 @@ const page = () => {
     return (
         <RootLayout>
             <div className='row align-items-center mt-lg-2 pt-lg-2 about-main-desc'>
-                <div className='col-lg-12 mt-lg-5'>
+                <div className='col-lg-12 mt-lg-5 mt-4'>
                     <Title title={'درباره'} />
                     <h2 className='fw-bold d-flex flex-column gap-3 mt-3'>
                         <span className='lead fs-3 fw-normal'>

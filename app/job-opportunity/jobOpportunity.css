@@ -1,6 +1,16 @@
-.counterSeciton{
+.counterSeciton {
     background-color: #f1f8ff;
 }
-.send-resume{
+
+.send-resume {
     margin-top: -150px !important;
+}
+
+@media(max-width:768px) {
+    .job-ops-unit {
+        width: 100% !important;
+    }
+    .w-25{
+        width: 50% !important;
+    }
 }

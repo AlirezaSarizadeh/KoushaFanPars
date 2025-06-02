@@ -35,7 +35,7 @@ const itemVariants = {
 const FaqOutro = () => {
     return (
         <motion.section
-            className='faqOutro pt-3'
+            className='faqOutro pt-3 mb-5'
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

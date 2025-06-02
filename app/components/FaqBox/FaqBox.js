@@ -76,7 +76,7 @@ function FaqBox() {
           </Tabs>
         </div> */}
 
-        <Nav variant="tabs" activeKey={activeTab} onSelect={(k) => setActiveTab(k)} className="mb-3 faq-tab-titles">
+        <Nav variant="tabs" activeKey={activeTab} onSelect={(k) => setActiveTab(k)} className="mb-lg-3 faq-tab-titles">
           <Swiper spaceBetween={10} slidesPerView="auto">
             {tabs.map((tab) => (
               <SwiperSlide key={tab.eventKey} style={{ width: 'auto' }}>
@@ -112,14 +112,14 @@ function FaqBox() {
 
       {/* Accordion content */}
       <div className="tab-content p-3 border-top-0 border faq-tab-content ">
-        <div className='row align-items-center justify-content-start row-cols-2 p-5' style={{ background: '#2d98e7', borderRadius: '15px' }}>
+        <div className='row align-items-center justify-content-start row-cols-2 p-lg-5 p-3' style={{ background: '#2d98e7', borderRadius: '15px' }}>
           <span className='fs-3 w-100 text-light fw-bolder mb-lg-5 mb-3'>
             {tabs.find(tab => tab.eventKey === activeTab)?.title}
           </span>
           {filteredFaqs?.length > 0 ? (
             <>
               {filteredFaqs.map((item, index) => (
-                <div className='p-2' key={index}>
+                <div className='p-2 faq-acc-item' key={index}>
                   <Accordion defaultActiveKey="0" className=''>
                     <Accordion.Item eventKey={index.toString()} key={index}>
                       <Accordion.Header>{item.question}</Accordion.Header>

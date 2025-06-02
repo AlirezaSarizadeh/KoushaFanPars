@@ -9,11 +9,11 @@ import AnimatedInput from "../../AnimatedInput/AnimatedInput";
 import Button from "../../utils/button/Button";
 const ContactUsBox = () => {
     return (
-        <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg ctu-box position-relative mt-lg-5 mt-2">
+        <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg ctu-box position-relative mt-lg-5 mt-4">
             {/* Header Section */}
 
             {/* Main Content */}
-            <div className="p-5 bg-gray-50 ctu-main-content row">
+            <div className="p-lg-5 p-4 bg-gray-50 ctu-main-content row">
 
                 <Title className="ps-lg-5 pb-lg-5" title={'تماس با ما'} />
 
@@ -21,7 +21,7 @@ const ContactUsBox = () => {
                     <p>
                         امـروز سـاختار مجموعـه کوشـافن پارس بر پایـه تعامل با مشـتریان، درک نیاز و تحقق خواسـته های آنهاسـت کـه همانـا لبخنـد رضایتشـان دلگرمـی مدیریـت و پرسـنل در نیل بـه اهداف عالـی سـازمان اسـت.امیدواریم به همـت و حمایت جامعه دندانپزشـکان و دندانسـازان، دانشـگاه هـا و مراکـز علمـی بـا امیـد بـه آینـده روشـن، همواره پشـتیبان و حامـی ایـن عزیزان باشـیم.
                     </p>
-                    <div className=" p-3 rounded">
+                    <div className=" p-lg-3 rounded">
                         <span className="d-flex align-items-center gap-2 mt-lg-3 mt-2 fs-5 textColor">
                             <Image src={images.chatIcon} alt="icon" />
                             {/* <Title title={'صدای مشتری'} /> */}
@@ -29,17 +29,17 @@ const ContactUsBox = () => {
                         </span>
                         <form>
                             <div className="row align-items-center justify-content-start">
-                                <div className="col-lg-6 mt-lg-5 mt-2">
+                                <div className="col-lg-6 mt-lg-5 mt-4">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="name" label="نام" name="name" type="text" />
                                     </span>
                                 </div>
-                                <div className="col-lg-6 mt-lg-5 mt-2">
+                                <div className="col-lg-6 mt-lg-5 mt-4">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="name" label="نام خانوادگی" name="name" type="text" />
                                     </span>
                                 </div>
-                                <div className="col-lg-12 mt-lg-5 mt-2">
+                                <div className="col-lg-12 mt-lg-5 mt-4">
                                     <span className="mt-3 mt-lg-5">
                                         <AnimatedInput id="description" label="شرح دهید" name="description" as="textarea" rows="4" />
                                     </span>
@@ -79,14 +79,14 @@ const ContactUsBox = () => {
 
                 <div className="col-lg-5 d-flex align-items-end justify-content-end flex-column gap-3 gap-lg-5 pe-lg-5">
                     <span className="w-100">
-                        <Image className="w-100" style={{objectFit:'cover'}} src={images.mapImage} alt="" />
+                        <Image className="w-100 iran_map_pic" style={{objectFit:'cover'}} src={images.mapImage} alt="" />
                     </span>
 
-                    <span className="d-flex align-items-center justify-content-end gap-3">
+                    <span className="d-flex align-items-center justify-content-end gap-3 social-media-container">
                         <Link href={'mapImage'}><Image src={images.instagramCtu} alt="icon" /></Link>
-                        <Link href={'mapImage'}><Image src={images.instagramCtu} alt="icon" /></Link>
-                        <Link href={'mapImage'}><Image src={images.instagramCtu} alt="icon" /></Link>
-                        <Link href={'mapImage'}><Image src={images.instagramCtu} alt="icon" /></Link>
+                        <Link href={'mapImage'}><Image src={images.youtube_icon} alt="icon" /></Link>
+                        <Link href={'mapImage'}><Image src={images.whatasapp_icon} alt="icon" /></Link>
+                        <Link href={'mapImage'}><Image src={images.linkedin_icon} alt="icon" /></Link>
                     </span>
                 </div>
 

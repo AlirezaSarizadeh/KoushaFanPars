@@ -1,4 +1,4 @@
-.ctu-box::after{
+.ctu-box::after {
     content: '';
     position: absolute;
     left: 0;
@@ -8,10 +8,27 @@
     background: #104369;
 
 }
-.ctu-main-content{
+
+.ctu-main-content {
     position: relative;
     z-index: 2;
 }
-.ctu-box{
+
+.ctu-box {
     border-radius: 3.5rem;
+}
+
+@media (max-width:991px) {
+    .ctu-box::after {
+        display: none;
+    }
+    .iran_map_pic{
+        height: 200px;
+        margin-top: 30px;
+    }
+    .social-media-container{
+        background-color: #0067ad;
+        padding: 5px;
+        border-radius: 5px;
+    }
 }

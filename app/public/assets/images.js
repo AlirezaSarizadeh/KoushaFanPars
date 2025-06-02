@@ -72,7 +72,11 @@ import main_slider_item_5 from './images/main-slider-item-5.png'
 import main_slider_desktop_bg from './images/main-slider-bg-desktop.png'
 import main_slider_mobile_bg from './images/main-slider-bg-mobile.png'
 import iran_map from './images/iran-map.png'
+import about_us_hero from './images/aboutus-hero.png'
 import menu_item_after from './images/menu-item-after.png'
+import youtube_icon from './images/youtube-ctu.png'
+import linkedin_icon from './images/linkedin-ctu.png'
+import whatasapp_icon from './images/whatsapp-ctu.png'
 const images = {
    mainLogo,
    userIco,
@@ -148,6 +152,10 @@ const images = {
    main_slider_desktop_bg,
    main_slider_mobile_bg,
    iran_map,
-   menu_item_after
+   menu_item_after,
+   about_us_hero,
+   youtube_icon,
+   linkedin_icon,
+   whatasapp_icon
 }
 export default images

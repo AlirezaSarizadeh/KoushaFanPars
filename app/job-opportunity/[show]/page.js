@@ -10,9 +10,9 @@ import '../jobOpportunity.css'
 const page = () => {
     return (
         <RootLayout>
-            <div className='row align-items-center justify-content-center mt-lg-5'>
-                <div className='col-lg-4'>
-                    <Image src={images.departmentOne} alt='educate picture' className='w-100' />
+            <div className='row align-items-center justify-content-center mt-lg-5 mt-4'>
+                <div className='col-lg-4 col-6'>
+                    <Image src={images.departmentOne} alt='educate picture' className='w-100 h-100' />
                 </div>
                 <div className='col-lg-8'>
                     <Title title={'فرصت شغلی'} />
@@ -23,62 +23,62 @@ const page = () => {
                 </div>
             </div>
             <div className='row align-items-center justify-content-start mt-lg-5 p-lg-4 p-2' style={{ background: '#f3f7fa' , paddingBottom:'200px !important' }}>
-                <div className='col-lg-4'>
+                <div className='col-lg-4 col-6'>
                     <div className='py-3 px-2 d-flex flex-column align-items-satrt gap-3'>
                         <span className='fs-6 f-bold'>
                             دسته بندی شغلی :
                         </span>
-                        <span className='w-50 float-start border border-2 border-primary-subtle rounded rounded-2 py-2 px-4 d-flex align-items-center justify-content-center fw-light fs-6'>
+                        <span className='w-50 float-start border border-2 border-primary-subtle rounded rounded-2 py-2 px-4 d-flex align-items-center justify-content-center fw-light fs-6 job-ops-unit'>
                             بازرگانی
                         </span>
                     </div>
                 </div>
-                <div className='col-lg-4'>
+                <div className='col-lg-4 col-6'>
                     <div className='py-3 px-2 d-flex flex-column align-items-satrt gap-3'>
                         <span className='fs-6 f-bold'>
                             دسته بندی شغلی :
                         </span>
-                        <span className='w-50 float-start border border-2 border-primary-subtle rounded rounded-2 py-2 px-4 d-flex align-items-center justify-content-center fw-light fs-6'>
+                        <span className='w-50 float-start border border-2 border-primary-subtle rounded rounded-2 py-2 px-4 d-flex align-items-center justify-content-center fw-light fs-6 job-ops-unit'>
                             بازرگانی
                         </span>
                     </div>
                 </div>
-                <div className='col-lg-4'>
+                <div className='col-lg-4 col-6'>
                     <div className='py-3 px-2 d-flex flex-column align-items-satrt gap-3'>
                         <span className='fs-6 f-bold'>
                             دسته بندی شغلی :
                         </span>
-                        <span className='w-50 float-start border border-2 border-primary-subtle rounded rounded-2 py-2 px-4 d-flex align-items-center justify-content-center fw-light fs-6'>
+                        <span className='w-50 float-start border border-2 border-primary-subtle rounded rounded-2 py-2 px-4 d-flex align-items-center justify-content-center fw-light fs-6 job-ops-unit'>
                             بازرگانی
                         </span>
                     </div>
                 </div>
-                <div className='col-lg-4'>
+                <div className='col-lg-4 col-6'>
                     <div className='py-3 px-2 d-flex flex-column align-items-satrt gap-3'>
                         <span className='fs-6 f-bold'>
                             دسته بندی شغلی :
                         </span>
-                        <span className='w-50 float-start border border-2 border-primary-subtle rounded rounded-2 py-2 px-4 d-flex align-items-center justify-content-center fw-light fs-6'>
+                        <span className='w-50 float-start border border-2 border-primary-subtle rounded rounded-2 py-2 px-4 d-flex align-items-center justify-content-center fw-light fs-6 job-ops-unit'>
                             بازرگانی
                         </span>
                     </div>
                 </div>
-                <div className='col-lg-4'>
+                <div className='col-lg-4 col-6'>
                     <div className='py-3 px-2 d-flex flex-column align-items-satrt gap-3'>
                         <span className='fs-6 f-bold'>
                             دسته بندی شغلی :
                         </span>
-                        <span className='w-50 float-start border border-2 border-primary-subtle rounded rounded-2 py-2 px-4 d-flex align-items-center justify-content-center fw-light fs-6'>
+                        <span className='w-50 float-start border border-2 border-primary-subtle rounded rounded-2 py-2 px-4 d-flex align-items-center justify-content-center fw-light fs-6 job-ops-unit'>
                             بازرگانی
                         </span>
                     </div>
                 </div>
-                <div className='col-lg-4'>
+                <div className='col-lg-4 col-6'>
                     <div className='py-3 px-2 d-flex flex-column align-items-satrt gap-3'>
                         <span className='fs-6 f-bold'>
                             دسته بندی شغلی :
                         </span>
-                        <span className='w-50 float-start border border-2 border-primary-subtle rounded rounded-2 py-2 px-4 d-flex align-items-center justify-content-center fw-light fs-6'>
+                        <span className='w-50 float-start border border-2 border-primary-subtle rounded rounded-2 py-2 px-4 d-flex align-items-center justify-content-center fw-light fs-6 job-ops-unit'>
                             بازرگانی
                         </span>
                     </div>
@@ -160,7 +160,7 @@ const page = () => {
 
             </div>
             {/* send resume */}
-            <div className='send-resume row row-cols-lg-2 bg-primary col-lg-8 m-auto rounded-5 align-items-center '>
+            <div className='send-resume row row-cols-lg-2 bg-primary col-lg-8 m-auto rounded-5 align-items-center py-4 py-lg-2'>
                 <Image src={images.sendResumeAvatar} alt='user' style={{objectFit:'contain'}} />
                 <div className='d-flex flex-column pe-4 '>
                     <span className='fw-bold fs-4 text-light '>
