@@ -8,7 +8,7 @@ import ShareButton from '../../ShareButton/ShareButton';
 import ProductReviews from '../../ProductReviews/ProductReviews';
 
 
-const ProductDetails = () => {
+const ProductDetails = ({data}) => {
   const [showModal, setShowModal] = React.useState(false);
 
   const handleShareClick = () => {
@@ -43,28 +43,7 @@ const ProductDetails = () => {
                 مشخصات
               </h6>
               <Card.Text className='d-flex flex-column gap-1 product-details'>
-                <span className='mt-2'>
-                  -
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                </span>
-                <span className='mt-2'>
-                  -
-
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                </span>
-                <span className='mt-2'>
-                  -
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                </span>
-                <span className='mt-2'>
-                  -
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                </span>
-                <span className='mt-2'>
-                  -
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                </span>
+                {data.detail}
               </Card.Text>
             </Card.Body>
           </Card>
@@ -78,6 +57,7 @@ const ProductDetails = () => {
                 مشخصات
               </h6>
               <Card.Text className='d-flex flex-column gap-1'>
+                {data.tech_info}
                 <span className='mt-2'>
                   <b>
                     ابعاد :

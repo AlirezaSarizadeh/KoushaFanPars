@@ -14,9 +14,6 @@ const Header = () => {
 
     // Debug context values and manage loading state
     useEffect(() => {
-        console.log('Header - User:', user);
-        console.log('Header - isLoggedIn:', isLoggedIn);
-        // Set loading to false once context is initialized
         setIsLoading(false);
     }, [user, isLoggedIn]);
 

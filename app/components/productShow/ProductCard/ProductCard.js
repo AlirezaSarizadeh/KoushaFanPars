@@ -5,7 +5,10 @@ import React from 'react'
 import './productCard.css'
 import { Card } from 'react-bootstrap'
 
-const ProductCard = ({ hoverColor , bgColor }) => {
+const ProductCard = ({ hoverColor , bgColor , data}) => {
+
+    const safeData = Array.isArray(data) ? data : [data];
+
     return (
         <Link href={'/'}>
             <Card className="border-0 text-center p-3 rounded-4 product-list-card" style={{ minHeight: '400px', backgroundColor: bgColor}}>
@@ -29,7 +32,7 @@ const ProductCard = ({ hoverColor , bgColor }) => {
 
                 {/* Card Body */}
                 <Card.Body>
-                    <Card.Title className="fw-bold fs-5">کوره AT100</Card.Title>
+                    <Card.Title className="fw-bold fs-5">{safeData[0].title}</Card.Title>
                     {/* <Card.Text className="text-muted fs-6">
                     دوره مبتدی دندان‌سازی
                 </Card.Text> */}

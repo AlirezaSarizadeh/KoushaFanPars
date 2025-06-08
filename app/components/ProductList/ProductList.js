@@ -13,6 +13,7 @@ import PlaceholderCard from "../PlaceholderCard/PlaceholderCard";
 
 // Framer Motion
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 // Animation variants
 const sectionVariants = {
@@ -33,7 +34,7 @@ const slideVariants = {
     },
 };
 
-const ProductList = ({ bgColor, title, hoverColor }) => {
+const ProductList = ({ bgColor, title, hoverColor, data }) => {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
@@ -50,16 +51,19 @@ const ProductList = ({ bgColor, title, hoverColor }) => {
         return `rgba(${r}, ${g}, ${b}, ${opacity})`;
     };
 
+    const safeData = Array.isArray(data) ? data : [data];
+
+
     return (
         <>
             <motion.section
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
-                                            transition={{ duration: 1.5, delay: 10.5 }}
+                transition={{ duration: 1.5, delay: 10.5 }}
                 variants={sectionVariants}
                 className='py-4 px-lg-5 px-2 product-list-container my-lg-5 my-3'
-                style={{ backgroundColor: getRGBAColor(bgColor, 0.2) }}
+                style={{ backgroundColor: getRGBAColor(bgColor) }}
             >
                 <div className='d-flex align-items-center justify-content-between pb-lg-2 pb-2 w-100'>
                     <Title title={title} />
@@ -83,12 +87,14 @@ const ProductList = ({ bgColor, title, hoverColor }) => {
                     className="mySwiper popCours-card product-list-card"
                 >
                     {(isLoaded ? (
-                        [...Array(6)].map((_, i) => (
-                            <SwiperSlide key={i} style={{ backgroundColor: getRGBAColor(bgColor, 0.0) }}>
-                                <motion.div variants={slideVariants} initial="hidden" animate="visible">
-                                    <ProductCard hoverColor={hoverColor} bgColor={getRGBAColor(bgColor, 0.0)} />
-                                </motion.div>
-                            </SwiperSlide>
+                        safeData.map((_, i) => (
+                            <Link key={i} href={''}>
+                                <SwiperSlide  style={{ backgroundColor: getRGBAColor(bgColor, 0.0) }}>
+                                    <motion.div variants={slideVariants} initial="hidden" animate="visible">
+                                        <ProductCard data={safeData} hoverColor={hoverColor} bgColor={getRGBAColor(bgColor, 0.0)} />
+                                    </motion.div>
+                                </SwiperSlide>
+                            </Link>
                         ))
                     ) : (
                         [...Array(5)].map((_, i) => (
