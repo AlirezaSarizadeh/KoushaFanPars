@@ -1,7 +1,6 @@
-
 import RootLayout from '@/app/(main)/layout';
 import ProductGallery from '@/app/components/productShow/ProductGallery/ProductGallery';
-import './productShow.css'
+import './productShow.css';
 import ProductDetails from '@/app/components/productShow/ProductDetails/ProductDetails';
 import Button from '@/app/components/utils/button/Button';
 import images from '@/app/public/assets/images';
@@ -14,26 +13,22 @@ export const metadata = {
   title: 'دسته‌بندی محصولات',
 };
 
-
 export default async function ProductCategoryPage({ params }) {
+  const productId = params.productId;
+  // Directly access params.productId (no await needed)
 
-  const param = await params.productId;
-
-
-  // Fetching Category Fetching 
-
+  // Fetching Category Fetching
   const formData = new FormData();
-  formData.append('id', param);
+  formData.append('id', productId);
 
   const res = await fetch('https://api.kfp-dental.com/api/product', {
     method: 'POST',
     body: formData,
-    // Optional: include token or headers if needed
-    // headers: { Authorization: 'Bearer YOUR_TOKEN_HERE' },
-    cache: 'no-cache', // or 'force-cache' depending on need
+    cache: 'no-cache',
   });
 
   const data = await res.json();
+  const col = '#f2f9ff'
 
   return (
     <RootLayout>
@@ -45,14 +40,12 @@ export default async function ProductCategoryPage({ params }) {
           <div className='d-flex flex-column gap-lg-4 gap-2 mt-lg-3 mt-3'>
             <Link href={data.catalog_file} className="primaryButton custom-button w-100">
               دریافت کاتالوگ
-
               <span className='button-arrow'>
                 <Image src={images.downloadCatalogIcon} width={22} alt='arrow-button' />
               </span>
             </Link>
             <Link href={data.tutorial_video} className="primaryButton custom-button w-100">
               مشاهده ویدیو آموزشی
-
               <span className='button-arrow'>
                 <Image src={images.videoIconProduct} width={22} alt='arrow-button' />
               </span>
@@ -63,7 +56,6 @@ export default async function ProductCategoryPage({ params }) {
                 <Image src={images.folderOpenIcon} width={22} alt='arrow-button' />
               </span>
             </Link>
-
           </div>
         </div>
         <div className='col-lg-8 mt-lg-0'>
@@ -74,11 +66,7 @@ export default async function ProductCategoryPage({ params }) {
           </div>
         </div>
       </div>
-      {/* <div className='row align-items-start mt-lg-5 pt-lg-5'> */}
-      <ProductList hoverColor={'#bae0f5'} bgColor='#bae0f5' data={data} title={'محصولات مشابه'} />
-      {/* </div> */}
-
-      {/* Product Reviews Component */}
+      <ProductList hoverColor={'#333'} bgColor={'#ccc'} data={data} title={'محصولات مشابه'} />
       <div className='row align-items-start mt-lg-5 pt-lg-5 justify-content-center'>
         <div className='col-lg-10'>
           <ProductReviews />

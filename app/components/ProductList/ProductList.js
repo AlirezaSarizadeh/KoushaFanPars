@@ -63,7 +63,7 @@ const ProductList = ({ bgColor, title, hoverColor, data }) => {
                 transition={{ duration: 1.5, delay: 10.5 }}
                 variants={sectionVariants}
                 className='py-4 px-lg-5 px-2 product-list-container my-lg-5 my-3'
-                style={{ backgroundColor: getRGBAColor(bgColor) }}
+                style={{ backgroundColor: getRGBAColor(bgColor,0.1) }}
             >
                 <div className='d-flex align-items-center justify-content-between pb-lg-2 pb-2 w-100'>
                     <Title title={title} />
@@ -85,20 +85,21 @@ const ProductList = ({ bgColor, title, hoverColor, data }) => {
                         1480: { slidesPerView: 5 },
                     }}
                     className="mySwiper popCours-card product-list-card"
+
                 >
                     {(isLoaded ? (
                         safeData.map((_, i) => (
                             <Link key={i} href={''}>
-                                <SwiperSlide  style={{ backgroundColor: getRGBAColor(bgColor, 0.0) }}>
+                                <SwiperSlide  style={{ backgroundColor: getRGBAColor(bgColor, 0.1) , borderRadius:'18px' }}>
                                     <motion.div variants={slideVariants} initial="hidden" animate="visible">
-                                        <ProductCard data={safeData} hoverColor={hoverColor} bgColor={getRGBAColor(bgColor, 0.0)} />
+                                        <ProductCard data={safeData} hoverColor={hoverColor} bgColor={getRGBAColor(bgColor, 0.1)} />
                                     </motion.div>
                                 </SwiperSlide>
                             </Link>
                         ))
                     ) : (
-                        [...Array(5)].map((_, i) => (
-                            <SwiperSlide key={i}>
+                        [...Array(5)].map((_, s) => (
+                            <SwiperSlide key={s}>
                                 <motion.div variants={slideVariants} initial="hidden" animate="visible">
                                     <PlaceholderCard />
                                 </motion.div>
