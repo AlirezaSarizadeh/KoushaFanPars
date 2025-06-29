@@ -1,12 +1,13 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
 import './partners.css'
+import DOMPurify from 'dompurify';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
 import Title from '../../utils/title/Title'
 import Lead from '../../utils/lead/Lead'
@@ -16,19 +17,47 @@ import images from '@/app/public/assets/images'
 import { Card } from 'react-bootstrap'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
+
 
 const Partners = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
+  const pathname = usePathname()
+  console.log(pathname);
+
+
+  // fetching datas
+
+  const [partners, setPartners] = useState([])
+
+  // useEffect برای واکشی دیتا:
+  useEffect(() => {
+    const fetchPartners = async () => {
+      try {
+        const res = await fetch('https://api.kfp-dental.com/api/partners', {
+          method: 'POST',
+        })
+        const data = await res.json()
+
+        setPartners(data || []) // برای اسلاید اصلی
+
+      } catch (err) {
+        console.error("Error fetching partners data:", err)
+      }
+    }
+
+    fetchPartners()
+  }, [])
 
   // Animation variants for cards
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
-        duration: 0.6, 
-        ease: 'easeOut' 
+      transition: {
+        duration: 0.6,
+        ease: 'easeOut'
       }
     }
   }
@@ -36,12 +65,12 @@ const Partners = () => {
   // Animation variants for thumbnails
   const thumbVariants = {
     hidden: { opacity: 0, scale: 0.8 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
-      transition: { 
-        duration: 0.4, 
-        ease: 'easeOut' 
+      transition: {
+        duration: 0.4,
+        ease: 'easeOut'
       }
     }
   }
@@ -49,13 +78,13 @@ const Partners = () => {
   // Animation variants for text content
   const textVariants = {
     hidden: { opacity: 0, x: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
-      transition: { 
-        duration: 0.5, 
+      transition: {
+        duration: 0.5,
         ease: 'easeOut',
-        delay: 0.2 
+        delay: 0.2
       }
     }
   }
@@ -90,11 +119,7 @@ const Partners = () => {
             modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper2"
           >
-            {[
-              { title: 'کوشافن پارس 78989879889', image: images.partner1_product },
-              { title: 'کوشافن پارس', image: images.partner1_product },
-              { title: 'کوشافن پارس 45454', image: images.partner1_product },
-            ].map((item, index) => (
+            {partners.map((item, index) => (
               <SwiperSlide key={index}>
                 <motion.div
                   variants={cardVariants}
@@ -103,18 +128,23 @@ const Partners = () => {
                   viewport={{ once: true }}
                 >
                   <Card className='d-flex flex-lg-row flex-column align-items-center justify-content-between border-0'>
-                    <Image src={item.image} alt='product' style={{ objectFit: 'scale-down' }} />
+                    {/* <Image src={item.image} alt='product' style={{ objectFit: 'scale-down' }} /> */}
+                    <img src={item.product.image} style={{ objectFit: 'scale-down' }} width={200} />
                     <Card.Body className='text-start d-flex flex-column partner-desc-box'>
                       <Card.Title className='small'>{item.title}</Card.Title>
-                      <Card.Text className='fw-light small text-justify'>
-                        شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید شـرکت مهندسـي تولیدي کوشـافن پارس در زمینه تولید تجهیـزات دندانپزشـکي و دندانسـازي و نیـز تامین مـواد مصرفی فعالیت می نماید
-                      </Card.Text>
+                      <Card.Text
+                        className='fw-light small text-justify'
+                        dangerouslySetInnerHTML={{
+                          __html: DOMPurify.sanitize(item.product.detail),
+                        }}
+                      />
                       <Card.Footer className='border-0 bg-transparent text-end'>
-                        <Link className='d-flex align-items-center gap-3 textColor justify-content-end' href={'/'}>
+                        <Link className='d-flex align-items-center gap-3 textColor justify-content-end' href={`${pathname.replace(/\/$/, '')}/products/${item.product.category_id}/${item.product_id}`}>
                           <small className='small'>
                             مشاهده محصولات
                           </small>
                           <Image src={images.arrowLeftIco} alt='arrow' style={{ objectFit: 'scale-down' }} />
+
                         </Link>
                       </Card.Footer>
                     </Card.Body>
@@ -147,7 +177,7 @@ const Partners = () => {
           },
         }}
       >
-        {[images.partner1, images.partner2, images.partner3, images.partner1, images.partner2, images.partner3].map((image, index) => (
+        {partners.map((index) => (
           <SwiperSlide key={index}>
             <motion.div
               variants={thumbVariants}
@@ -156,7 +186,8 @@ const Partners = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Image src={image} alt='partner' />
+              {/* <Image src='' alt='partner' /> */}
+              <img src={partners[0].image} />
             </motion.div>
           </SwiperSlide>
         ))}

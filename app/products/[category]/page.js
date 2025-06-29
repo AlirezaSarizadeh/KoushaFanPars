@@ -10,6 +10,7 @@ export const metadata = {
 };
 
 export default async function ProductCategoryPage({ params }) {
+
     const param = params.category;
     let categories = null;
     let categoryProduct = [];

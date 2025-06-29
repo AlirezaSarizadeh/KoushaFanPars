@@ -11,9 +11,33 @@ import toast, { Toaster } from 'react-hot-toast';
 const Header = () => {
     const { user, isLoggedIn, logout } = useUser();
     const [isLoading, setIsLoading] = useState(true); // Track loading state
+    const [menuData, setMenuData] = useState([]);
 
     // Debug context values and manage loading state
     useEffect(() => {
+
+
+        const fetchMenu = async () => {
+            try {
+                const formData = new FormData();
+                formData.append("parent_id", 0);
+
+                const response = await fetch("https://api.kfp-dental.com/api/menu", {
+                    method: "POST",
+                    body: formData,
+                });
+
+                if (!response.ok) throw new Error("Failed to fetch");
+
+                const data = await response.json();
+                setMenuData(data);
+
+            } catch (error) {
+                console.error("Error fetching menu:", error);
+            }
+        };
+
+        fetchMenu();
         setIsLoading(false);
     }, [user, isLoggedIn]);
 
@@ -30,7 +54,7 @@ const Header = () => {
     return (
         <header className="d-flex align-items-center justify-content-between pt-lg-4 pt-4">
             <Toaster position="top-center" reverseOrder={false} />
-            <Menu />
+            <Menu menuData={menuData} />
             <Link href="/">
                 <Image src={images.mainLogo} alt="KFP LOGO" className="main-logo" width={175} height={50} />
             </Link>
@@ -38,7 +62,7 @@ const Header = () => {
                 {isLoading ? (
                     <div className="d-flex align-items-center">
                         <div className="ms-3 placeholder-glow">
-                            <span className="placeholder col-12" style={{ width: '120px', height: '32px' , borderRadius:'25px' }}></span>
+                            <span className="placeholder col-12" style={{ width: '120px', height: '32px', borderRadius: '25px' }}></span>
                         </div>
                     </div>
                 ) : (

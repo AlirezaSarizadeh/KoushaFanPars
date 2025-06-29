@@ -1,11 +1,15 @@
 'use client'
 import React from 'react'
+import DOMPurify from 'dompurify'
 import './productListHero.css'
 import Card from 'react-bootstrap/Card'
 import Title from '../utils/title/Title'
 import Button from '../utils/button/Button'
 
-const ProductListHero = ({ gradient , data }) => {
+const ProductListHero = ({ gradient, data }) => {
+    // Sanitize the HTML
+    const safeDesc = DOMPurify.sanitize(data.desc || '');
+
     return (
         <Card
             bg={'light'}
@@ -18,17 +22,10 @@ const ProductListHero = ({ gradient , data }) => {
                 <Title title={data.title} />
             </Card.Header>
             <Card.Body>
-                {/* <Card.Title>
-                    <h1 className='fw-bold d-flex flex-column gap-3'>
-                        <span className='lead fw-normal fs-3'>
-                            شرکت مهندسی تولیدی
-                        </span>
-                        دانش بنیان کوشافن پارس
-                    </h1>
-                </Card.Title> */}
-                <Card.Text className='text-justify mt-3'>
-                    {data.desc}
-                </Card.Text>
+                <Card.Text
+                    className='text-justify mt-3'
+                    dangerouslySetInnerHTML={{ __html: safeDesc }}
+                />
                 <Card.Footer className='d-flex align-items-center gap-lg-4 border-0 bg-transparent px-0'>
                     <Button variant={'primary'} title={'تماس باما'} />
                 </Card.Footer>
