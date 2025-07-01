@@ -11,14 +11,42 @@ import { Autoplay } from 'swiper/modules';
 import { motion, useInView } from 'framer-motion';
 
 const BlogList = (props) => {
+
     const swiperRef = useRef(null);
     const swiperInstance = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
     const observerRef = useRef(null);
     const inView = useInView(observerRef, { once: true, margin: '-100px' });
-
+    const [blogsData, setblogsData] = useState([]);
     // IntersectionObserver to control autoplay
     useEffect(() => {
+
+        // Fetching Datas
+
+
+        const fetchData = async () => {
+            try {
+                const formData = new FormData();
+                formData.append("category_id", props.categoryId);
+
+                const response = await fetch("https://api.kfp-dental.com/api/articles", {
+                    method: "POST",
+                    body: formData,
+                });
+
+                if (!response.ok) throw new Error("Failed to fetch");
+
+                const data = await response.json();
+                setblogsData(data);
+
+
+            } catch (error) {
+                console.error("Error fetching menu:", error);
+            }
+        };
+
+        fetchData();
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 setIsVisible(entry.isIntersecting);
@@ -116,7 +144,7 @@ const BlogList = (props) => {
                         }
                     }}
                 >
-                    {[...Array(3)].map((_, index) => (
+                    {blogsData.map((_, index) => (
                         <SwiperSlide
                             key={index}
                             className='blog-list-swiperSlide'
@@ -127,7 +155,7 @@ const BlogList = (props) => {
                                 initial="hidden"
                                 animate={inView ? "visible" : "hidden"}
                             >
-                                <EvenetCard />
+                                <EvenetCard data={blogsData} />
                             </motion.div>
                         </SwiperSlide>
                     ))}

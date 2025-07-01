@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import DOMPurify from 'dompurify';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import './productDetails.css';
@@ -9,9 +9,13 @@ import FavoriteButton from '../../FavortiteButton/FavoriteButton';
 import ShareButton from '../../ShareButton/ShareButton';
 
 const ProductDetails = ({ data }) => {
-  // Sanitize HTML directly during render
-  const safeDetail = DOMPurify.sanitize(data.detail || '');
-  const safeTechInfo = DOMPurify.sanitize(data.tech_info || '');
+  const [safeDetail, setSafeDetail] = useState('');
+  const [safeTechInfo, setSafeTechInfo] = useState('');
+
+  useEffect(() => {
+    setSafeDetail(DOMPurify.sanitize(data.detail || ''));
+    setSafeTechInfo(DOMPurify.sanitize(data.tech_info || ''));
+  }, [data]);
 
   return (
     <Container>

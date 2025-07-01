@@ -14,8 +14,9 @@ export const metadata = {
 };
 
 export default async function ProductCategoryPage({ params }) {
+
   const productId = params.productId;
-  // Directly access params.productId (no await needed)
+  
 
   // Fetching Category Fetching
   const formData = new FormData();

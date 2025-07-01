@@ -30,7 +30,7 @@ const ProductReviews = () => {
 
   return (
     <motion.div
-      className="mt-4 product-reviews-container"
+      className="mt-0 product-reviews-container"
       initial="hidden"
       animate="visible"
       variants={fadeVariants}

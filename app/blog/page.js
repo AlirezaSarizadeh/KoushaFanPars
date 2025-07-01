@@ -5,7 +5,20 @@ import Image from 'next/image'
 import images from '../public/assets/images'
 import BlogList from '../components/Blog/BlogList/BlogList'
 
-const page = () => {
+export default async function page() {
+
+    const res = await fetch(`https://api.kfp-dental.com/api/article_categories`, {
+        cache: 'no-store', // Or 'force-cache' or 'revalidate' depending on your use case
+        method: 'POST'
+    })
+
+    if (!res.ok) {
+        throw new Error('Failed to fetch product data')
+    }
+
+    const data = await res.json()
+
+
     return (
         <RootLayout>
             <div className='row align-items-center mt-lg-2 pt-lg-2 about-main-desc'>
@@ -28,42 +41,43 @@ const page = () => {
                     </span>
                     <div className='d-flex gap-2 my-3 '>
                         <div className='d-flex align-items-center justify-content-between gap-2 textColor fw-normal flex-column lead'>
-                        <span className='fw-bold' dir='ltr'>
-                            +12k
-                        </span>
-                        <span>
-                            خواننده فعال
-                        </span>
-                    </div>
-                    <div className='d-flex align-items-center justify-content-between gap-2 textColor fw-normal flex-column lead'>
-                        <span className='fw-bold' dir='ltr'>
-                            +12k
-                        </span>
-                        <span>
-                            خواننده فعال
-                        </span>
-                    </div>
-                    <div className='d-flex align-items-center justify-content-between gap-2 textColor fw-normal flex-column lead'>
-                        <span className='fw-bold' dir='ltr'>
-                            +12k
-                        </span>
-                        <span>
-                            خواننده فعال
-                        </span>
-                    </div>
+                            <span className='fw-bold' dir='ltr'>
+                                +12k
+                            </span>
+                            <span>
+                                خواننده فعال
+                            </span>
+                        </div>
+                        <div className='d-flex align-items-center justify-content-between gap-2 textColor fw-normal flex-column lead'>
+                            <span className='fw-bold' dir='ltr'>
+                                +12k
+                            </span>
+                            <span>
+                                خواننده فعال
+                            </span>
+                        </div>
+                        <div className='d-flex align-items-center justify-content-between gap-2 textColor fw-normal flex-column lead'>
+                            <span className='fw-bold' dir='ltr'>
+                                +12k
+                            </span>
+                            <span>
+                                خواننده فعال
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             {/* COURSES SLIDER */}
             <div className='row align-items-center mt-lg-5 mt-2 py-lg-5 px-lg-4  p-2 justify-content-center' style={{ background: '#e4f0fd', borderRadius: '15px' }}>
+                {data.map((item, index) => (
+                    <BlogList categoryId={item.id} key={index} heading={item.title} />
+                ))}
                 {/* <EducateCourses heading={'دوره مبتدی'} /> */}
-                <BlogList heading={'مقالات'}  />
-                <BlogList heading={'نمایشگاه ها'}  />
-                <BlogList heading={'اخبار'}  />
+                {/* <BlogList heading={'مقالات'} />
+                <BlogList heading={'نمایشگاه ها'} />
+                <BlogList heading={'اخبار'} /> */}
             </div>
         </RootLayout>
     )
 }
-
-export default page
