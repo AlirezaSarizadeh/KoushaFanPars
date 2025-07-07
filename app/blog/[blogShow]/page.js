@@ -1,47 +1,115 @@
+// app/blog/[blogShow]/page.jsx
+
 import React from 'react'
 import RootLayout from '../../(main)/layout'
 import Title from '../../components/utils/title/Title'
 import Image from 'next/image'
 import images from '../../public/assets/images'
-import BlogList from '../../components/Blog/BlogList/BlogList'
 import SimilarBlogs from '@/app/components/Blog/SimilarBlogs/SimilarBlogs'
 import ProductReviews from '@/app/components/ProductReviews/ProductReviews'
 
-const page = () => {
+// Import server-compatible DOMPurify
+import DOMPurify from 'dompurify'
+import { JSDOM } from 'jsdom'
+
+// Create a DOMPurify instance using jsdom
+const window = new JSDOM('').window
+const purify = DOMPurify(window)
+
+// ✅ Dynamic Metadata
+export async function generateMetadata({ params }) {
+  const { blogShow } = params;
+
+  const formData = new FormData();
+  formData.append('id', blogShow);
+
+  const res = await fetch(`https://api.kfp-dental.com/api/article`, {
+    method: 'POST',
+    cache: 'no-store',
+    body: formData,
+  });
+
+  if (!res.ok) {
+    return {
+      title: 'مقاله پیدا نشد',
+      description: 'خطایی در دریافت اطلاعات مقاله رخ داده است.',
+    }
+  }
+
+  const data = await res.json();
+
+  return {
+    title: data?.title || 'عنوان نامشخص',
+    description: data?.description || 'توضیحات مقاله',
+    openGraph: {
+      title: data?.title,
+      description: data?.description,
+      images: [data?.image],
+    },
+  }
+}
+
+// ✅ Page Component
+export default async function Page({ params }) {
+  const { blogShow } = await params;
+
+  const formData = new FormData();
+  formData.append('id', blogShow);
+
+  const res = await fetch(`https://api.kfp-dental.com/api/article`, {
+    method: 'POST',
+    cache: 'no-store',
+    body: formData,
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch article data');
+  }
+
+  const data = await res.json();
+
+  // Sanitize title and content
+  const sanitizedTitle = purify.sanitize(data?.title || '')
+  const sanitizedContent = purify.sanitize(data?.content || '')
+
   return (
     <RootLayout>
-      {/* COURSES SLIDER */}
-      <div className='row align-items-center mt-lg-5 mt-4 py-lg-5 px-lg-4  p-2 justify-content-center' style={{ background: '#e4f0fd', borderRadius: '15px' }}>
+      <div className='row align-items-center mt-lg-5 mt-4 py-lg-5 px-lg-4 p-2 justify-content-center' style={{ background: '#e4f0fd', borderRadius: '15px' }}>
         <div className='col-12 my-3'>
-          <Image src={images.blog_show_image} alt='image' className='w-100 h-100' />
+          <Image
+            src={data?.image}
+            alt="blog image"
+            className="w-100 h-100"
+            width={600}
+            height={600}
+            unoptimized
+          />
         </div>
+
         <div className='col-12 d-flex flex-column gap-lg-4'>
           <div className='d-flex align-items-center justify-content-start gap-3 mt-lg-4'>
             <Title title={'مجله کوشافن پارس'} />
             <Image src={images.share_icon} alt='icon' />
           </div>
         </div>
+
         <div className='col-lg-12 mt-lg-3'>
           <h2 className='fw-bold d-flex flex-column gap-3 mt-3'>
-            <span className='lead fs-3 fw-normal'>
-              مقالات و رویداد ها
-            </span>
-            پنجره ای رو به دنیای نوآورانه دندانپزشکی و دندانسازی
+            <span className='lead fs-3 fw-normal' dangerouslySetInnerHTML={{ __html: sanitizedTitle }} />
           </h2>
-          <p className='text-justify py-2 lead'>
-            مجله کوشافن پارس، پنجره‌ای رو به دنیای نوآورانه دندانپزشکی و دندانسازی است. در هر شماره از این مجله، با آخرین دستاوردهای علمی و تکنولوژیکی در این حوزه آشنا شده و از نزدیک شاهد حضور فعال شرکت کوشافن پارس در رویدادهای مهم صنعت خواهیم بود. وبلاگ تخصصی این مجله، فضایی است برای تبادل نظر و ارائه مقالات علمی توسط متخصصان و پژوهشگران. همچنین، گالری تصاویر نمایشگاهی، روایتگر حضور پررنگ محصولات و خدمات کوشافن پارس در نمایشگاه‌های داخلی و بین‌المللی است. با دنبال کردن اخبار این مجله، همواره از جدیدترین محصولات و خدمات شرکت و همچنین رویدادهای مهم صنعت دندانپزشکی آگاه خواهید شد
-            مجله کوشافن پارس، پنجره‌ای رو به دنیای نوآورانه دندانپزشکی و دندانسازی است. در هر شماره از این مجله، با آخرین دستاوردهای علمی و تکنولوژیکی در این حوزه آشنا شده و از نزدیک شاهد حضور فعال شرکت کوشافن پارس در رویدادهای مهم صنعت خواهیم بود. وبلاگ تخصصی این مجله، فضایی است برای تبادل نظر و ارائه مقالات علمی توسط متخصصان و پژوهشگران. همچنین، گالری تصاویر نمایشگاهی، روایتگر حضور پررنگ محصولات و خدمات کوشافن پارس در نمایشگاه‌های داخلی و بین‌المللی است. با دنبال کردن اخبار این مجله، همواره از جدیدترین محصولات و خدمات شرکت و همچنین رویدادهای مهم صنعت دندانپزشکی آگاه خواهید شد مجله کوشافن پارس، پنجره‌ای رو به دنیای نوآورانه دندانپزشکی و دندانسازی است. در هر شماره از این مجله، با آخرین دستاوردهای علمی و تکنولوژیکی در این حوزه آشنا شده و از نزدیک شاهد حضور فعال شرکت کوشافن پارس در رویدادهای مهم صنعت خواهیم بود. وبلاگ تخصصی این مجله، فضایی است برای تبادل نظر و ارائه مقالات علمی توسط متخصصان و پژوهشگران. همچنین، گالری تصاویر نمایشگاهی، روایتگر حضور پررنگ محصولات و خدمات کوشافن پارس در نمایشگاه‌های داخلی و بین‌المللی است. با دنبال کردن اخبار این مجله، همواره از جدیدترین محصولات و خدمات شرکت و همچنین رویدادهای مهم صنعت دندانپزشکی آگاه خواهید شد مجله کوشافن پارس، پنجره‌ای رو به دنیای نوآورانه دندانپزشکی و دندانسازی است. در هر شماره از این مجله، با آخرین دستاوردهای علمی و تکنولوژیکی در این حوزه آشنا شده و از نزدیک شاهد حضور فعال شرکت کوشافن پارس در رویدادهای مهم صنعت خواهیم بود. وبلاگ تخصصی این مجله، فضایی است برای تبادل نظر و ارائه مقالات علمی توسط متخصصان و پژوهشگران. همچنین، گالری تصاویر نمایشگاهی، روایتگر حضور پررنگ محصولات و خدمات کوشافن پارس در نمایشگاه‌های داخلی و بین‌المللی است. با دنبال کردن اخبار این مجله، همواره از جدیدترین محصولات و خدمات شرکت و همچنین رویدادهای مهم صنعت دندانپزشکی آگاه خواهید شد
-          </p>
+          <div className='text-justify py-2 lead' dangerouslySetInnerHTML={{ __html: sanitizedContent }} />
         </div>
+
         <div className='col-lg-12 mt-lg-3'>
           <SimilarBlogs />
         </div>
       </div>
-      <div className='col-lg-9 mt-lg-5 mt-3 mx-auto'>
-        <ProductReviews />
+
+      <div className='row align-items-center mt-lg-5 mt-4 py-lg-5 px-lg-4 p-2 justify-content-center'>
+        <div className='col-lg-9 mt-lg-5 mt-3 mx-auto'>
+          <ProductReviews />
+        </div>
       </div>
     </RootLayout>
   )
 }
-
-export default page

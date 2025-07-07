@@ -23,7 +23,6 @@ import { usePathname } from 'next/navigation'
 const Partners = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
   const pathname = usePathname()
-  console.log(pathname);
 
 
   // fetching datas
