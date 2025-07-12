@@ -29,7 +29,7 @@ const ProductDetails = ({ data }) => {
                 <ShareButton />
               </div>
               <Card.Title className='d-flex align-items-center gap-1'>
-                <Title title={'کوره AT-100'} />
+                <Title title={data.title} />
                 <p className='small mb-0'>
                   دسته بندی :
                   <span> برند KFP </span>

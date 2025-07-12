@@ -17,7 +17,6 @@ export default async function page() {
     }
 
     const data = await res.json()
-    console.log(data);
     
 
 

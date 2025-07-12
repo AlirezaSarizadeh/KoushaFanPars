@@ -11,15 +11,16 @@ export const metadata = {
 
 export default async function ProductCategoryPage({ params }) {
 
-    const {param} = params.category;
+    const { category } = params;
     let categories = null;
     let categoryProduct = [];
     let hasError = false;
 
+
     try {
         // Category fetch
         const formData = new FormData();
-        formData.append('id', param);
+        formData.append('id', category);
 
         const res = await fetch('https://api.kfp-dental.com/api/category', {
             method: 'POST',
@@ -35,7 +36,7 @@ export default async function ProductCategoryPage({ params }) {
 
         // Products fetch
         const formData2 = new FormData();
-        formData2.append('category_id', param);
+        formData2.append('category_id', category);
 
         const res2 = await fetch('https://api.kfp-dental.com/api/categoryProduct', {
             method: 'POST',
