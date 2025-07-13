@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import React from 'react';
 import { Autoplay } from 'swiper/modules';
-import './productList.css';
+import './relatedProducts.css';
 import Title from '../utils/title/Title';
 import ProductCard from '../productShow/ProductCard/ProductCard';
 import PlaceholderCard from '../PlaceholderCard/PlaceholderCard';
@@ -18,7 +18,7 @@ import Link from 'next/link';
 const sectionVariants = { hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } } };
 const slideVariants   = { hidden: { opacity: 0, scale: 0.95 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.4, ease: 'easeOut' } } };
 
-export default function ProductList({ bgColor = '#ffffff', title, hoverColor, data }) {
+export default function relatedProducts({ bgColor = '#ffffff', title, hovercolor, data }) {
   /** 🛑 Bail‑out guard  */
   if (!data || (Array.isArray(data) && data.length === 0)) {
     return null;              // ← nothing to render
@@ -62,9 +62,9 @@ export default function ProductList({ bgColor = '#ffffff', title, hoverColor, da
         {isLoaded
           ? products.map((p) => (
               <SwiperSlide key={`prod-${p.id}`} style={{ backgroundColor: rgba(bgColor, 0.1), borderRadius: 18 }}>
-                <Link href={`${pathname.replace(/\/$/, '')}/${p.id}`}>
+                <Link href={`/products/${p.category_id}/${p.id}`}>
                   <motion.div variants={slideVariants} initial="hidden" animate="visible">
-                    <ProductCard data={p} hoverColor={hoverColor} bgColor={rgba(bgColor, 0.1)} />
+                    <ProductCard data={p} hoverColor={hovercolor} bgColor={rgba(bgColor, 0.1)} />
                   </motion.div>
                 </Link>
               </SwiperSlide>
