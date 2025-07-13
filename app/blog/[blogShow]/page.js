@@ -11,6 +11,7 @@ import ProductReviews from '@/app/components/ProductReviews/ProductReviews'
 // Import server-compatible DOMPurify
 import DOMPurify from 'dompurify'
 import { JSDOM } from 'jsdom'
+import BlogComment from '@/app/components/Blog/BlogComment/BlogComment'
 
 // Create a DOMPurify instance using jsdom
 const window = new JSDOM('').window
@@ -107,7 +108,7 @@ export default async function Page({ params }) {
 
       <div className='row align-items-center mt-lg-5 mt-4 py-lg-5 px-lg-4 p-2 justify-content-center'>
         <div className='col-lg-9 mt-lg-5 mt-3 mx-auto'>
-          <ProductReviews />
+          <BlogComment id={data.id} />
         </div>
       </div>
     </RootLayout>

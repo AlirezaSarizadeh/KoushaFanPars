@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import { Tab, Nav, Spinner } from 'react-bootstrap';
-import './productReviews.css';
+import './blogComment.css';
 import Image from 'next/image';
 import images from '@/app/public/assets/images';
-import Title from '../utils/title/Title';
-import Button from '../utils/button/Button';
-import AnimatedInput from '../AnimatedInput/AnimatedInput';
-import CustomerReview from '../CustomerReview/CustomerReview';
+import Title from '../../utils/title/Title';
+import Button from '../../utils/button/Button';
+import AnimatedInput from '../../AnimatedInput/AnimatedInput';
+import CustomerReview from '../../CustomerReview/CustomerReview';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const fadeVariants = {
@@ -17,11 +17,11 @@ const fadeVariants = {
   exit:   { opacity: 0, y: -30, transition: { duration: 0.3, ease: 'easeIn' } }
 };
 
-const ProductReviews = ({ id }) => {
+const BlogComment = ({ id }) => {
   /* -------------------------------------------------------------------- *
    *  local states                                                        *
    * -------------------------------------------------------------------- */
-  const [productComments, setProductComments] = useState([]); // ذخیرهٔ دیدگاه‌ها
+  const [blogComments, setBlogComments] = useState([]); // ذخیرهٔ دیدگاه‌ها
   const [isLoading, setIsLoading]     = useState(false);       // کنترل نمایش spinner
   const [error, setError]             = useState(null);        // پیام خطا برای کاربر
   const [activeKey, setActiveKey]     = useState('form');      // تب فعال
@@ -29,17 +29,17 @@ const ProductReviews = ({ id }) => {
   /* -------------------------------------------------------------------- *
    *  fetch comments                                                      *
    * -------------------------------------------------------------------- */
-  const fetchProductComments = async () => {
+  const fetchBlogComments = async () => {
     setIsLoading(true);     // شروع بارگذاری
     setError(null);         // پاک‌کردن خطای قبلی (اگر وجود داشت)
 
     try {
       /* فرم داده برای ارسال شناسهٔ محصول */
       const productForm = new FormData();
-      productForm.append('product_id', id);
+      productForm.append('article_id', id);
 
       /* درخواست به API */
-      const res = await fetch('https://api.kfp-dental.com/api/product_comments', {
+      const res = await fetch('https://api.kfp-dental.com/api/article_comments', {
         method : 'POST',
         body   : productForm,
         cache  : 'no-cache',
@@ -50,7 +50,7 @@ const ProductReviews = ({ id }) => {
         throw new Error('خطا در دریافت دیدگاه‌ها. لطفاً بعداً دوباره تلاش کنید.');
 
       const data = await res.json();
-      setProductComments(data);   // ذخیرهٔ داده‌ها در state
+      setBlogComments(data);   // ذخیرهٔ داده‌ها در state
     } catch (err) {
       // ذخیرهٔ پیام خطا برای نمایش
       setError(err.message || 'خطای ناشناخته‌ای رخ داد.');
@@ -64,7 +64,7 @@ const ProductReviews = ({ id }) => {
    *  initial load                                                        *
    * -------------------------------------------------------------------- */
   useEffect(() => {
-    fetchProductComments();
+    fetchBlogComments();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -134,13 +134,13 @@ const ProductReviews = ({ id }) => {
                   <p className="text-danger text-center my-4">{error}</p>
                 )}
 
-                {!isLoading && !error && productComments.length === 0 && (
+                {!isLoading && !error && blogComments.length === 0 && (
                   <p className="text-muted">هنوز دیدگاهی ثبت نشده است.</p>
                 )}
 
                 {!isLoading &&
                   !error &&
-                  productComments.map(c => (
+                  blogComments.map(c => (
                     <CustomerReview
                       key={c.id}
                       review={c.comment}
@@ -212,4 +212,4 @@ const ProductReviews = ({ id }) => {
   );
 };
 
-export default ProductReviews;
+export default BlogComment;

@@ -149,7 +149,7 @@ export default async function ProductCategoryPage({ params }) {
 
       <div className="row align-items-start mt-lg-5 pt-lg-5 justify-content-center">
         <div className="col-lg-10">
-          <ProductReviews productId={productData.id} />
+          <ProductReviews id={productData.id} />
         </div>
       </div>
     </RootLayout>
