@@ -1,6 +1,6 @@
 import React from 'react'
 import RootLayout from '../(main)/layout'
-import CustomerServices from '../components/home/CustomerServices/CustomerServices'
+import CustomerServices from '../components/home/customerServices/CustomerServices'
 import Counters from '../components/home/counters/Counters'
 import Title from '../components/utils/title/Title'
 import Lead from '../components/utils/lead/Lead'

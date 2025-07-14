@@ -8,8 +8,8 @@ import Link from 'next/link';
 import DOMPurify from 'dompurify';
 import { usePathname } from 'next/navigation'
 
-const EvenetCard = ({ data }) => {
-        const pathname = usePathname()
+const EvenetCard = ({ data, className = '' }) => {
+    const pathname = usePathname()
     // Don't render if all main content fields are empty
     if (!data?.image && !data?.short_content && !data?.writer && !data?.title) {
         return null;
@@ -21,8 +21,8 @@ const EvenetCard = ({ data }) => {
     const timeRead = data?.time_read || 'نامشخص';
 
     return (
-        <Link href={`${data.id}`}>
-            <Card className="rounded-4 border-0 p-2 float-start event-card w-100" style={{ margin: "auto", backgroundColor: "#FFF" }}>
+        <Link href={`/blog/${data.id}`}>
+            <Card className={`rounded-4 border-0 p-2 float-start event-card w-100 ${className}`} style={{ margin: "auto", backgroundColor: "#FFF" }}>
                 <Card.Body className='p-0 p-lg-4'>
                     <div className="d-flex flex-column flex-md-row">
                         {/* Image Section */}

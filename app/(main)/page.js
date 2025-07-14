@@ -1,6 +1,6 @@
 import Hero from "../components/HeroCard/HeroCard";
 import Counters from "../components/home/counters/Counters";
-import CustomerServices from "../components/home/CustomerServices/CustomerServices";
+import CustomerServices from "../components/home/customerServices/CustomerServices";
 import EducationCenter from "../components/home/EducationCenter/EducationCenter";
 import Evenets from "../components/home/Events/Evenets";
 import Partners from "../components/home/Partners/Partners";
