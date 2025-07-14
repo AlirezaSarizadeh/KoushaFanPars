@@ -102,7 +102,7 @@ export default async function Page({ params }) {
         </div>
 
         <div className='col-lg-12 mt-lg-3'>
-          <SimilarBlogs />
+          <SimilarBlogs id={data.id} />
         </div>
       </div>
 
