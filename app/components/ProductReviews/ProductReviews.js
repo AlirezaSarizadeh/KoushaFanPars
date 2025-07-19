@@ -144,7 +144,7 @@ const ProductReviews = ({ id }) => {
                     <CustomerReview
                       key={c.id}
                       review={c.comment}
-                      reviewerName={`کاربر #${c.user_id}`}
+                      reviewerName={`${c.first_name} ${c.last_name}`}
                       date={new Date(c.created_at ?? c.updated_at).toLocaleDateString('fa-IR')}
                     />
                   ))}

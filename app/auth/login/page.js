@@ -97,7 +97,7 @@ const LoginForm = () => {
   };
 
   const handleRegisterRedirect = () => {
-    router.push('/auth/register');
+    router.push('/auth/signup');
   };
 
   return (

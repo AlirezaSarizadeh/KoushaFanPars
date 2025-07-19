@@ -130,7 +130,7 @@ const Events = () => {
           viewport={{ once: true }}
           variants={buttonVariants}
         >
-          <Button href="moz" title="مجله کوشافن پارس" />
+          <Button href="/blog" title="مجله کوشافن پارس" />
         </motion.span>
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={tabVariants}>

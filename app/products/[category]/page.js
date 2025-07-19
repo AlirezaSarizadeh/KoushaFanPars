@@ -32,6 +32,8 @@ export default async function ProductCategoryPage({ params }) {
 
         if (res.headers.get('content-type')?.includes('application/json')) {
             categories = await res.json();
+            // console.log(categories);
+            
         }
 
         // Products fetch

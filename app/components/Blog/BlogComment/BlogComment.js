@@ -50,6 +50,7 @@ const BlogComment = ({ id }) => {
         throw new Error('خطا در دریافت دیدگاه‌ها. لطفاً بعداً دوباره تلاش کنید.');
 
       const data = await res.json();
+      
       setBlogComments(data);   // ذخیرهٔ داده‌ها در state
     } catch (err) {
       // ذخیرهٔ پیام خطا برای نمایش
@@ -144,7 +145,7 @@ const BlogComment = ({ id }) => {
                     <CustomerReview
                       key={c.id}
                       review={c.comment}
-                      reviewerName={`کاربر #${c.user_id}`}
+                      reviewerName={`${c.first_name} ${c.last_name}`}
                       date={new Date(c.created_at ?? c.updated_at).toLocaleDateString('fa-IR')}
                     />
                   ))}

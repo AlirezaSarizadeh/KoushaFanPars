@@ -32,7 +32,7 @@ const ProductDetails = ({ data }) => {
                 <Title title={data.title} />
                 <p className='small mb-0'>
                   دسته بندی :
-                  <span> برند KFP </span>
+                  <span> {data.category.title} </span>
                 </p>
               </Card.Title>
               <h6 className='pt-3'>مشخصات</h6>

@@ -17,17 +17,37 @@ export const UserProvider = ({ children }) => {
     }
   }, []);
 
+  // const login = (userData) => {
+  //   setUser(userData);
+  //   setIsLoggedIn(true);
+  //   localStorage.setItem('user', JSON.stringify(userData));
+  // };
+
+
   const login = (userData) => {
     setUser(userData);
     setIsLoggedIn(true);
     localStorage.setItem('user', JSON.stringify(userData));
+
+    // Store a cookie that middleware can read
+    document.cookie = `token=${userData.token}; path=/`;
   };
 
+
+  // const logout = () => {
+  //   setUser(null);
+  //   setIsLoggedIn(false);
+  //   localStorage.removeItem('user');
+  //   // localStorage.removeItem('rememberMe');
+  // };
+  
   const logout = () => {
     setUser(null);
     setIsLoggedIn(false);
     localStorage.removeItem('user');
-    // localStorage.removeItem('rememberMe');
+
+    // Remove token cookie
+    document.cookie = 'token=; Max-Age=0; path=/';
   };
 
   return (

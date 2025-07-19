@@ -34,6 +34,9 @@ export default async function ProductCategoryPage({ params }) {
   }
 
   const productData = await productRes.json();
+  console.log(productData);
+  
+  
 
   // اگر محصولی پیدا نشد
   if (!productData || !productData.id) {
