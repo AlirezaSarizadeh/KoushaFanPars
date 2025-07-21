@@ -140,14 +140,14 @@ const ProductReviews = ({ id }) => {
                   </div>
                 )}
 
-                {!isLoading && productComments.filter((c) => c.status === '1').length === 0 && (
+                {!isLoading && productComments.filter((c) => c.status === 1).length === 0 && (
                   <p className="text-muted">هنوز دیدگاهی تأیید شده‌ای وجود ندارد.</p>
                 )}
 
 
                 {!isLoading &&
                   productComments
-                    .filter((c) => c.status === '1')
+                    .filter((c) => c.status === 1)
                     .slice()
                     .reverse()
                     .map((c) => (
