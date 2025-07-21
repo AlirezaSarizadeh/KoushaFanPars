@@ -10,75 +10,96 @@ import Button from '../utils/button/Button';
 import AnimatedInput from '../AnimatedInput/AnimatedInput';
 import CustomerReview from '../CustomerReview/CustomerReview';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useUser } from '@/context/UserContext';
+import toast from 'react-hot-toast';
 
 const fadeVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-  exit:   { opacity: 0, y: -30, transition: { duration: 0.3, ease: 'easeIn' } }
+  exit: { opacity: 0, y: -30, transition: { duration: 0.3, ease: 'easeIn' } }
 };
 
 const ProductReviews = ({ id }) => {
-  /* -------------------------------------------------------------------- *
-   *  local states                                                        *
-   * -------------------------------------------------------------------- */
-  const [productComments, setProductComments] = useState([]); // ذخیرهٔ دیدگاه‌ها
-  const [isLoading, setIsLoading]     = useState(false);       // کنترل نمایش spinner
-  const [error, setError]             = useState(null);        // پیام خطا برای کاربر
-  const [activeKey, setActiveKey]     = useState('form');      // تب فعال
+  const [productComments, setProductComments] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [activeKey, setActiveKey] = useState('form');
+  const [formData, setFormData] = useState({ name: '', lastname: '', description: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { user, isHydrated } = useUser();
 
-  /* -------------------------------------------------------------------- *
-   *  fetch comments                                                      *
-   * -------------------------------------------------------------------- */
   const fetchProductComments = async () => {
-    setIsLoading(true);     // شروع بارگذاری
-    setError(null);         // پاک‌کردن خطای قبلی (اگر وجود داشت)
-
+    setIsLoading(true);
     try {
-      /* فرم داده برای ارسال شناسهٔ محصول */
       const productForm = new FormData();
       productForm.append('product_id', id);
 
-      /* درخواست به API */
       const res = await fetch('https://api.kfp-dental.com/api/product_comments', {
-        method : 'POST',
-        body   : productForm,
-        cache  : 'no-cache',
+        method: 'POST',
+        body: productForm,
+        cache: 'no-cache',
       });
 
-      /* در صورت خطا سمت سرور یا شبکه */
-      if (!res.ok)
-        throw new Error('خطا در دریافت دیدگاه‌ها. لطفاً بعداً دوباره تلاش کنید.');
+      if (!res.ok) throw new Error('خطا در دریافت دیدگاه‌ها.');
 
       const data = await res.json();
-      setProductComments(data);   // ذخیرهٔ داده‌ها در state
+      setProductComments(data);
     } catch (err) {
-      // ذخیرهٔ پیام خطا برای نمایش
-      setError(err.message || 'خطای ناشناخته‌ای رخ داد.');
+      toast.error('مشکلی در دریافت دیدگاه‌ها وجود دارد.');
     } finally {
-      // در هر صورت spinner متوقف می‌شود
       setIsLoading(false);
     }
   };
 
-  /* -------------------------------------------------------------------- *
-   *  initial load                                                        *
-   * -------------------------------------------------------------------- */
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!user?.id) {
+      toast.error('برای ثبت دیدگاه باید وارد شوید.');
+      return;
+    }
+
+    if (!formData.description.trim()) {
+      toast.error('لطفاً شرح دیدگاه خود را وارد نمایید.');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const payload = new FormData();
+      payload.append('user_id', user.id);
+      payload.append('product_id', id);
+      payload.append('comment', formData.description);
+      payload.append('status', '0');
+
+      const res = await fetch('https://api.kfp-dental.com/api/product_comment_insert', {
+        method: 'POST',
+        body: payload,
+      });
+
+      if (!res.ok) throw new Error('ارسال دیدگاه با خطا مواجه شد.');
+
+      toast.success('دیدگاه با موفقیت ثبت شد و پس از بررسی نمایش داده می‌شود.');
+
+      // Optional: Reset form
+      setFormData({ name: '', lastname: '', description: '' });
+
+      // Refresh comments
+      fetchProductComments();
+      setActiveKey('comments');
+    } catch (err) {
+      toast.error('خطا در ارسال دیدگاه.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   useEffect(() => {
     fetchProductComments();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  /* -------------------------------------------------------------------- *
-   *  UI                                                                  *
-   * -------------------------------------------------------------------- */
   return (
-    <motion.div
-      className="mt-0 product-reviews-container"
-      initial="hidden"
-      animate="visible"
-      variants={fadeVariants}
-    >
-      {/* ---------- Tabs Navigation ---------- */}
+    <motion.div className="mt-0 product-reviews-container" initial="hidden" animate="visible" variants={fadeVariants}>
       <Nav variant="pills" className="mb-0">
         <Nav.Item className="w-50 text-center">
           <Nav.Link
@@ -102,27 +123,16 @@ const ProductReviews = ({ id }) => {
         </Nav.Item>
       </Nav>
 
-      {/* ---------- Tabs Content ---------- */}
       <Tab.Content>
         <AnimatePresence mode="wait">
-          {/* ----------- COMMENTS TAB ----------- */}
           {activeKey === 'comments' && (
             <Tab.Pane eventKey="comments" active>
-              <motion.div
-                key="comments"
-                variants={fadeVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                className="p-3 rounded"
-              >
-                {/* عنوان */}
+              <motion.div key="comments" variants={fadeVariants} initial="hidden" animate="visible" exit="exit" className="p-3 rounded">
                 <span className="d-flex align-items-center gap-2 mt-lg-3 mt-2 mb-lg-4 mb-2">
                   <Image src={images.chatIcon} alt="icon" />
                   <Title title="دیدگاه کاربران" />
                 </span>
 
-                {/* -------- وضعیت‌های مختلف ---------- */}
                 {isLoading && (
                   <div className="text-center my-4">
                     <Spinner animation="border" role="status" />
@@ -130,47 +140,33 @@ const ProductReviews = ({ id }) => {
                   </div>
                 )}
 
-                {error && !isLoading && (
-                  <p className="text-danger text-center my-4">{error}</p>
+                {!isLoading && productComments.filter((c) => c.status === '1').length === 0 && (
+                  <p className="text-muted">هنوز دیدگاهی تأیید شده‌ای وجود ندارد.</p>
                 )}
 
-                {!isLoading && !error && productComments.length === 0 && (
-                  <p className="text-muted">هنوز دیدگاهی ثبت نشده است.</p>
-                )}
 
                 {!isLoading &&
-                  !error &&
-                  productComments.map(c => (
-                    <CustomerReview
-                      key={c.id}
-                      review={c.comment}
-                      reviewerName={`${c.first_name} ${c.last_name}`}
-                      date={new Date(c.created_at ?? c.updated_at).toLocaleDateString('fa-IR')}
-                    />
-                  ))}
+                  productComments
+                    .filter((c) => c.status === '1')
+                    .slice()
+                    .reverse()
+                    .map((c) => (
+                      <CustomerReview
+                        key={c.id}
+                        review={c.comment}
+                        reviewerName={`${c.first_name} ${c.last_name}`}
+                        date={new Date(c.created_at ?? c.updated_at).toLocaleDateString('fa-IR')}
+                      />
+                    ))}
 
-                {/* نمونهٔ ثابت در صورت نیاز */}
-                {/* <CustomerReview
-                  key="sample"
-                  review="سلام چرا نمیشه دوعدد سفارش داد؟"
-                  reviewerName="امیرعلی هریوندی"
-                  date="1403/12/21"
-                /> */}
+
               </motion.div>
             </Tab.Pane>
           )}
 
-          {/* ------------- FORM TAB ------------- */}
           {activeKey === 'form' && (
             <Tab.Pane eventKey="form" active>
-              <motion.div
-                key="form"
-                variants={fadeVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                className="border p-3 rounded"
-              >
+              <motion.div key="form" variants={fadeVariants} initial="hidden" animate="visible" exit="exit" className="border p-3 rounded">
                 <span className="d-flex align-items-center gap-2 mt-lg-3 mt-2">
                   <Image src={images.chatIcon} alt="icon" />
                   <Title title="ثبت نظر" />
@@ -180,15 +176,28 @@ const ProductReviews = ({ id }) => {
                   نظر خود را دربارهٔ این محصول ثبت نمایید
                 </h6>
 
-                {/* فرم ثبت دیدگاه */}
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="row align-items-center justify-content-center">
-                    <div className="col-lg-5 mt-lg-5 mt-4">
-                      <AnimatedInput id="name" label="نام" name="name" type="text" />
+                    {/* <div className="col-lg-5 mt-lg-5 mt-4">
+                      <AnimatedInput
+                        id="name"
+                        label="نام"
+                        name="name"
+                        type="text"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      />
                     </div>
                     <div className="col-lg-7 mt-lg-5 mt-4">
-                      <AnimatedInput id="lastname" label="نام خانوادگی" name="lastname" type="text" />
-                    </div>
+                      <AnimatedInput
+                        id="lastname"
+                        label="نام خانوادگی"
+                        name="lastname"
+                        type="text"
+                        value={formData.lastname}
+                        onChange={(e) => setFormData({ ...formData, lastname: e.target.value })}
+                      />
+                    </div> */}
                     <div className="col-lg-12 mt-lg-5 mt-4">
                       <AnimatedInput
                         id="description"
@@ -196,10 +205,18 @@ const ProductReviews = ({ id }) => {
                         name="description"
                         as="textarea"
                         rows="4"
+                        value={formData.description}
+                        onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                       />
                     </div>
                     <div className="col-12 mt-lg-4 mt-2 d-flex align-items-center justify-content-end">
-                      <Button title="ثبت دیدگاه" variant="primary" />
+                      <Button
+                        title={isSubmitting ? 'در حال ارسال...' : 'ثبت دیدگاه'}
+                        variant="primary"
+                        type="submit"
+                        disabled={isSubmitting}
+                      />
+
                     </div>
                   </div>
                 </form>

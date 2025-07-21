@@ -8,13 +8,15 @@ export const UserProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Load user from localStorage on mount
+  const [isHydrated, setIsHydrated] = useState(false);
+
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
-      const parsedUser = JSON.parse(storedUser);
-      setUser(parsedUser);
+      setUser(JSON.parse(storedUser));
       setIsLoggedIn(true);
     }
+    setIsHydrated(true);
   }, []);
 
   // const login = (userData) => {
@@ -51,7 +53,7 @@ export const UserProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider value={{ user, login, logout, isLoggedIn }}>
+    <UserContext.Provider value={{ user, login, logout, isLoggedIn ,isHydrated  }}>
       {children}
     </UserContext.Provider>
   );
