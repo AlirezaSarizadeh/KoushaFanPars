@@ -6,6 +6,7 @@ import images from '@/app/public/assets/images'
 import Image from 'next/image'
 import React from 'react'
 import '../jobOpportunity.css'
+import UploadResume from '@/app/components/UploadResume/UploadResume'
 
 const page = () => {
     return (
@@ -22,7 +23,7 @@ const page = () => {
                     </p>
                 </div>
             </div>
-            <div className='row align-items-center justify-content-start mt-lg-5 p-lg-4 p-2' style={{ background: '#f3f7fa' , paddingBottom:'200px !important' }}>
+            <div className='row align-items-center justify-content-start mt-lg-5 p-lg-4 p-2' style={{ background: '#f3f7fa', paddingBottom: '200px !important' }}>
                 <div className='col-lg-4 col-6'>
                     <div className='py-3 px-2 d-flex flex-column align-items-satrt gap-3'>
                         <span className='fs-6 f-bold'>
@@ -160,21 +161,7 @@ const page = () => {
 
             </div>
             {/* send resume */}
-            <div className='send-resume row row-cols-lg-2 bg-primary col-lg-8 m-auto rounded-5 align-items-center py-4 py-lg-2'>
-                <Image src={images.sendResumeAvatar} alt='user' style={{objectFit:'contain'}} />
-                <div className='d-flex flex-column pe-4 '>
-                    <span className='fw-bold fs-4 text-light '>
-                        ارسال رزومه
-                    </span>
-                    <span className='fw-light fs-4 text-light '>
-                        کوشافن پارس استخدام میکند
-                    </span>
-                    <p className='text-light mt-3 text-justify'>
-                        مرکز آموزش کوشافن پارس، دروازه ورود به دنیای نوین دندانپزشکی است. این مرکز جامع آموزشی، با ارائه دوره‌های متنوع در سطوح مبتدی، نیمه پیشرفته و پیشرفته، پاسخگوی نیازهای تمام دندانپزشکان و دندانسازان است. چه تازه وارد دنیای دندانپزشکی باشید و چه سال‌ها تجربه داشته باشید،
-                    </p>
-                    <Button className='mt-lg-3 mt-2 me-auto' variant={'secondary'} title={'ارسال رزومه'} />
-                </div>
-            </div>
+            <UploadResume />
         </RootLayout>
     )
 }

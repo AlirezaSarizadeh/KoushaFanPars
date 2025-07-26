@@ -16,6 +16,7 @@ import BlogSlider from '../components/BlogSlider/BlogSlider'
 import LicenseSlider from '../components/LicenseSlider/LicenseSlider'
 import AnimatedInput from '../components/AnimatedInput/AnimatedInput'
 import Button from '../components/utils/button/Button'
+import CustomerVoiceFormClient from '../components/CustomerVoiceFormClient/CustomerVoiceFormClient'
 
 
 const page = () => {
@@ -123,7 +124,8 @@ const page = () => {
                         <h6 className="fw-normal fs-5 mt-lg-4 mt-2">
                             نظر خود را درباره این محصول ثبت نمایید
                         </h6>
-                        <form>
+                        <CustomerVoiceFormClient />
+                        {/* <form>
                             <div className="row align-items-center justify-content-center">
                                 <div className="col-lg-4 mt-lg-5 mt-2 pt-3 pt-lg-0">
                                     <span className="mt-3 mt-lg-5">
@@ -179,7 +181,7 @@ const page = () => {
                                     <Button title={'ثبت دیدگاه'} variant={'primary'} />
                                 </div>
                             </div>
-                        </form>
+                        </form> */}
                     </div>
                 </div>
             </div>

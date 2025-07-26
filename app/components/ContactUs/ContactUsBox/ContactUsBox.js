@@ -7,6 +7,7 @@ import images from "@/app/public/assets/images";
 import Link from "next/link";
 import AnimatedInput from "../../AnimatedInput/AnimatedInput";
 import Button from "../../utils/button/Button";
+import ContactFormClient from "../../ContactFormClient/ContactFormClient";
 const ContactUsBox = () => {
     return (
         <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg ctu-box position-relative mt-lg-5 mt-4">
@@ -27,7 +28,7 @@ const ContactUsBox = () => {
                             {/* <Title title={'صدای مشتری'} /> */}
                             ثبت نظر
                         </span>
-                        <form>
+                        {/* <form>
                             <div className="row align-items-center justify-content-start">
                                 <div className="col-lg-6 mt-lg-5 mt-4">
                                     <span className="mt-3 mt-lg-5">
@@ -48,7 +49,9 @@ const ContactUsBox = () => {
                                     <Button title={'ثبت دیدگاه'} variant={'secondary'} />
                                 </div>
                             </div>
-                        </form>
+                        </form> */}
+                        {/* ✅ Dynamic Contact Form */}
+                        <ContactFormClient />
                         <span className="d-flex align-items-center gap-2 mt-lg-3 mt-2 fs-5 textColor">
                             راه های ارتباطی
                         </span>
@@ -63,10 +66,10 @@ const ContactUsBox = () => {
                         <span className="d-flex align-items-center justify-content-start gap-1 mt-lg-4 mt-2">
                             <Image src={images.ctu_mail} alt="icon" />
                             <span className="me-lg-4 me-2">
-                            تلفن دفتر مرکزی : 02155545958
+                                تلفن دفتر مرکزی : 02155545958
                             </span>
                             <span className="me-lg-4 me-2">
-                            تلفن دفتر مرکزی : 02155545958
+                                تلفن دفتر مرکزی : 02155545958
                             </span>
                         </span>
                         <span className="d-flex align-items-center justify-content-start gap-1 mt-lg-4 mt-2">
@@ -79,7 +82,7 @@ const ContactUsBox = () => {
 
                 <div className="col-lg-5 d-flex align-items-end justify-content-end flex-column gap-3 gap-lg-5 pe-lg-5">
                     <span className="w-100">
-                        <Image className="w-100 iran_map_pic" style={{objectFit:'cover'}} src={images.mapImage} alt="" />
+                        <Image className="w-100 iran_map_pic" style={{ objectFit: 'cover' }} src={images.mapImage} alt="" />
                     </span>
 
                     <span className="d-flex align-items-center justify-content-end gap-3 social-media-container">
