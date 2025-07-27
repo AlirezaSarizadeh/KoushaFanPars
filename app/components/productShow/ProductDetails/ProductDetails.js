@@ -25,7 +25,7 @@ const ProductDetails = ({ data }) => {
           <Card className="post-card">
             <Card.Body>
               <div className="product-actions">
-                <FavoriteButton />
+                <FavoriteButton product_id={data.id} />
                 <ShareButton />
               </div>
               <Card.Title className='d-flex align-items-center gap-1'>

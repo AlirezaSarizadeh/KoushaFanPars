@@ -134,8 +134,8 @@ export default async function ProductCategoryPage({ params }) {
           <ProductDetails data={productData} />
 
           <div className="d-flex align-items-center justify-content-between container gap-lg-5 gap-2 justify-content-lg-start p-0">
-            <Button title="ارتباط با کارشناسان" variant="secondary" href="moz" />
-            <Button title="خرید محصول" variant="primary" href="moz" />
+            <Button title="ارتباط با کارشناسان" variant="secondary" href="#" />
+            <Button title="خرید محصول" variant="primary" href="#" />
           </div>
         </div>
       </div>
