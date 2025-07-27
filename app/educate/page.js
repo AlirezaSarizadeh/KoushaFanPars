@@ -1,5 +1,5 @@
 import React from 'react'
-import RootLayout from '../(main)/layout'
+import RootLayout from '../layout'
 import CustomerServices from '../components/home/customerServices/CustomerServices'
 import Counters from '../components/home/counters/Counters'
 import Title from '../components/utils/title/Title'

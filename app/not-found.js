@@ -1,11 +1,9 @@
 import Link from 'next/link'
 import './globals.css'
 import './not-found.css'
-import RootLayout from './(main)/layout'
 import Button from './components/utils/button/Button'
 export default function NotFound() {
   return (
-    <RootLayout>
       <div className="text-center bg-404 d-flex align-items-center justify-content-center rounded-5 my-lg-5 my-4 p-3">
 
         <div className="text-center flex-column d-flex align-items-start justify-content-center rounded-5 my-lg-5 ms-lg-5">
@@ -19,6 +17,5 @@ export default function NotFound() {
           </span>
         </div>
       </div>
-    </RootLayout>
   )
 }

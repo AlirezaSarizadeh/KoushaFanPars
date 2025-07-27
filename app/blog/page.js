@@ -1,5 +1,5 @@
 import React from 'react'
-import RootLayout from '../(main)/layout'
+import RootLayout from '../layout'
 import Title from '../components/utils/title/Title'
 import Image from 'next/image'
 import images from '../public/assets/images'
@@ -17,11 +17,11 @@ export default async function page() {
     }
 
     const data = await res.json()
-    
+
 
 
     return (
-        <RootLayout>
+        <>
             <div className='row align-items-center mt-lg-2 pt-lg-2 about-main-desc'>
                 <div className='col-lg-12 mt-lg-5 mt-4'>
                     <Title title={'مجله ی کوشافن پارس'} />
@@ -79,6 +79,6 @@ export default async function page() {
                 <BlogList heading={'نمایشگاه ها'} />
                 <BlogList heading={'اخبار'} /> */}
             </div>
-        </RootLayout>
+        </>
     )
 }

@@ -141,9 +141,9 @@ const BlogList = (props) => {
                                     initial="hidden"
                                     animate={inView ? "visible" : "hidden"}
                                 >
-                                    <Link href={`${pathname.replace(/\/$/, '')}/${item.id}`}>
+                                    {/* <Link href={`${pathname.replace(/\/$/, '')}/${item.id}`}> */}
                                         <EvenetCard data={item} />
-                                    </Link>
+                                    {/* </Link> */}
                                 </motion.div>
                             </SwiperSlide>
                         ))}

@@ -1,4 +1,4 @@
-import RootLayout from '@/app/(main)/layout'
+import RootLayout from '@/app/layout'
 import Title from '@/app/components/utils/title/Title'
 import images from '@/app/public/assets/images'
 import Image from 'next/image'

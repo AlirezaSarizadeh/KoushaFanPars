@@ -1,4 +1,4 @@
-import RootLayout from '@/app/(main)/layout'
+import RootLayout from '@/app/layout'
 import Button from '@/app/components/utils/button/Button'
 import Lead from '@/app/components/utils/lead/Lead'
 import Title from '@/app/components/utils/title/Title'

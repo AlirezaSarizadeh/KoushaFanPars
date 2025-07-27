@@ -1,5 +1,5 @@
 import React from 'react';
-import RootLayout from '../../(main)/layout';
+import RootLayout from '../../layout';
 import ProductListHero from '../../components/ProductListHero/ProductListHero';
 import ProductList from '../../components/ProductList/ProductList';
 import ProductCategoryHero from '../../components/ProductCategory/ProductCategoryHero/ProductCategoryHero';

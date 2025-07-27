@@ -1,4 +1,4 @@
-import RootLayout from '@/app/(main)/layout';
+import RootLayout from '@/app/layout';
 import ProductGallery from '@/app/components/productShow/ProductGallery/ProductGallery';
 import './productShow.css';
 import ProductDetails from '@/app/components/productShow/ProductDetails/ProductDetails';

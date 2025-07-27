@@ -1,9 +1,9 @@
 
 import "bootstrap/dist/css/bootstrap.rtl.min.css";
-import "../globals.css";
-import Header from "../templates/Header";
-import Footer from "../templates/Footer";
-import SearchModalBtn from "../components/SearchModal/SearchModal";
+import "./globals.css";
+import Header from "./templates/Header";
+import Footer from "./templates/Footer";
+import SearchModalBtn from "./components/SearchModal/SearchModal";
 import { UserProvider } from "@/context/UserContext";
 export const metadata = {
   title: "KoushaFan Pars",

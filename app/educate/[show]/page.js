@@ -1,5 +1,5 @@
 import React from 'react'
-import RootLayout from '../../(main)/layout'
+import RootLayout from '../../layout'
 import Title from '../../components/utils/title/Title'
 import images from '../../public/assets/images'
 import DiscountedCoursesBox from '../../components/DiscountedCoursesBox/DiscountedCoursesBox'

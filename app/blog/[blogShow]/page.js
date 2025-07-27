@@ -1,7 +1,7 @@
 // app/blog/[blogShow]/page.jsx
 
 import React from 'react'
-import RootLayout from '../../(main)/layout'
+import RootLayout from '../../layout'
 import Title from '../../components/utils/title/Title'
 import Image from 'next/image'
 import images from '../../public/assets/images'
@@ -74,7 +74,7 @@ export default async function Page({ params }) {
   const sanitizedContent = purify.sanitize(data?.content || '')
 
   return (
-    <RootLayout>
+    <>
       <div className='row align-items-center mt-lg-5 mt-4 py-lg-5 px-lg-4 p-2 justify-content-center' style={{ background: '#e4f0fd', borderRadius: '15px' }}>
         <div className='col-12 my-3'>
           <Image
@@ -111,6 +111,6 @@ export default async function Page({ params }) {
           <BlogComment id={data.id} />
         </div>
       </div>
-    </RootLayout>
+    </>
   )
 }

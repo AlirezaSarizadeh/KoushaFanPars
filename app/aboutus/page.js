@@ -1,6 +1,6 @@
 
 import React from 'react'
-import RootLayout from '../(main)/layout'
+import RootLayout from '../layout'
 import AnimatedAboutCard from '../components/AnimatedAboutCard/AnimatedAboutCard'
 import EducationCenter from '../components/home/EducationCenter/EducationCenter'
 import Button from '../components/utils/button/Button'
