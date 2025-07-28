@@ -1,6 +1,6 @@
 'use client'
-import React from 'react'
-import { Accordion } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Accordion, Spinner } from 'react-bootstrap'
 import './faqoutro.css'
 import Title from '../utils/title/Title'
 import Lead from '../utils/lead/Lead'
@@ -11,69 +11,79 @@ const containerVariants = {
     visible: {
         opacity: 1,
         y: 0,
-        transition: {
-            duration: 0.6,
-            ease: 'easeOut',
-            when: 'beforeChildren',
-            staggerChildren: 0.2,
-        },
-    },
+        transition: { duration: 0.6, ease: 'easeOut', when: 'beforeChildren', staggerChildren: 0.2 }
+    }
 }
 
 const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.5,
-            ease: 'easeOut',
-        },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
 }
 
-const FaqOutro = () => {
+export default function FaqOutro() {
+    const [questions, setQuestions] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    // ✅ Fetch only "برتر" category from API
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const res = await fetch('https://api.kfp-dental.com/api/question_and_answer',{
+                    method:'POST'
+                });
+                const data = await res.json();
+                if (data['برتر']) setQuestions(data['برتر']);
+            } catch (err) {
+                console.error('❌ Error fetching FAQ Outro data:', err);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchData();
+    }, []);
+
     return (
         <motion.section
-            className='faqOutro pt-3 mb-5'
+            className="faqOutro pt-3 mb-5"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0 }} // Triggers when 20% is visible
+            viewport={{ once: true, amount: 0.2 }}
         >
+            {/* ✅ Title */}
             <motion.div variants={itemVariants}>
-                <Title title={'سوالات متداول'} />
+                <Title title="سوالات متداول" />
             </motion.div>
 
+            {/* ✅ Subtitle */}
             <motion.div variants={itemVariants}>
                 <Lead
-                    boldText={'هرآنچه سوال شماست'}
-                    lightText={'کوشافن پارس پاسخگوی تمام سوالات شما خواهد بود'}
+                    boldText="هرآنچه سوال شماست"
+                    lightText="کوشافن پارس پاسخگوی تمام سوالات شما خواهد بود"
                 />
             </motion.div>
 
-            <motion.div className='py-lg-5 container-custom' variants={itemVariants}>
-                <Accordion defaultActiveKey="0">
-                    {[...Array(4)].map((_, index) => (
-                        <motion.div key={index} variants={itemVariants}>
-                            <Accordion.Item eventKey={index.toString()} className='mt-lg-4 mt-3'>
-                                <Accordion.Header>
-                                    آیا ایمپلنت دندانی اویتا مجوز های مورد نیاز را دارد؟
-                                </Accordion.Header>
-                                <Accordion.Body>
-                                    مشتریان عزیز ما با ارسال پیام‌های رضایتمندی، از کیفیت بالای خدمات طراحی
-                                    وبسایت اوستاوب ابراز خشنودی کرده‌اند. آنها به طور ویژه به طراحی زیبا،
-                                    کاربری آسان و همچنین پشتیبانی حرفه‌ای تیم ما اشاره کرده‌اند. این نظرات
-                                    ارزشمند، انگیزه ما را برای ارائه خدمات بهتر و نوآورانه‌تر دوچندان می‌کند. ما
-                                    مفتخریم که توانسته‌ایم اعتماد و رضایت مشتریان خود را جلب کنیم.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                        </motion.div>
-                    ))}
-                </Accordion>
+            {/* ✅ Accordion for "برتر" Category */}
+            <motion.div className="py-lg-5 container-custom" variants={itemVariants}>
+                {loading ? (
+
+                        <Spinner animation="border" size="sm" /> 
+
+                ) : questions.length > 0 ? (
+                    <Accordion defaultActiveKey="0">
+                        {questions.map((item, index) => (
+                            <motion.div key={item.id} variants={itemVariants}>
+                                <Accordion.Item eventKey={index.toString()} className="mt-lg-4 mt-3">
+                                    <Accordion.Header>{item.title}</Accordion.Header>
+                                    <Accordion.Body>{item.desc}</Accordion.Body>
+                                </Accordion.Item>
+                            </motion.div>
+                        ))}
+                    </Accordion>
+                ) : (
+                    <p className="text-muted text-center">سوالی برای نمایش وجود ندارد.</p>
+                )}
             </motion.div>
         </motion.section>
-    )
+    );
 }
-
-export default FaqOutro
