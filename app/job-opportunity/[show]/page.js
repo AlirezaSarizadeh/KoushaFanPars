@@ -7,10 +7,59 @@ import Image from 'next/image'
 import React from 'react'
 import '../jobOpportunity.css'
 import UploadResume from '@/app/components/UploadResume/UploadResume'
+import Script from 'next/script';
+
+export const metadata = {
+    title: 'کارشناس بازرگانی | فرصت شغلی کوشافن پارس',
+    description:
+        'به عنوان کارشناس بازرگانی به تیم کوشافن پارس بپیوندید. این فرصت شغلی ویژه افراد باانگیزه و علاقه‌مند به رشد در صنعت تجهیزات دندانپزشکی است.',
+    openGraph: {
+        title: 'کارشناس بازرگانی | فرصت شغلی کوشافن پارس',
+        description:
+            'شرکت دانش‌بنیان کوشافن پارس به دنبال جذب نیروی متخصص بازرگانی است. همین حالا رزومه خود را ارسال کنید.',
+        url: 'https://example.com/job-opportunity/detail',
+        images: [{ url: '/assets/images/job-default.jpg', alt: 'فرصت شغلی کوشافن پارس' }],
+        type: 'article',
+    },
+    alternates: { canonical: 'https://example.com/job-opportunity/detail' },
+};
+
+// ✅ JobPosting Schema استاتیک
+const jobSchema = {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "کارشناس بازرگانی",
+    "description": "فرصت شغلی برای کارشناس بازرگانی در شرکت دانش‌بنیان کوشافن پارس. ارسال رزومه و پیوستن به تیم متخصص ما.",
+    "datePosted": "2025-07-28",
+    "employmentType": "Full-time",
+    "hiringOrganization": {
+        "@type": "Organization",
+        "name": "KFP Dental",
+        "sameAs": "https://example.com",
+        "logo": "https://example.com/assets/images/logo.png"
+    },
+    "jobLocation": {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "شهرک غرب",
+            "addressLocality": "تهران",
+            "addressCountry": "IR"
+        }
+    }
+};
+
+
 
 const page = () => {
     return (
-        <RootLayout>
+        <>
+
+            {/* ✅ Structured Data */}
+            <Script id="jobposting-schema" type="application/ld+json">
+                {JSON.stringify(jobSchema)}
+            </Script>
+
             <div className='row align-items-center justify-content-center mt-lg-5 mt-4'>
                 <div className='col-lg-4 col-6'>
                     <Image src={images.departmentOne} alt='educate picture' className='w-100 h-100' />
@@ -162,7 +211,8 @@ const page = () => {
             </div>
             {/* send resume */}
             <UploadResume />
-        </RootLayout>
+        </>
+
     )
 }
 

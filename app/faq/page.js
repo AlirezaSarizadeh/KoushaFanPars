@@ -1,30 +1,81 @@
-import React from 'react'
 import RootLayout from '../layout'
 import Title from '../components/utils/title/Title'
-import Lead from '../components/utils/lead/Lead'
-import Image from 'next/image'
 import FaqBox from '../components/FaqBox/FaqBox'
+import Script from 'next/script'
 
-
-const page = () => {
-    return (
-        <RootLayout>
-            <div className='row align-items-center justify-content-start mt-lg-5 mt-4'>
-                <div className='col-lg-8 mt-lg-5 mt-3'>
-                    <Title title={'سوالات متداول'} />
-                    <p className='text-justify py-4'>
-                        مرکز آموزش کوشافن پارس، دروازه ورود به دنیای نوین دندانپزشکی است. این مرکز جامع آموزشی، با ارائه دوره‌های متنوع در سطوح مبتدی، نیمه پیشرفته و پیشرفته، پاسخگوی نیازهای تمام دندانپزشکان و دندانسازان است. چه تازه وارد دنیای دندانپزشکی باشید و چه سال‌ها تجربه داشته باشید، در کوشافن پارس، دوره‌ای متناسب با سطح دانش و مهارت خود خواهید یافت. تنها با یک ثبت‌نام ساده، به دنیایی از دانش و تجربه دسترسی پیدا خواهید کرد و می‌توانید مهارت‌های خود را ارتقا داده و با آخرین تکنیک‌ها و فناوری‌های روز دنیا آشنا شوید.
-                    </p>
-                </div>
-            </div>
-
-            <div className="row align-items-center mt-lg-5 mt-2 p-lg-4 p-2 justify-content-center" style={{ background: '#e4f0fd', borderRadius: '15px' }}>
-
-                    <FaqBox />
-            </div>
-
-        </RootLayout>
-    )
+export const metadata = {
+  title: "سوالات متداول | کوشافن پارس",
+  description: "پاسخ به سوالات متداول دندانپزشکان و دندانسازان در کوشافن پارس.",
+  openGraph: {
+    title: "سوالات متداول | کوشافن پارس",
+    description: "مرجع کامل سوالات متداول درباره دوره‌ها و تکنیک‌های دندانپزشکی.",
+    url: "https://kfp-dental.com/faq",
+    siteName: "KFP Dental",
+    type: "website",
+    images: [
+      {
+        url: "https://kfp-dental.com/assets/images/faq-banner.jpg",
+        width: 1200,
+        height: 630,
+        alt: "سوالات متداول کوشافن پارس"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "سوالات متداول | کوشافن پارس",
+    description: "پاسخ به سوالات متداول دندانپزشکان و دندانسازان در کوشافن پارس.",
+    images: ["https://kfp-dental.com/assets/images/faq-banner.jpg"]
+  },
+  alternates: { canonical: "https://kfp-dental.com/faq" }
 }
 
-export default page
+async function getFaqData() {
+  const res = await fetch('https://api.kfp-dental.com/api/question_and_answer', {
+    next: { revalidate: 3600 },
+    method:'POST'
+  });
+  if (!res.ok) throw new Error('❌ Failed to fetch FAQ data');
+  return res.json();
+}
+
+export default async function Page() {
+  const faqData = await getFaqData();
+
+  const faqSchema = Object.entries(faqData).flatMap(([cat, items]) =>
+    items.map(item => ({
+      "@type": "Question",
+      "name": item.title,
+      "acceptedAnswer": { "@type": "Answer", "text": item.desc }
+    }))
+  );
+
+  return (
+    <main role="main">
+      <Script id="faq-schema" type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqSchema
+          })
+        }}
+      />
+
+      <section className="row align-items-center justify-content-start mt-lg-5 mt-4" aria-labelledby="faq-page-title">
+        <div className="col-lg-8 mt-lg-5 mt-3">
+          <Title as="h1" title="سوالات متداول" />
+          <div className="text-justify py-4" lang="fa" dir="rtl">
+            مرکز آموزش کوشافن پارس، دروازه ورود به دنیای نوین دندانپزشکی است. این مرکز جامع آموزشی...
+          </div>
+        </div>
+      </section>
+
+      <section className="row align-items-center mt-lg-5 mt-2 p-lg-4 p-2 justify-content-center"
+        style={{ background: '#e4f0fd', borderRadius: '15px' }}
+        aria-label="سوالات متداول کوشافن پارس">
+        <FaqBox data={faqData} />
+      </section>
+    </main>
+  );
+}

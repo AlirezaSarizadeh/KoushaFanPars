@@ -16,14 +16,17 @@ const page = () => {
 
 
   return (
-    <RootLayout>
+
+    <>
       <Image src={images.about_us_hero} className='w-100 h-100 mt-lg-5 mt-4' alt='about us hero' />
 
       <AnimatedAboutCard />
 
       <div className='row align-items-center mt-lg-5 pt-lg-5 mt-4 pt-4 about-main-desc'>
         <div className='col-lg-12 mt-lg-5'>
-          <Title title={'معرفی'} />
+          {/* <Title title={'معرفی'} /> */}
+          <Title as="h1" title="معرفی" />
+
           <h2 className='fw-bold d-flex flex-column gap-3 mt-3'>
             <span className='lead fs-3 fw-normal'>
               شرکت تولیدی مهندسی
@@ -41,9 +44,8 @@ const page = () => {
 
 
       <Timeline />
+    </>
 
-
-    </RootLayout>
   )
 }
 

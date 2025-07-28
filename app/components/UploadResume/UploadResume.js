@@ -38,7 +38,7 @@ export default function UploadResume() {
 
             if (!cvRes.ok) throw new Error('خطا در ارسال اطلاعات رزومه');
 
-            toast.success('✅ رزومه شما با موفقیت ارسال شد');
+            toast.success(' رزومه شما با موفقیت ارسال شد');
         } catch (err) {
             toast.error(`❌ ${err.message}`);
         } finally {
