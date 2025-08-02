@@ -15,7 +15,7 @@ const AnimatedAboutCard = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 600) {
+            if (window.scrollY > 400) {
                 setShowSecondCard(true);
             } else {
                 setShowSecondCard(false);

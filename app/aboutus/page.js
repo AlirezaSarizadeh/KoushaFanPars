@@ -8,6 +8,7 @@ import Title from '../components/utils/title/Title'
 import Lead from '../components/utils/lead/Lead'
 import './aboutus.css'
 import CompaniesSlider from '../components/AboutUs/CompaniesSlider/CompaniesSlider'
+import Timeline from '../components/AboutUs/Timeline/Timeline'
 import Image from 'next/image'
 import images from '../public/assets/images'
 
@@ -41,6 +42,8 @@ const page = () => {
 
       <CompaniesSlider />
 
+
+      <Timeline />
     </>
 
   )

@@ -81,9 +81,9 @@ const LoginForm = () => {
         }
 
         toast.success('ورود با موفقیت انجام شد!');
-        // setTimeout(() => router.replace('/'), 100);
-        window.location.href = "/";
-
+        setTimeout(() => {
+          router.push('/');
+        }, 1500);
       } else {
         setError(result.message || 'خطایی در ورود رخ داد');
         toast.error(result.message || 'خطایی در ورود رخ داد');

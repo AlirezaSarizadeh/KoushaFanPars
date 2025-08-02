@@ -1,0 +1,58 @@
+.timeline-rtl {
+    direction: rtl;
+  }
+  
+  .timeline-rtl .vertical-timeline-element {
+    text-align: center;
+  }
+  
+  /* یکی در میون جای ایتم عوض بشه */
+  .timeline-rtl .vertical-timeline-element.left {
+    display: flex;
+    justify-content: start;
+    border:none !important;
+  }
+  
+  .timeline-rtl .vertical-timeline-element.right {
+    display: flex;
+    justify-content: end;
+
+    border:none !important;
+  }
+  .vertical-timeline-element-content + div{
+    border: none !important;
+  }
+  .vertical-timeline-element-content{
+    background: linear-gradient(90deg, #034b9493 0%, #23bcf991 60%) !important;
+    border-top: 2px solid ;
+    border: none;
+  }
+  
+  /* فلش ها چپ باز بشن */
+  .timeline-rtl .vertical-timeline-element-content::before {
+    left: auto;
+    right: 100%;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff;
+  }
+  @media only screen and (width >= 1170px) {
+    .vertical-timeline--two-columns .vertical-timeline-element.vertical-timeline-element--right .vertical-timeline-element-content .vertical-timeline-element-date, .vertical-timeline--two-columns .vertical-timeline-element:nth-child(2n):not(.vertical-timeline-element--left) .vertical-timeline-element-content .vertical-timeline-element-date {
+        left: 124%;
+        right: auto;
+        text-align: right;
+        color: #fff !important;
+        opacity: 1;
+        font-size: 20px !important;
+    }
+}
+.right.vertical-timeline-element > span{
+  border: 5px solid #0069b0 !important;
+}
+.vertical-timeline-element > span{
+  box-shadow: 10px 10px 10px #00000033 !important;
+}
+.vertical-timeline-element > div{
+  box-shadow: 10px 10px 10px #00000033 !important;
+  border-radius: 15px;
+}
