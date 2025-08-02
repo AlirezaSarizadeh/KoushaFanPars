@@ -6,7 +6,7 @@ import { useUser } from "@/context/UserContext";
 import toast from "react-hot-toast";
 
 const FavoriteButton = ({ product_id }) => {
-  const { user, isHydrated } = useUser();
+  const { user } = useUser();
   const [liked, setLiked] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -26,57 +26,71 @@ const FavoriteButton = ({ product_id }) => {
 
         if (res.ok) {
           const favorites = await res.json();
-          console.log("لیست علاقه‌مندی‌ها:", favorites);
 
-          // ✅ بررسی وجود محصول در علاقه‌مندی‌ها
-          const isLiked = favorites.some((fav) => fav.product_id === product_id);
+          // ✅ تبدیل product_id به رشته یا عدد برای مقایسه درست
+          const isLiked = favorites.some((fav) => String(fav.product_id) === String(product_id));
           setLiked(isLiked);
         } else {
-          console.error("دریافت لیست علاقه‌مندی‌ها با خطا مواجه شد");
+          console.error("❌ دریافت لیست علاقه‌مندی‌ها با خطا مواجه شد");
         }
       } catch (error) {
-        console.error("خطا در دریافت علاقه‌مندی‌ها:", error);
+        console.error("❌ خطا در دریافت علاقه‌مندی‌ها:", error);
       }
     };
 
     fetchFavoriteStatus();
   }, [user?.id, product_id]);
 
-  // ✅ افزودن یا حذف علاقه‌مندی
   const handleFavorite = async () => {
     if (!user?.id) {
       toast.error("برای افزودن به علاقه‌مندی‌ها ابتدا وارد حساب شوید");
       return;
     }
-
+  
     setLoading(true);
     try {
       const formData = new FormData();
       formData.append("user_id", user.id);
       formData.append("product_id", product_id);
-
+  
       const response = await fetch("https://api.kfp-dental.com/api/product_favorite", {
         method: "POST",
         body: formData,
       });
-
-      const data = await response.json();
-      console.log("پاسخ API علاقه‌مندی:", data);
-
-      if (response.ok) {
-        setLiked((prev) => !prev);
-        toast.success(!liked ? "محصول به علاقه‌مندی‌ها اضافه شد" : "محصول از علاقه‌مندی‌ها حذف شد");
+  
+      // ✅ تشخیص نوع پاسخ (JSON یا متن ساده)
+      const contentType = response.headers.get("content-type");
+      let data;
+      if (contentType && contentType.includes("application/json")) {
+        data = await response.json();
       } else {
-        console.error("به‌روزرسانی علاقه‌مندی ناموفق بود:", data);
+        data = await response.text(); // ✅ برای پاسخ‌های ساده مثل "Delete favorite"
+      }
+  
+      console.log("📡 پاسخ API علاقه‌مندی:", data);
+  
+      if (response.ok) {
+        const message = typeof data === "string" ? data : data?.message || "";
+  
+        if (message.toLowerCase().includes("delete")) {
+          setLiked(false);
+          toast.success("محصول از علاقه‌مندی‌ها حذف شد");
+        } else {
+          setLiked(true);
+          toast.success("محصول به علاقه‌مندی‌ها اضافه شد");
+        }
+      } else {
         toast.error("به‌روزرسانی علاقه‌مندی انجام نشد");
+        console.error("❌ به‌روزرسانی علاقه‌مندی ناموفق بود:", data);
       }
     } catch (err) {
-      console.error("خطا در ارسال علاقه‌مندی:", err);
+      console.error("❌ خطا در ارسال علاقه‌مندی:", err);
       toast.error("خطا در ارتباط با سرور");
     } finally {
       setLoading(false);
     }
   };
+  
 
   return (
     <motion.button
@@ -88,7 +102,7 @@ const FavoriteButton = ({ product_id }) => {
       aria-label={liked ? "حذف از علاقه‌مندی‌ها" : "افزودن به علاقه‌مندی‌ها"}
       title={liked ? "حذف از علاقه‌مندی‌ها" : "افزودن به علاقه‌مندی‌ها"}
     >
-      {/* افکت پس‌زمینه قلب */}
+      {/* ✅ افکت پس‌زمینه قلب */}
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: liked ? 1.2 : 0, opacity: liked ? 1 : 0 }}
@@ -99,7 +113,7 @@ const FavoriteButton = ({ product_id }) => {
         <Heart size={24} fill="currentColor" />
       </motion.div>
 
-      {/* آیکون قلب */}
+      {/* ✅ آیکون قلب */}
       <Heart
         size={24}
         className={`transition-all ${liked ? "text-primary" : "text-primary"}`}
