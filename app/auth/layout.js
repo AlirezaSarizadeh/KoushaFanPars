@@ -1,5 +1,4 @@
 
-import "bootstrap/dist/css/bootstrap.rtl.min.css";
 import "../globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 import { UserProvider } from "@/context/UserContext";

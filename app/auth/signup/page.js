@@ -50,17 +50,25 @@ const RegisterForm = () => {
       };
 
       const response = await fetch("https://api.kfp-dental.com/api/register", requestOptions);
-      const result = await response.json(); // Parse JSON response
+
+      // ✅ اگر وضعیت 203 باشد، پیام خاص نمایش داده و هدایت به صفحه ورود انجام شود
+      if (response.status === 203) {
+        toast.error('این شماره تلفن قبلا ثبت شده است ، لطفا وارد شوید');
+        setTimeout(() => {
+          router.push('/auth/login');
+        }, 1000); // کمی تأخیر برای نمایش toast
+        return;
+      }
+
+      // ✅ در غیر این صورت پاسخ را به صورت JSON پردازش کن
+      const result = await response.json();
 
       if (response.ok && result[0]?.token) {
-        // Show success toast
         toast.success('ثبت نام با موفقیت انجام شد!');
-        // Redirect to /auth/login after a short delay to allow toast to be visible
         setTimeout(() => {
           router.push('/auth/login');
         }, 1500);
       } else {
-        // Handle error response
         setError(result.message || 'خطایی در ثبت نام رخ داد');
         toast.error(result.message || 'خطایی در ثبت نام رخ داد');
       }
@@ -71,6 +79,7 @@ const RegisterForm = () => {
       setLoading(false);
     }
   };
+
 
   const handleLoginRedirect = () => {
     router.push('/auth/login'); // Use router for navigation
