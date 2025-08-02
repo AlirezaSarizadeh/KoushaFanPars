@@ -10,6 +10,10 @@ import './aboutus.css'
 import CompaniesSlider from '../components/AboutUs/CompaniesSlider/CompaniesSlider'
 import Image from 'next/image'
 import images from '../public/assets/images'
+import Timeline from '../components/AboutUs/TimeLine/TimeLine'
+
+
+
 
 const page = () => {
 
@@ -40,6 +44,8 @@ const page = () => {
       </div>
 
       <CompaniesSlider />
+
+      <Timeline />
 
     </>
 
