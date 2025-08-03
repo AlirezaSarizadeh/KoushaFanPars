@@ -1,9 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    unoptimized: true, // ⬅️ جلوگیری از بهینه‌سازی sharp
+    loader: 'default', // ⬅️ مطمئن میشه از loader پیشفرض استفاده شه
+  },
+  experimental: {
     images: {
-      unoptimized: true,
+      allowFutureImage: true,
     },
-  };
-  
-  module.exports = nextConfig; // ✅ به جای export default
-  
+  },
+};
+
+module.exports = nextConfig;

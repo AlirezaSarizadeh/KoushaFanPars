@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "lint": "next lint"
+    "lint": "next lint",
+      "postinstall": "npm uninstall sharp || true"
   },
   "resolutions": {
   "sharp": "0.33.4"
