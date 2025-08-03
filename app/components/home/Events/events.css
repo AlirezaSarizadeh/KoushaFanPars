@@ -33,7 +33,9 @@
     font-weight: 700;
     padding: 15px;
 }
-
+.events-swiperSlide{
+    background: transparent;
+}
 @media only screen and (max-width: 768px) {
     .nav-tabs .nav-link {
         padding: 7px;
