@@ -6,7 +6,6 @@ import 'swiper/css'
 import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
-import './partners.css'
 import DOMPurify from 'dompurify';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
 import Title from '../../utils/title/Title'
@@ -18,7 +17,7 @@ import { Card } from 'react-bootstrap'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
-
+import './partners.css'
 
 const Partners = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
