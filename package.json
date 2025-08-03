@@ -8,6 +8,9 @@
     "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },
+  "resolutions": {
+  "sharp": "0.33.4"
+},
   "dependencies": {
     "bootstrap": "^5.3.3",
     "bootstrap-rtl": "^3.3.4",
