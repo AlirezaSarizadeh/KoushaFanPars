@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import Button from './components/utils/button/Button';
+import Button from '../app/(main)/components/utils/button/Button';
 import './globals.css';
 import './not-found.css';
+import RootLayout from '../app/(main)/layout';
 
 export const metadata = {
   title: 'صفحه مورد نظر یافت نشد - کوشافن پارس',
@@ -10,6 +11,7 @@ export const metadata = {
 
 export default function NotFound() {
   return (
+    <RootLayout>
     <div className="text-center bg-404 d-flex align-items-center justify-content-center rounded-5 my-lg-5 my-4 p-3" style={{ minHeight: '60vh' }}>
       <div className="text-center flex-column d-flex align-items-start justify-content-center rounded-5 my-lg-5 ms-lg-5 px-3">
         <h1 className="fw-bold ms-lg-5">صفحه مورد نظر یافت نشد!</h1>
@@ -21,5 +23,6 @@ export default function NotFound() {
         </span>
       </div>
     </div>
+    </RootLayout>
   );
 }
