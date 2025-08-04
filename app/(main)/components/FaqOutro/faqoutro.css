@@ -21,3 +21,6 @@ button.accordion-button {
 .accordion-button:after {
     transform: scale(1.5);
 }
+.faqOutro .accordion-button:not(.collapsed) {
+    background-color: transparent;
+}
