@@ -28,18 +28,22 @@ const LoginForm = () => {
 
   const { login } = userContext;
 
-  // Load remembered credentials on component mount
+  // بارگذاری اطلاعات ذخیره شده در localStorage هنگام لود اولیه کامپوننت
   useEffect(() => {
-    const remembered = JSON.parse(localStorage.getItem('rememberMe'));
-    if (remembered) {
-      setPhone(remembered.phone || '');
-      setPassword(remembered.password || '');
-      setRememberMe(true);
+    try {
+      const remembered = JSON.parse(localStorage.getItem('rememberMe'));
+      if (remembered) {
+        setPhone(remembered.phone || '');
+        setPassword(remembered.password || '');
+        setRememberMe(true);
+      }
+    } catch {
+      // اگر localStorage خراب بود یا فرمت اشتباه داشت نادیده گرفته شود
     }
   }, []);
 
   const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
+    setShowPassword((prev) => !prev);
   };
 
   const handleLogin = async (e) => {
@@ -52,15 +56,13 @@ const LoginForm = () => {
       formdata.append('phone', phone);
       formdata.append('password', password);
 
-      const requestOptions = {
+      const response = await fetch('/api/login', {  // پیشنهاد می‌کنم مسیر API رو به api/login تغییر بدی
         method: 'POST',
         body: formdata,
         redirect: 'follow',
-      };
+      });
 
-      const response = await fetch('https://api.kfp-dental.com/api/login', requestOptions);
       const result = await response.json();
-      console.log('API Response:', result); // Debug log
 
       if (response.ok && result[0]?.token) {
         const userData = {
@@ -69,9 +71,8 @@ const LoginForm = () => {
           phone: result[0].phone,
           email: result[0].email,
           token: result[0].token,
-          id: result[0].id
+          id: result[0].id,
         };
-        console.log('User Data to Save:', userData); // Debug log
         login(userData);
 
         if (rememberMe) {
@@ -81,15 +82,15 @@ const LoginForm = () => {
         }
 
         toast.success('ورود با موفقیت انجام شد!');
-        // setTimeout(() => router.replace('/'), 100);
-        window.location.href = "/";
-
+        setTimeout(() => {
+          router.replace('/');  // استفاده از router.replace برای ناوبری بدون اضافه شدن به تاریخچه
+        }, 800);
       } else {
         setError(result.message || 'خطایی در ورود رخ داد');
         toast.error(result.message || 'خطایی در ورود رخ داد');
       }
     } catch (error) {
-      console.error('Login Error:', error); // Debug log
+      console.error('Login Error:', error);
       setError('نام کاربری یا رمز عبور اشتباه است');
       toast.error('نام کاربری یا رمز عبور اشتباه است');
     } finally {
@@ -106,7 +107,7 @@ const LoginForm = () => {
       <Toaster position="top-right" reverseOrder={false} />
       <Row className="h-100 d-flex align-items-center auth-color-side">
         <Col md={5} className="p-5 bg-white vh-100 auth-form-side">
-          <Form className="d-flex flex-column justify-content-around h-100" onSubmit={handleLogin}>
+          <Form className="d-flex flex-column justify-content-around h-100" onSubmit={handleLogin} noValidate>
             <div className="auth-heading d-flex flex-column gap-2">
               <Image src={images.mainLogo} alt="logo" />
               <h3 className="fs-1 mt-lg-5 mt-3 fw-bold">ورود کاربر</h3>
@@ -116,7 +117,7 @@ const LoginForm = () => {
                 ایران همپای تکنولوژی روز دنیا باشد.
               </p>
             </div>
-            {error && <p className="text-danger mb-3">{error}</p>}
+            {error && <p className="text-danger mb-3" role="alert">{error}</p>}
             <Form.Group className="mb-3" controlId="formBasicPhone">
               <Form.Label>
                 نام کاربری
@@ -127,6 +128,9 @@ const LoginForm = () => {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 required
+                aria-required="true"
+                aria-describedby="phoneHelp"
+                placeholder="شماره تلفن خود را وارد کنید"
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -138,20 +142,33 @@ const LoginForm = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
+                  aria-required="true"
+                  placeholder="رمز عبور خود را وارد کنید"
                 />
-                <InputGroup.Text className="opacity-75" onClick={togglePasswordVisibility}>
+                <InputGroup.Text
+                  className="opacity-75"
+                  onClick={togglePasswordVisibility}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={showPassword ? 'پنهان کردن رمز عبور' : 'نمایش رمز عبور'}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') togglePasswordVisibility();
+                  }}
+                  style={{ cursor: 'pointer' }}
+                >
                   {showPassword ? <Eye /> : <EyeOff />}
                 </InputGroup.Text>
               </InputGroup>
             </Form.Group>
             <div className="d-flex align-items-center justify-content-between">
-              <Form.Group className="" controlId="formBasicCheckbox">
+              <Form.Group controlId="formBasicCheckbox">
                 <Form.Check
                   type="checkbox"
                   className="px-0 small"
                   label="به خاطر داشته باش"
                   checked={rememberMe}
                   onChange={(e) => setRememberMe(e.target.checked)}
+                  aria-checked={rememberMe}
                 />
               </Form.Group>
               <Link className="text-decoration-underline text-dark" href="/auth/forgot-password">
@@ -163,10 +180,11 @@ const LoginForm = () => {
               className="auth-primary-button w-100 my-3"
               type="submit"
               disabled={loading}
+              aria-disabled={loading}
             >
               {loading ? 'در حال ورود...' : 'ورود'}
             </Button>
-            <div className="auth-hr-devider position-relative text-center">
+            <div className="auth-hr-devider position-relative text-center" aria-hidden="true">
               <span className="px-2 position-relative bg-white small" style={{ zIndex: '2' }}>
                 یا
               </span>
@@ -176,6 +194,7 @@ const LoginForm = () => {
               className="auth-secondary-button w-100 mt-3"
               onClick={handleRegisterRedirect}
               disabled={loading}
+              aria-disabled={loading}
             >
               ثبت نام
             </Button>
