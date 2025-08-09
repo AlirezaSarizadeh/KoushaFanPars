@@ -42,8 +42,14 @@
         margin-top: 30px;
     }
     .social-media-container{
-        background-color: #0067ad;
+        /* background-color: #0067ad; */
         padding: 5px;
         border-radius: 5px;
+    }
+    .ctu-box {
+        border-radius: 1rem;
+    }
+    .social-media-container li a img{
+        filter: invert(0.5);
     }
 }

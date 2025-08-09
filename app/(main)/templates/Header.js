@@ -52,7 +52,7 @@ const Header = () => {
     };
 
     return (
-        <header className="d-flex align-items-center justify-content-between pt-lg-4 pt-4">
+        <header className="d-flex align-items-center justify-content-between pt-lg-4 pt-4 pb-4">
             <Toaster position="top-center" reverseOrder={false} />
             <Menu menuData={menuData} />
             <Link href="/">

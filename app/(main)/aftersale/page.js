@@ -86,7 +86,7 @@ const CustomerServicePage = () => {
           </p>
 
           {/* ✅ لینک‌های تماس بهینه شده */}
-          <div className="d-flex align-items-center gap-lg-4 border-0 bg-transparent px-0">
+          <div className="d-flex align-items-center gap-lg-4 border-0 bg-transparent px-0 flex-column flex-lg-row gap-3">
             <Link href="tel:0214420806" className="btn btn-light p-2 py-3 fs-5 d-flex align-items-center gap-2">
               <LuPhoneCall className="textColor fs-4" /> 021-4420806
             </Link>

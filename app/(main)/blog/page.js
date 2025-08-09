@@ -113,7 +113,7 @@ export default async function BlogCategoriesPage() {
       </div>
 
       {/* ✅ لیست دسته‌بندی مقالات */}
-      <div className="row align-items-center mt-lg-5 mt-2 py-lg-5 px-lg-4 p-2 justify-content-center" style={{ background: '#e4f0fd', borderRadius: '15px' }}>
+      <div className="row align-items-center mt-lg-5 mt-2 py-lg-5 px-lg-4 p-2 justify-content-center w-100 m-auto" style={{ background: '#e4f0fd', borderRadius: '15px' }}>
         {data.map((item, index) => (
           <BlogList categoryId={item.id} key={index} heading={item.title} />
         ))}

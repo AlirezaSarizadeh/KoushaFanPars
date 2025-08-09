@@ -84,7 +84,7 @@ const JobOpportunityPage = () => {
         <CounterBox targetNumber={20} label="نمایندگی استانی در کشور" icon={images.counterIcon4} />
       </section>
 
-      <section className="row row-cols-lg-4 row-cols-1 align-items-center py-lg-5 py-4 container-custom mt-lg-5 mt-3" style={{ background: '#f1f2f4' }}>
+      <section className="row row-cols-lg-4 row-cols-1 align-items-center py-lg-5 py-4 container-custom mt-lg-5 mt-3 w-100 m-auto" style={{ background: '#f1f2f4' }}>
         <Title className="col-12 w-100 mb-3" title={'مراحل استخدام'} />
         <JobOpsStepCard />
         <JobOpsStepCard />

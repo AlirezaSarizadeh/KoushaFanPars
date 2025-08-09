@@ -52,7 +52,7 @@ const cardVariants = {
 const JobNeeds = () => {
   return (
     <motion.div
-      className='courses-box row p-lg-4 p-4 mb-lg-3 mb-2 mt-lg-5 mt-3'
+      className='courses-box row p-lg-4 p-4 mb-lg-3 mb-2 mt-lg-5 mt-3 w-100 m-auto'
       variants={containerVariants}
       initial='hidden'
       whileInView='visible'

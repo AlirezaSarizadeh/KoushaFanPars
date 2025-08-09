@@ -196,7 +196,6 @@
   color: var(--bs-nav-tabs-link-active-color);
   background-color: var(--bs-nav-tabs-link-active-bg);
   border-color: transparent;
-  border-right: 3px solid ;
 }
 .nav-tabs .nav-item .nav-link {
   border-radius: 25px;
@@ -209,6 +208,14 @@
   border-radius: 25px;
   overflow: hidden;
 }
+.faq-tab-titles .nav-item:first-child .nav-link {
+  border-radius: 25px;
+}
+
+.faq-tab-titles .nav-item:not(:first-child) .nav-link {
+  border-radius: 0 !important;
+}
+
 
 @media (max-width:991px){
   .faq-tab-content{
