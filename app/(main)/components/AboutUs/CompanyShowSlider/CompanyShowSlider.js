@@ -23,7 +23,7 @@ const CompanyShowSlider = ({ flexDirection = 'row' }) => {
 
     return (
         <div 
-            className='courses-box course-box-companies row p-lg-4 p-3 my-lg-3 my-2 justify-content-center col-lg-11' 
+            className='courses-box courses-box-v2 course-box-companies row p-lg-4 p-3 my-lg-3 my-2 justify-content-center col-lg-11' 
             style={{ flexDirection: flexDirection }}
         >
             <div className='col-md-8 d-flex flex-column justify-content-center gap-lg-5 gap-3 align-items-between gap-2 course-box-desc'>
