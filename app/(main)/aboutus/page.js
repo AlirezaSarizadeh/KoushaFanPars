@@ -11,7 +11,34 @@ import CompaniesSlider from '../components/AboutUs/CompaniesSlider/CompaniesSlid
 import Image from 'next/image'
 import images from '../../public/assets/images'
 import Timeline from '../components/AboutUs/TimeLine/TimeLine'
+import Script from 'next/script'
 
+// ✅ متادیتا مخصوص این صفحه
+export const generateMetadata = () => {
+  return {
+    title: 'درباره کوشافن پارس | شرکت تولیدی مهندسی دانش بنیان',
+    description:
+      'شرکت تولیدی مهندسی کوشافن پارس در زمینه تولید تجهیزات دندانپزشکی و دندانسازی فعالیت دارد و بزرگترین تولیدکننده تجهیزات این حوزه در کشور است.',
+    alternates: {
+      canonical: 'https://yourdomain.com/aboutus',
+    },
+    openGraph: {
+      title: 'درباره کوشافن پارس',
+      description:
+        'معرفی شرکت تولیدی مهندسی کوشافن پارس و محصولات دندانپزشکی و دندانسازی این شرکت.',
+      url: 'https://yourdomain.com/aboutus',
+      type: 'website',
+      images: [
+        {
+          url: 'https://yourdomain.com/og-aboutus.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'شرکت کوشافن پارس',
+        },
+      ],
+    },
+  }
+}
 
 
 
@@ -21,6 +48,27 @@ const page = () => {
   return (
 
     <>
+    <Script
+        id="aboutus-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'کوشافن پارس',
+            url: 'https://yourdomain.com/aboutus',
+            logo: 'https://yourdomain.com/logo.png',
+            description:
+              'شرکت تولیدی مهندسی دانش بنیان کوشافن پارس تولیدکننده تجهیزات و لوازم دندانپزشکی و دندانسازی در ایران.',
+            sameAs: [
+              'https://www.linkedin.com/company/kfp',
+              'https://www.instagram.com/kfp',
+            ],
+          }),
+        }}
+      />
+
+
       <Image src={images.about_us_hero} className='w-100 h-100 mt-lg-5 mt-4' alt='about us hero' />
 
       <AnimatedAboutCard />
