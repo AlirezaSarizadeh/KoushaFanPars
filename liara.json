@@ -1,0 +1,8 @@
+{
+  "app": "stupefied-meitner-zwkeer19a",
+  "port": 3000,
+  "build": {
+    "location": "iran"
+  },
+  "disks": []
+}
